@@ -5,8 +5,13 @@
 	</head>
 	<body>
 		<button id="surePos">位置</button>
-		
 	</body>
+	<script>
+		var btn = document.getElementById("surePos");
+		btn.onclick = function() {
+			alert("hi");
+		};
+	</script>
 </html>
 
 	
