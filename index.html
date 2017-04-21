@@ -4,7 +4,150 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
+	<link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap.css" />
+	<link rel="stylesheet" href="html/css/style.css" />
+	<link rel="stylesheet" href="html/css/font-awesome.css" />
+	<link rel="stylesheet" href="html/css/cm-overlay.css" />
+	<style>
+		body{
+			background: url(html/images/banner.jpg);
+		}
+		#outsidePage{
+			position: relative;
+			width: 100%;
+			height: 770px;
+			
+			background: rgba(100,149,237, 0.4);
+		}
+		.headPicture{
+			position: absolute;
+			top: 80px;
+			width: 100%;
+			height: 600px;
+			background: coral;
+			opacity: 1;
+		}
+		.headPicture img{
+			height: 257px;
+			width: 257px;
+			margin-left: 570.5px;
+			opacity: 1;
+			border: 7px solid #44c7f4;
+			border-radius: 4px;
+			display: block;
+		}
+		.headPicture h1{
+			margin: 5px 5px;
+			text-align: center;
+			font-size: 3em;
+			color: #fff;
+			font-family:'Gidugu', sans-serif;
+		}
+		.headPicture span{
+			text-align: center;
+			display: block;
+			text-transform: uppercase;
+			color: #44c7f4;
+		    letter-spacing: 4px;
+		    font-size: 0.9em;
+		    font-family: 'Gidugu', sans-serif;
+		}
+		#descriptUl{
+			list-style: none;
+			margin: 5px 5px;
+		}
+		#descriptUl li{
+			text-align: center;
+		    text-transform: uppercase;
+		    color: #fff;letter-spacing: 7px;
+		    margin: 2px 0;
+		    font-size: 14px;
+		    font-family: "gill sans mt";
+		}
+		.fourImg{
+			margin: 30px 558px;
+		}
+		.fourImg li{
+			display: inline;
+			margin:0px 15px;
+			height: 40px;
+			width: 40px;
+			font-size: 19px;
+		}
+		.fourImg button{
+			color: white;
+			background: #23282C;
+			font-family: "arial, helvetica, sans-serif";
+			border-color: white;
+			height: 35px;
+			width: 35px;
+		}
+		.roundHolder{
+			margin: 30px 558px;
+			list-style: none;
+		}
+		.roundHolder li{
+			display: inline;
+			margin:0px 35px;
+			height: 40px;
+			width: 40px;
+			font-size: 19px;
+		}
+		.fa-circle{
+			color: white;
+		}
+	</style>
 	<body>
-		homepage
+		<div id="outsidePage">
+				<div class="headPicture">
+					<img src="html/images/ab.jpg">
+					<h1>I'AM  LEMON-ZHANG</h1>
+					<span>programmer/web developer</span>
+					<div id="personDescription">
+						<ul id="descriptUl">
+							<li value="1">
+								I really enjoy the work of web development very much.
+							</li>
+							<li value="2">
+								I have a lot of hobbies.such as:basketball,swimming.
+							</li>
+							<li value="3">
+								I think of improving my technology everyday.
+							</li>
+						</ul>
+					</div>
+					<div id="littleImg">
+						<ul class="fourImg">
+							<li><button type="button"><i class="fa fa-facebook"></i></button></li>
+							<li><button type="button"><i class="fa fa-twitter"></i></button></li>
+							<li><button type="button"><i class="fa fa-comments"></i></button></li>
+							<li><button type="button"><i class="fa fa-github"></i></button></li>
+						</ul>
+					</div>
+					<div id="toggleRound">
+						<ul class="roundHolder">
+							<li><i class="fa fa-circle"></i></li>
+							<li><i class="fa fa-circle"></i></li>
+							<li><i class="fa fa-circle"></i></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+		<script type="text/javascript" src="jquery/jquery-1.12.1.min.js" ></script>
+		<script>
+			$(function(){
+				$("#descriptUl li:not(':first')").css("display", "none");
+			}());
+			function changeLi() {
+				var nowLi = $("#descriptUl li:visible");
+				var nextLi = nowLi.val() == "3" ?  $("#descriptUl li:first"): nowLi.next();
+				setTimeout(function() {
+					nowLi.css("display", "none");
+					nextLi.css("display", "block");
+					setTimeout(changeLi(),4000);
+				},3000)
+			};
+			changeLi()
+		</script>
 	</body>
 </html>
