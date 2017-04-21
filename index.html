@@ -147,7 +147,7 @@
 							<li><button type="button"><i class="fa fa-facebook"></i></button></li>
 							<li><button type="button"><i class="fa fa-twitter"></i></button></li>
 							<li><button type="button"><i class="fa fa-comments"></i></button></li>
-							<li><button type="button"><i class="fa fa-github"></i></button></li>
+							<li><button type="button" id="toGit"><i class="fa fa-github"></i></button></li>
 						</ul>
 					</div>
 					<div id="toggleRound">
@@ -163,8 +163,11 @@
 		<script>
 			$(function(){
 				$("#descriptUl li:not(':first')").css("display", "none");
-				$(".roundHolder li:first").addClass("whiteRound")
-				$(".roundHolder li:first").css("margin-left","150px")
+				$(".roundHolder li:first").addClass("whiteRound");
+				$(".roundHolder li:first").css("margin-left","150px");
+				$("#toGit").click(function() {
+					location.href = "https://github.com/lemondreamtobe";
+				});
 			}());
 			function changeLi() {
 				var nowLi = $("#descriptUl li:visible");
