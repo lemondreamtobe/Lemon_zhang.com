@@ -69,7 +69,7 @@
 		.fourImg{
 			list-style: none;
 			display: block;
-			width: 400px;
+			width: 500px;
 			margin: 0 auto;
 			position: relative;
 		}
@@ -79,6 +79,11 @@
 			width: 40px;
 			font-size: 19px;
 			display:inline;
+			margin-right: 30px;
+			margin-left: 50px;
+		}
+		.fourImg li:first{
+			margin-left: 35px;
 		}
 		.fourImg button{
 			color: white;
@@ -101,12 +106,16 @@
 			height: 40px;
 			width: 40px;
 			font-size: 19px;
-			margin:0px 25px 0px 25px
+			margin:0px 30px 0px 30px
 			
 		}
+		
 		#littleImg,#toggleRound{
 			position:relative;
 			margin:25px 0px 25px 0px;
+		}
+		.whiteRound{
+			color: white;
 		}
 	</style>
 	<body>
@@ -151,18 +160,20 @@
 		<script>
 			$(function(){
 				$("#descriptUl li:not(':first')").css("display", "none");
-				$(".roundHolder li:first").css("color", "white")
+				$(".roundHolder li:first").addClass("whiteRound")
+				$(".roundHolder li:first").css("margin-left","150px")
 			}());
 			function changeLi() {
 				var nowLi = $("#descriptUl li:visible");
 				var nextLi = nowLi.val() == "3" ?  $("#descriptUl li:first"): nowLi.next();
-				var nowRound = $("roundHolder li:first");
-				var nextRound = nowRound.val() == "3" ? $("roundHolder li:first") : nowRound.next();
+				var nowRound = $(".roundHolder .whiteRound");
+				console.log(nowRound.text())
+				var nextRound = nowRound.val() == "3" ? $(".roundHolder li:first") : nowRound.next();
 				setTimeout(function() {
 					nowLi.css("display", "none");
 					nextLi.css("display", "block");
-					nextRound.css("color","white");
-					nextRound.siblings().css("color", "black")
+					nextRound.addClass("whiteRound");
+					nextRound.siblings().removeClass("whiteRound");
 					
 					setTimeout(changeLi(),4000);
 				},3000)
