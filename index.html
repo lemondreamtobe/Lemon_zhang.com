@@ -93,9 +93,7 @@
 			width: 40px;
 			font-size: 19px;
 		}
-		.fa-circle{
-			color: white;
-		}
+		
 	</style>
 	<body>
 		<div id="outsidePage">
@@ -128,7 +126,7 @@
 						<ul class="roundHolder">
 							<li><i class="fa fa-circle"></i></li>
 							<li><i class="fa fa-circle"></i></li>
-							<li><i class="fa fa-circle"></i></li>
+							<li value="3"><i class="fa fa-circle"></i></li>
 						</ul>
 					</div>
 				</div>
@@ -137,13 +135,19 @@
 		<script>
 			$(function(){
 				$("#descriptUl li:not(':first')").css("display", "none");
+				$(".roundHolder li:first").css("color", "white")
 			}());
 			function changeLi() {
 				var nowLi = $("#descriptUl li:visible");
 				var nextLi = nowLi.val() == "3" ?  $("#descriptUl li:first"): nowLi.next();
+				var nowRound = $("roundHolder li:first");
+				var nextRound = nowRound.val() == "3" ? $("roundHolder li:first") : nowRound.next();
 				setTimeout(function() {
 					nowLi.css("display", "none");
 					nextLi.css("display", "block");
+					nextRound.css("color","white");
+					nextRound.siblings().css("color", "black")
+					
 					setTimeout(changeLi(),4000);
 				},3000)
 			};
