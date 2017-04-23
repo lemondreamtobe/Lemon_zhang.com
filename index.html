@@ -11,21 +11,22 @@
 	<style>
 		body{
 			
-			
+			background-size:100%;
 		}
 		#outsidePage{
+			background: url(html/images/banner.jpg);
 			position: relative;
 			width: 100%;
-			height: 580px;
-			background: url(html/images/banner.jpg);
+			height: 670px;
+			
 			
 			/*background: rgba(100,149,237, 0.4);*/
 		}
 		.headPicture{
-			position: absolute;
-			top: 80px;
+			position: relative;
+			top:110px;
 			width: 100%;
-			height: 600px;
+			height: 670px;
 			/*background: coral;*/
 			opacity: 1;
 		}
@@ -97,9 +98,6 @@
 			height: 35px;
 			width: 35px;
 		}
-		.fourImg button:hover{
-			color:#44c7f4;
-		}
 		.roundHolder{
 			list-style: none;
 			display: block;
@@ -124,12 +122,105 @@
 		.whiteRound{
 			color: white;
 		}
+		.midNav {
+			width: 100%;
+			background: #44c7f4;
+			height: 80px;
+		}
+		.midNav h1{
+			text-transform: uppercase;
+			color: black;
+			font-size: 40px;
+		    color: #fff;
+		    margin-left: 50px;
+		    line-height: 80px;
+		    letter-spacing: 1px;
+		   
+		}
+		.personInformation{
+			background: white;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.personInformation h1{
+			
+			text-align: center;
+		}
+		#infoTitle{
+			margin-bottom: 20px;
+		}
+		#infoBody{
+			padding-right: 15px;
+		    padding-left: 15px;
+		   margin: 0 100px;
+		}
+		.xixi{
+			padding: 1em 0;
+		    border-bottom: 1px dashed #44c7f4;
+		    box-sizing:
+		    border-box;
+			color:
+			rgb(51, 51, 51);
+			display:block;
+			font-family:"Open Sans", sans-serif;
+			font-size:16px;
+			height:82px;
+			line-height:22.8571px;
+			padding-bottom:16px;
+			padding-left:0px;
+			padding-right:0px;
+			padding-top:16px;
+			text-size-adjust:100%;
+			margin-bottom: 32px;
+		}
+		.xixi h4{
+		    color: #212121;
+		    text-transform: uppercase;
+		    letter-spacing: 2px;
+		    font-family:Gidugu, sans-serif;
+		    font-size:25.6px;
+			font-weight:500;
+			height:28px;
+			letter-spacing:2px;
+		}
+		.xixi p{
+			    color: #827e7e;
+    			font-size: 0.95em;
+    			letter-spacing: 1px;
+    			font-family: 'Open Sans', sans-serif;
+    			line-height: 1.42857143;
+    			text-transform: uppercase;
+    			margin: 15px 0;
+		}
+		.hobbit{
+			width: 100%;
+			background: url(html/images/serve.jpg) no-repeat;
+			background-size: 100%;
+		}
+		#hobitTitle{
+			margin: 10px 0px 10px 0px;
+		}
+		#hobitTitle h1{
+			text-align: center;
+			color: white;
+		}
+		.hobbitCon{
+			width: 100%;
+			height: 300px;
+			margin:0 100px ;
+		}
+		.hobbitCon .col-md-4{
+			width: 420px;
+		}
+		.makedown{
+			margin-top: 20px;
+		}
 	</style>
 	<body>
 		<div id="outsidePage">
 				<div class="headPicture">
 					<div>
-						<img id="personPic" src="html/images/IMG_1443.JPG">
+						<img id ="personPic" src="html/images/IMG_1443.JPG">
 					</div>
 					<h1>I'AM  LEMON-ZHANG</h1>
 					<span>programmer/web developer</span>
@@ -162,13 +253,67 @@
 						</ul>
 					</div>
 				</div>
+				<div class="midNav">
+					<h1>Self introduction</h1>
+				</div>
+				<div class="personInformation">
+					<div id="infoTitle">
+						<div style="width:400px;height:1px;margin:10px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+						<h1>information</h1>
+						<div style="width:400px;height:1px;margin:10px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+					</div>
+					<div id="infoBody">
+						<div class="ib-left col-md-5">
+							<img src="html/images/IMG_2912.JPG" />
+						</div>
+						<div class="ib-right col-md-7">
+							<div class="xixi">
+								<h4>name</h4>
+								<p>zhanglinfeng</p>
+							</div>
+							<div class="xixi">
+								<h4>Job Title</h4>
+								<p>Programmer / Web Developer</p>
+							</div>
+							<div class="xixi">
+								<h4>education experience</h4>
+								<p>South China Normal University</p>
+							</div>
+							<div class="xixi">
+								<h4>address</h4>
+								<p>shenzhen guangming baihua street</p>
+							</div>
+							<div class="xixi">
+								<h4>email</h4>
+								<p>897418436@qq.com</p>
+							</div>
+						</div>
+					</div>
+					<br style="clear: both;">
+				</div>
+				<br style="clear: both;">
+				<div class="hobbit">
+					<div class="makedown">
+						<div id="hobitTitle">
+							<div style="width:00px;height:1px;margin:10px auto;padding:0px;background-color:white;overflow:hidden;"></div>
+							<div style="width:400px;height:1px;margin:10px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+							<h1>MY HOBBIT</h1>
+							<div style="width:400px;height:1px;margin:10px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+						</div>
+					</div>
+					<div class="hobbitCon">
+						<div class="col-md-4"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492941185092&di=c592ccb129869c6b797a4a5756cfd74a&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201501%2F09%2F20150109230750_xiPGz.jpeg"></div>
+						<div class="col-md-4"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=228897427,3905131961&fm=23&gp=0.jpg" style="width: 280px; height: 280px;"></div>
+						<div class="col-md-4"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2316655809,3915149039&fm=23&gp=0.jpg" style="width: 280px; height: 280px;"></div>
+					</div>
+				</div>
 		</div>
 		<script type="text/javascript" src="jquery/jquery-1.12.1.min.js" ></script>
 		<script>
 			$(function(){
 				$("#descriptUl li:not(':first')").css("display", "none");
 				$(".roundHolder li:first").addClass("whiteRound");
-				$(".roundHolder li:first").css("margin-left","160px");
+				$(".roundHolder li:first").css("margin-left","150px");
 				$("#toGit").click(function() {
 					location.href = "https://github.com/lemondreamtobe";
 				});
