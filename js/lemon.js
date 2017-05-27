@@ -17,7 +17,6 @@ $(function(){
 				var nowLi = $("#descriptUl li:visible");
 				var nextLi = nowLi.val() == "3" ?  $("#descriptUl li:first"): nowLi.next();
 				var nowRound = $(".roundHolder .whiteRound");
-				console.log(nowRound.text())
 				var nextRound = nowRound.val() == "3" ? $(".roundHolder li:first") : nowRound.next();
 				setTimeout(function() {
 					nowLi.css("display", "none");
