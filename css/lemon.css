@@ -228,7 +228,7 @@ body{
 		.hobbit{
 			
 			background: url(../html/images/serve.jpg) no-repeat;
-			background-size: 100%;
+			background-size: 100% 120%;
 			min-width: 1182px;
 		}
 		.skill{
@@ -257,7 +257,7 @@ body{
 		}
 		
 		.makedown{
-			margin-top: 20px;
+			margin-top: -20px;
 		}
 		.hobbit-img img{
 			display:block;
