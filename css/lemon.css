@@ -1,13 +1,14 @@
 body{
 			
 			background-size:100%;
+			min-width: 1182px;
 		}
 		#outsidePage{
 			background: url(../html/images/banner.jpg);
 			position: relative;
 			width: 100%;
 			height: 670px;
-			
+			min-width: 1182px;
 			
 			/*background: rgba(100,149,237, 0.4);*/
 		}
@@ -129,6 +130,7 @@ body{
 		.personInformation{
 			background: white;
 			width: 100%;
+			min-width: 1182px;
 			margin-bottom: 20px;
 		}
 		.personInformation h1{
@@ -185,6 +187,7 @@ body{
 			
 			background: url(../html/images/serve.jpg) no-repeat;
 			background-size: 100%;
+			min-width: 1182px;
 		}
 		#hobitTitle{
 			margin: 10px 0px 10px 0px;
@@ -202,7 +205,21 @@ body{
 		.makedown{
 			margin-top: 20px;
 		}
-		.col-md-4 img{
+		.hobbit-img img{
 			display:block;
 			margin:0 auto;
+		}
+		.ib-left{
+			display: inline-block;
+			float: left;
+			width: 40%;
+		}
+		.ib-right{
+			display: inline-block;
+			float: right;
+			width: 40%;
+		}
+		.hobbit-img{
+			display: inline-block;
+			width: 33%;
 		}
