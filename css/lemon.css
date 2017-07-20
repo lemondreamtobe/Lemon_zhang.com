@@ -51,6 +51,10 @@ body{
 			list-style: none;
 			margin: 5px 5px;
 		}
+		.himg{
+			width: 280px;
+			height: 280px;
+		}
 		#descriptUl li{
 			text-align: center;
 		    	text-transform: uppercase;
@@ -230,6 +234,7 @@ body{
 			background: url(../html/images/serve.jpg) no-repeat;
 			background-size: 100% 120%;
 			min-width: 1182px;
+			height: 526px;
 		}
 		.skill{
 			background: url(../html/images/6.jpg);
@@ -277,3 +282,53 @@ body{
 			display: inline-block;
 			width: 33%;
 		}
+*{
+	padding: 0;
+	margin: 0;
+}
+.box img{
+	width:200px;
+	height: 300px;
+}
+body{ background-color: #313131; }
+@keyframes fn{
+	0% {transform:rotateX(-15deg) rotateY(0deg);}
+	100%{transform:rotateX(-15deg) rotateY(360deg);}
+
+}
+@-moz-keyframes fn{
+	0% {transform:rotateX(-15deg) rotateY(0deg);}
+	100%{transform:rotateX(-15deg) rotateY(360deg);}
+}
+@-ms-keyframes fn{
+	0% {transform:rotateX(-15deg) rotateY(0deg);}
+	100%{transform:rotateX(-15deg) rotateY(360deg);}
+}
+@-webkit-keyframes fn{
+	0% {transform:rotateX(-15deg) rotateY(0deg);}
+	100%{transform:rotateX(-15deg) rotateY(360deg);}
+}
+.box{
+	width:200px;
+	height:300px;
+	position:relative;
+	margin:auto;
+	margin-top:73px;
+	transform-style:preserve-3d;
+	transform:rotateX(-10deg);
+	animation: fn 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	position: relative
+}
+.box:hover{
+	animation-play-state: paused;
+}
+.box>div{
+	width:200px;
+	height:300px;
+	position: absolute;
+	left:0;
+	top:0;
+
+}
