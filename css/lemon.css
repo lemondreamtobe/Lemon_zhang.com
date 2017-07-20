@@ -316,7 +316,7 @@ body{ background-color: #313131; }
 	margin-top:73px;
 	transform-style:preserve-3d;
 	transform:rotateX(-10deg);
-	animation: fn 10s;
+	animation: fn 25s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	position: relative
