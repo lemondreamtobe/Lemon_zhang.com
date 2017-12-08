@@ -1,0 +1,108 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery之图片关联伸缩效果</title>
+<style type="text/css">
+h3{
+    text-align: center;
+}
+#test_box{
+    max-width:640px; 
+    _width:640px; 
+    margin:1.2em auto; 
+    list-style: none;
+    padding:5em 0;
+}
+.fix{zoom:1;}
+.fix:after,.fix:before{
+    display:block; 
+    content:"clear"; 
+    height:0; 
+    clear:both; 
+    overflow:hidden; 
+    visibility:hidden;
+}
+.imgList{width:20%; height:170px; float:left;}
+.showImg_1{background:gray url(../images/imgcommon2.jpg) no-repeat;}
+.showImg_2{background:gray url(../images/imgcommon3.jpg) no-repeat;}
+.showImg_3{background:gray url(../images/imgcommon1.jpg) no-repeat;}
+.showImg_4{background:gray url(../images/imgcommon4.jpg) no-repeat;}
+.ul-container{
+    width: 80%;
+    padding-left: 108px;
+    margin: 0 auto;
+}
+</style>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <h3>jQuery之图片关联伸缩效果</h3>
+    <div class="ul-container">
+		<ul id="test_box" class="fix">
+			<li class="imgList showImg_1"></li>
+            <li class="imgList showImg_2"></li>
+            <li class="imgList showImg_3"></li>
+            <li class="imgList showImg_4"></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+       $(function(){
+           let accordion = (function() {
+                let states = {
+                    pic1: function(target) {
+                        target.animate({
+                            width:"27%"	
+                        },'fast');	
+                    },
+                    pic2: function(target) {
+                        target.animate({
+                            width:"23%"	
+                        },'fast');	
+                    },
+                    pic3: function(target) {
+                        target.animate({
+                            width:"37%"	
+                        },'fast');	
+                    },
+                    pic4: function(target) {
+                        target.animate({
+                            width:"23%"	
+                        },'fast');
+                    }
+                };
+                return {
+                    show: function(type, target) {
+                        states[type](target)
+                    }
+                }
+           })();
+            $(".imgList").mouseover(function(){
+                $(".imgList").not($(this)).animate({
+                    width:"20%"	
+                },'fast');	
+                let type = '';
+                switch($(this).attr('class').split(' ')[1]) {
+                    case 'showImg_1': 
+                        type = 'pic1';
+                        break;
+                    case 'showImg_2': 
+                        type = 'pic2';
+                        break;
+                    case 'showImg_3': 
+                        type = 'pic3';
+                        break;
+                    case 'showImg_4': 
+                        type = 'pic4';
+                        break;
+                };
+                accordion.show(type, $(this));							  
+            }).mouseout(function(){
+                $(".imgList").animate({
+                    width:"20%"	
+                },'slow');	
+            });
+        });
+    </script>
+</body>
+</html>
