@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./demo.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <style>
+        .person_atten_r{
+            height: 34px;
+            padding: 0 5px;
+            display: inline-block;
+        }
+        .person_atten .num {
+            height: 23px;
+            font-size: 18px;
+            color: #333;
+        }
+        #sendNum{
+            zoom: 1;
+            opacity: 1;
+        }
+        .num a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<div>
+    <div class="demo-container">
+        <div class="header">
+            <i>
+                <b>数字闪现放大动画</b>
+            </i>
+        </div>
+        <div class="method-title">
+            数字放大
+        </div>
+        <div class="method-container">
+            <button class="tc-btn" >放大</button>
+            <div class="person_atten_r" style="position: relative;">
+                <p class="num">
+                    <strong style="width:46px; height:28px; line-height:28px; left:-4px; top:-3px; text-align:center;">
+                        <a href="javascript:void(0);" id="sendNum">166</a>
+                        <a href="#no" id="absNum" style="position:absolute; width:46px; height:28px; left:-3px; top:15px; display:none;"></a>
+                    </strong>
+                </p>
+                <!-- <p></p> -->
+               
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.tc-btn').click(function(e) {
+            number(document.getElementById("absNum"), document.getElementById("sendNum"), 18, 26);
+        });
+        // setInterval(function() {
+        //     $('.tc-btn').click();
+        // }, 1000);
+        var number = function(node,aim,minnum,maxnum){
+            var num = parseInt(aim.innerHTML,10); //获取sendNum的数字
+            aim.style.zoom = 1;
+            node.style.display = "inline-block";
+            node.innerHTML = num;
+            var fontSize = minnum; //字体18
+            var opacity = 1;
+            var step = function(){		
+                fontSize+=1; //字体逐渐放大
+                opacity-=0.09; //增加透明
+                node.style.fontSize = fontSize + "px";
+                node.style.opacity = opacity;
+                aim.style.opacity = opacity;
+
+                node.style.filter = "Alpha(opacity="+opacity*100+")"; //IE下使用半透明需要使用IE半透明滤镜
+                aim.style.filter = "Alpha(opacity="+opacity*100+")";
+                node.style.zoom = 1; //设置a标签zoom为1的代码，是为了使其haslayout，IE半透明滤镜才可以生效。
+
+                if(fontSize < maxnum){
+                    setTimeout(step,40); //没超过最大上限继续放大
+                }else{
+
+                    //超过最大上限数字加1，开始缩小
+                    num+=1;
+                    node.innerHTML = num;
+                    aim.innerHTML = num;
+                    setTimeout(step2,40);	
+                }
+            };
+            setTimeout(step,10);
+            var step2 = function(){
+
+                //这部分代码和上面放大字体的类似
+                fontSize-=1;
+                opacity+=0.09;
+                node.style.fontSize = fontSize + "px";
+                node.style.opacity = opacity;
+                aim.style.opacity = opacity;
+                node.style.filter = "Alpha(opacity="+opacity*100+")";
+                aim.style.filter = "Alpha(opacity="+opacity*100+")";
+                if(fontSize > minnum){
+                    setTimeout(step2,40);
+                }else{
+                    node.style.display = "none";
+                }
+            };
+        };
+    </script>
+</body>
+</html>
