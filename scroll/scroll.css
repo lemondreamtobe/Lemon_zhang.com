@@ -1,0 +1,14 @@
+.scroll-body{
+    display: inline-block;
+}
+.scroll-container{
+    text-align: center;
+}
+#scroll-table{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+    display: block;
+}

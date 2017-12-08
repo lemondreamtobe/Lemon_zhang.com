@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* body{
+            background:#069; 
+            margin:100px; 
+            border:30px solid #093;
+        }
+        html{background:#999;} */
+
+        html{background:#999;margin:100px; border:30px solid #093;}
+        body{background:#069; margin:100px; border:30px solid #093;}
+
+        html{overflow-y:scroll;}
+
+        html{background:white url(../image/404.png) no-repeat fixed center center;}
+
+        html{height: 100%;}
+    </style>
+</head>
+<body>
+    <div>
+            <!-- 透明层无论滚动与否都满屏显示，其实就是对html和body标签做一番手脚，两者高度100%显示，同时溢出隐藏（overflow:hidden），
+            然后用一个div高度100%系显示，溢出滚动。
+            而这个透明层就使用绝对定位且与这个div平级，高宽100%显示，就可以使得无论怎么滚动这个透明覆盖层都是满屏显示的。
+            这其实也就解决IE6下浮动层固定定位的经典方法。 -->
+    </div>
+</body>
+</html>

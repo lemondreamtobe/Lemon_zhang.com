@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./demo.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <style>
+        .clickClass{
+            padding: 5px;
+            border: 2px solid #e4e4e4;
+            background: #868e96;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="header">
+            <i><b>jquery和mvvm的类名操作比较</b></i>
+        </div>
+        <div class="method-title">jq方法</div>
+        <div class="method-container">
+           <img id="img1" src=".././images/imgcommon1.jpg">
+        </div>
+        <div class="method-title">mvvm方法</div>
+        <div class="method-container" :controller="img2">
+            <img  ms-click="@clickImg" id="img2" :class="@className" src=".././images/imgcommon1.jpg">
+        </div>
+    </div>
+    <script>
+
+            //jq way
+            $('#img1').click(function(e) {
+                // $(this).addClass('clickClass');
+                $(this).toggleClass('clickClass');
+            });
+
+            //mvvm way
+            let mvvmImg = avalon.define({
+                $id: 'img2',
+                className: '',
+                clickImg(e) {
+                    this.className = 'clickClass';
+                }
+            });      
+    </script>
+</body>
+</html>

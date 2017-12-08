@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 120px;
+            background: #536b82;
+            border: 1px solid #e4e4e4;
+            color: white;
+        }
+        .demo1{
+            line-height: 120px;
+        }
+        .demo2{
+            display:table-cell; 
+            height: 120px;
+            width:550px; 
+            /* height:1.14em;  */
+            /* padding:0 0.;  */
+            /* border:1px solid #beceeb;  */
+            color:white; 
+            font-size:14px; 
+            vertical-align:middle;
+        }
+        .demo2 span{
+            /* display:inline-block;  */
+            /* font-size:0.1em;  */
+            /* vertical-align:middle; */
+        }
+        ul{
+            list-style: none;
+        }
+        .zxx_align_box_3 li{
+            width:250px; 
+            height:250px; 
+            padding:1px; 
+            margin:1px; 
+            font-size:128px; 
+            float:left; 
+            border:1px solid #beceeb;
+        }
+        .fix {
+            zoom: 1;
+        }
+        .fix:after, .fix:before {
+            display: table;
+            content: "";
+            clear: both;
+        }
+        .zxx_align_box_3 li img{
+            display:block; 
+            width:100%; 
+            height:100%; 
+            background-repeat:no-repeat; 
+            background-position:center;
+        }
+        .zxx_align_box_4 li{
+            float:left; 
+            margin-right:2px;
+        }
+        .zxx_align_box_4 li div{
+            display:table-cell; 
+            width:252px; 
+            height:252px; 
+            border:1px solid #beceeb;
+            font-size:58px; 
+            text-align:center; 
+            vertical-align:middle;
+        }
+        .zxx_align_box_4 li div img{vertical-align:middle;}
+        .zxx_align_box_4 div{
+            background: none;
+        }
+        .zxx_align_box_5{
+            height: 100%;
+            background: none;
+            margin-bottom: 40px;
+        }
+        .zxx_align_box_5 a{
+            display:inline-block; 
+            /* width:1.2em;  */
+            font-size:128px; 
+            text-align:center; 
+            vertical-align:middle;
+            }
+        .zxx_align_box_5 a img{
+            vertical-align:middle; 
+            padding:2px; 
+            border:1px solid #beceeb;
+            }
+            .zxx_align_box_6 li{
+                /* height:128px;  */
+                /* width:150px;  */
+                padding:13px 0; 
+                float:left; 
+                margin-right:10px; 
+                border:1px solid #beceeb; 
+                text-align:center; 
+                font-size:0;
+                }
+            .zxx_align_box_6 li .alpha_img{
+                height:100%;
+                 width:1px; 
+                 vertical-align:middle;
+                 }
+            .zxx_align_box_6 li .show_img{vertical-align:middle;}
+            .method4{
+                background: none;
+                height: 100%;
+            }
+            .title{
+                background: none;
+                text-align: center;
+                border: none;
+            }
+            .title h3{
+                color: #536b82;
+            }
+            .zxx_ul_image{overflow:hidden; zoom:1;}
+            .zxx_ul_image li{
+                float:left; 
+                /* width:150px;  */
+                /* height:150px;  */
+                text-align:center; 
+                line-height:150px; 
+                padding: 5px;
+                *font-size:125px;
+            }
+            .zxx_ul_image li:after{content:' '; vertical-align:middle;}
+            .zxx_ul_image li img{vertical-align:middle;}
+    </style>
+
+</head>
+<body>
+    <div class="title">
+        <h3>单行文字垂直居中</h3>
+    </div>
+    <div class="demo1">
+        单行文字居中，样式height: 120px;height: 120px;<br>
+        <!-- 单行就可以，但是如果出现了这一行就不能垂直居中了 -->
+    </div>
+    <!-- 如何实现父容器高度固定，文字可能一行，两行或更多行的垂直居中对齐呢？
+    实现的关键是把文字当图片处理。用一个span标签将所有的文字封装起来，设置文字与图片相同的display属性（inline-block属性），然后用处理图片垂直居中的方式处理文字的垂直居中即可。 -->
+    <div class="title">
+        <h3>多行文字垂直居中</h3>
+    </div>
+    <div class="demo2">
+        <span>
+            多行文字垂直居中,这里是第一行文字<br>
+            这里是第二行文字
+        </span>       
+    </div>
+    <!-- 大小不固定，图片的垂直居中 -->
+   
+    <!-- 方法1：透明gif图片+背景定位
+            这里利用了background-position:center实现图片居中显示。
+            这是个很实用也是很聪明的办法，对于维护控制成本都很不错。
+            微软必应图片搜索的图片排列就是使用的这种方法。
+            方法的原理很简单，使用一个透明的gif图片做覆盖层，高宽拉伸至所需要的大小，然后给这个gif图片一个background-position:center center的属性。
+            而background-image建议写在页面上，因为实际项目中，这肯定是个动态的URL地址，css文件似乎不支持动态URL地址。下面就是此方法的实例表现。
+    -->
+    <div class="title">
+        <h3>大小不固定的图片垂直居中--方法1</h3>
+    </div>
+    <ul class="zxx_align_box_3 fix">
+        <li>
+            <img src='http://www.zhangxinxu.com/study/image/pixel.gif' style="background-image:url(./images/img3.jpg);" />
+        </li>
+        <li>
+            <img src='http://www.zhangxinxu.com/study/image/pixel.gif' style="background-image:url(./images/img2.jpg);" />
+        </li>
+        <li>
+            <img src='http://www.zhangxinxu.com/study/image/pixel.gif' style="background-image:url(./images/img4.jpg);" />
+        </li>
+        <li>
+            <img src='http://www.zhangxinxu.com/study/image/pixel.gif' style="background-image:url(./images/img7.jpg);" />
+        </li>
+    </ul>
+    <!-- 方法2：display:table-cell和文字大小控制居中 
+        这个通过文字大小控制IE下图片垂直居中是个很不错的方法，
+        要比使用position:relative这类高消耗的css方法要好多了。
+        但是这个方法不足之处在于：不支持img外标签的浮动，所以当多图片显示时需要再在外面嵌套一层标签——资源消耗多了！
+    -->
+    <div class="title">
+        <h3>大小不固定的图片垂直居中--方法2</h3>
+    </div>
+    <ul class="zxx_align_box_4 fix">
+        <li>
+            <div>
+                <img src="./images/img3.jpg" />
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="./images/img2.jpg" />
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="./images/img4.jpg" />
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="./images/img7.jpg" />
+            </div>
+        </li>
+    </ul>
+    <!-- 方法3：display:inline-block和文字大小控制居中 -->
+    <div class="title">
+        <h3>大小不固定的图片垂直居中--方法3</h3>
+    </div>
+    <div class="zxx_align_box_5 fix">
+        <a href="#zhangxinxu">
+            <img src='./images/img3.jpg' />
+        </a>
+        <a href="#zhangxinxu2">
+            <img src="./images/img4.jpg" />
+        </a>
+        <a href="#zhangxinxu3">
+            <img src="./images/img2.jpg" />
+        </a>
+        <a href="#zhangxinxu3">
+            <img src="./images/img7.jpg" />
+        </a>
+    </div>
+    <!-- 
+        方法四:一句话，将要显示的图片与一张透明的高度100%，宽度1像素的透明图片vertical-align:middle对齐。
+        其核心原理其实与第二种利用font-size大小实现IE下图片垂直居中是一致的。
+        将font-size设置得很大，目的是撑开IE下默认文字空间的高度，其性质类似于空格，
+        然后通过vertical-align:middle属性让图片与这个高高的空白空格空间垂直居中对齐；
+        而这里将这个看不见的文字空间实例成一张透明的gif图片，高度可以轻松设置为外部标签的高度，然后通过vertical-align:middle对齐，就实现效果了，
+        在各个浏览器下都是一样的表现，不需要担心什么兼容性的问题。而且代码很简单，很易懂，想出错都难！ 
+    -->
+    <div class="title">
+        <h3>大小不固定的图片垂直居中--方法4</h3>
+    </div>
+    <div class="method4">
+        <ul class="zxx_align_box_6 fix">
+            <li>
+                <img class="show_img" src="./images/img3.jpg" />
+                <img class="alpha_img" src='http://www.zhangxinxu.com/study/image/pixel.gif' />
+            </li>
+            <li>
+                <img class="show_img" src="./images/img2.jpg" />
+                <img class="alpha_img" src='http://www.zhangxinxu.com/study/image/pixel.gif' />
+            </li>
+            <li>
+                <img class="show_img" src="./images/img4.jpg" />
+                <img class="alpha_img" src='http://www.zhangxinxu.com/study/image/pixel.gif' />
+            </li>
+            <li>
+                <img class="show_img" src="./images/img7.jpg" />
+                <img class="alpha_img" src='http://www.zhangxinxu.com/study/image/pixel.gif' />
+            </li>
+        </ul>
+    </div>
+    <div class="title">
+        <h3>大小不固定的图片垂直居中--方法5</h3>
+    </div>
+    <!-- 
+        方法5：在IE下使用font-size使图片垂直居中显示，
+    Firefox，chrome等现代浏览器使用line-height配合img本身的vertical-align属性使垂直居中显示，
+    由于两者不冲突，所以没有hack就实现的效果。css代码简洁明了，
+    关键是HTML代码非常清晰，一层外标签，里面就是img标签，
+    不足之处：就是opera浏览器下图片无法垂直居中显示   
+    所以综合来讲这个方法是个非常优秀的图片水平垂直居中的方法。
+     -->
+    <div class="method4">
+        <ul class="zxx_ul_image">
+            <li>
+                <img src="./images/img2.jpg" />
+            </li>
+            <li>
+                <img src="./images/img4.jpg" />
+            </li>
+            <li>
+                <img src="./images/img3.jpg" />
+            </li>
+            <li>
+                <img src="./images/img7.jpg" />
+            </li>
+        </ul>
+    </div>
+    <!-- 
+        个人总结：   在项目中使用图片垂直居中的情况下，个人推崇方法4，方法5.
+                    方法4兼容性好，跨浏览器表现趋于一致。
+                    方法5结构性好，代码简单，不足之处瑕不掩瑜。                    
+     -->
+</body>
+</html>
