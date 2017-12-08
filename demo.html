@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="styleSheet" href="./demo.css">
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+        }
+        .left{
+            position: absolute;
+            left: 0px;
+            top:0px;
+            width: 200px;
+            height: 100%;
+            background: red;
+        }
+        .mid{
+            height: 100%;
+            margin: 0 210px;
+            background: green;
+        }
+        .right{
+            position: absolute;
+            right: 0px;
+            top:0px;
+            width: 200px;
+            height: 100%;
+            background: blue;
+        }
+        .fix-way1,.fix-way2,.fix-way3{
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        #main {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+        #main #body {
+            margin: 0 210px;
+            background: #ffe6b8;
+            height: 100%;
+        }
+        #left {
+            margin-left: -100%;
+            background: #e4e4e4;
+        }
+        #right {
+            margin-left: -200px;
+            background: #a0b3d6;
+        }
+        #left, #right {
+            width: 200px;
+            height: 100%;
+            float: left;
+            
+        }
+        .fix-way3 #left2{
+            float: left;
+            background: #e4e4e4;
+        }
+        .fix-way3 #right{
+            float: right;
+            background: #a0b3d6;
+        }
+        .fix-way3 #left2, .fix-way3 #right{
+            width: 200px;
+            height: 100%;
+
+        }
+        .fix-way3 #main2{
+            height: 100%;
+            margin: 0 210px;
+            background: #ffe6b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="header">
+            <i>
+                <b>自适应方法学习</b>
+            </i>
+        </div>
+        <div class="method-title">
+            绝对定位自适应
+        </div>
+        <div class="fix-way1">
+            <div class="left"></div>
+            <div class="mid"></div>
+            <div class="right"></div>
+        </div>
+        <div class="method-title">
+            margin负值自适应
+        </div>
+        <div class="fix-way2">
+            <div id="main">
+                <div id="body"></div>
+            </div>
+            <div id="left"></div>
+            <div id="right"></div>
+        </div>
+        <div class="method-title">
+            自身浮动自适应
+        </div>
+        <div class="fix-way3">
+            <div id="left2"></div>
+            <div id="right"></div>
+            <div id="main2"></div>
+        </div>
+    </div>
+</body>
+</html>
