@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //遍历自身属性
+        let a = {
+            x: 1,
+            y: 2,
+            z: 3
+        };
+
+        //自身属性
+        for (var propa in a) {
+
+            if (a.hasOwnProperty(propa)) {
+                console.log(propa);
+            }
+        }
+
+        //增强版，自身属性且可枚举
+        for (var propb in a) {
+
+            if (a.propertyIsEnumerable(propb)) {
+                console.log(propb);
+            }
+        };
+        console.log(Object.keys(a)); //所有自身可枚举属性
+        console.log(Object.getOwnPropertyNames(a)); //所有自身属性，不管是否可枚举    
+    </script>
+</body>
+</html>

@@ -12,6 +12,9 @@ $(function(){
             $("#personPic").attr("src", "html/images/IMG_1443.JPG");
         }
     });
+    $('#toBlog').click(function() {
+        location.href = "http://www.lemon-zhang.cn/myblog/index.html";
+    })
     changeLi();  //列表轮播
     // changeImg(); //兴趣图片轮播
 }());
