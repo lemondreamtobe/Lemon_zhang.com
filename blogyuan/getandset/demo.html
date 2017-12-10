@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            x: 1,
+            get superX() {
+                return this.x * this.x;
+            }
+        };
+        console.log(Object.getOwnPropertyDescriptor(obj, 'x'));
+        console.log(Object.getOwnPropertyDescriptor(obj, 'superX'));
+
+        console.log(obj.superX); //1
+        obj.x = 2;
+        console.log(obj.superX); //4
+
+        Object.defineProperty(obj, 'y', {
+            value: 2,
+            writable: true,
+            enumerable: false, //不可遍历
+            configurable: true
+        });
+        console.log(Object.keys(obj));
+        console.log(Object.getOwnPropertyNames(obj));
+
+        Object.defineProperty(obj, 'y', {enumerable:true});
+        console.log(Object.keys(obj));
+        console.log(Object.getOwnPropertyNames(obj));
+
+        //extend 复制属性特性
+        Object.defineProperty(Object.prototype, 'extend', {
+            writable: true,
+            enumerable: false,
+            configurable: true,
+            value: function(o) {
+                var names = Object.getOwnPropertyNames(o);
+                for( var i = 0; i < names.length; i++) {
+                    if (names[i] in this) {
+                        continue;
+                    }
+                    var desc = Object.getOwnPropertyDescriptor(o, names[i]);
+                    Object.defineProperty(this, names[i], desc);
+                }
+            }
+        });
+        var copy = {
+            name: 'lin',
+            age: 23
+        };
+        obj.extend(copy);
+        console.log(obj);
+        console.log(copy.isPrototypeOf(obj));
+
+        //get class
+        function getClass(o) {
+
+            if (o === null) {
+                return 'Null'
+            }
+            if (o === undefined) {
+                return 'Undefined';
+            }
+            return Object.prototype.toString.call(o).slice(8, -1);
+        };
+        console.log(getClass(new Date()));
+
+        //对象可扩展性的三种改变方法
+        var a = {
+            x: 1
+        };
+        Object.preventExtensions(a); //对象不可在增加属性
+        var b = {
+            x: 1
+        }
+        Object.seal(b); //对象不可增加属性，所有自身属性变为不可配置，已有可写属性可以继续设置
+        var c = {
+            x: 1
+        };
+        Object.freeze(c); //在seal基础上，所有数据属性即使可写，都变为只读， 存储器属性如果有set可以继续设置
+
+        //以上三种方法都返回原对象的引用
+
+        var obj_a = Object.create(obj);
+        console.log(obj.isPrototypeOf(obj_a));
+    </script>
+</body>
+</html>
