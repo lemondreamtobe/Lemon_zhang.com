@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1, 2, 3];
+        arr.push(4,5,6); //多元素情况下，按参数顺序推入， arr   <-- 4, <--5, <--6
+        console.log(arr);
+        arr.unshift(7, 8, 9); //多元素情况下， 按参数顺序推入, 7 -->, 8 -->, 9 --> arr
+        console.log(arr);
+
+        //ES5数组方法
+        var wayMan = {
+            name: 'ES5'
+        }
+        arr.sort(function(a, b){
+
+            if (a < b) {
+                return -1;
+            } else if(a > b) {
+                return 1
+            } else {
+                return 0;
+            }
+        });
+        arr.forEach(function(val, index, arr) {
+            arr[index] = val + 1;
+        });
+        console.log(arr);
+
+        //提前终止forEach 函数体内抛出异常或者return
+        arr = arr.map(function(val, index, arr) {
+            return (val - 1 + this.name);
+        }, wayMan);
+        console.log(arr);
+
+        //返回偶数项
+        var arr_odd = arr.filter(function(value, index, arr) {
+            return value%2 == 0;
+        });
+        console.log(arr_odd);
+        
+        //返回奇数项
+        var arr_not_odd = arr.filter(function(value, index, arr) {
+            return !(value%2 == 0);
+        });
+        console.log(arr_not_odd);
+
+        var tree = [
+            {
+                name: '',
+                age: '',
+                child: [1,2]
+            },
+            {
+                name: '',
+                age: '',
+                child: []
+            },
+            {
+                name: '',
+                age: '',
+                child: [1]
+            }
+        ];
+        //判断是否还有子元素
+        var ifChild = tree.every(function(value, index, arr) {
+            return value.child.length;
+        });
+        console.log(ifChild);
+
+        //some，其中一项满足逻辑表达式就返回true
+        var hasChild = tree.some(function(value, index, arr) {
+            return value.child.length;
+        });
+        console.log(hasChild);
+
+        var reduce = arr.reduce(function(now, next, index) {
+            return now + next;
+        });
+        console.log(reduce);
+        console.log(Array.isArray(arr));
+    </script>
+</body>
+</html>
