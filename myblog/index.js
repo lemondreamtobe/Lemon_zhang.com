@@ -9,7 +9,7 @@
         '#ef7040',
         '#f95422',
         '#303030',
-        '#2d2b32',
+        '#f73656',
         '#003b6a',
         '#e45c5c',
         '#26a69a',
@@ -59,7 +59,7 @@
         pagination: {
             current: 0,
             total: 0,
-            pageSize: 16
+            pageSize: 12
         }
     });
     body_content.article = siteArr.slice(0, body_content.pagination.pageSize).map(function(value, index, arr) {
