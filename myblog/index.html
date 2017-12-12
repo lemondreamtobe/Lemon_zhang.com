@@ -12,11 +12,11 @@
 
 <body>
     <div class="zlf-container">
-        <div class="zlf-head">  
+        <!-- <div class="zlf-head">  
             <a href="/" class="head-img">柠檬张的博客</a>
             <div class="zlf-head-description">记录成长的每一个脚印♫</div>       
-        </div>
-        <div class="zlf-menu">
+        </div> -->
+        <!-- <div class="zlf-menu">
             <ul class="nav nav-tabs nav-justified">
                 <li>
                     <a href="http://www.lemon-zhang.cn">个人首页</a>
@@ -29,17 +29,29 @@
                 </li>
                 <li>
                     <a href="#">吉他爱好</a>
-                </li>
+                </li> -->
                 <!-- <li>
                     <a href="#">Java</a>
                 </li>
                 <li>
                     <a href="#">PHP</a>
                 </li> -->
-            </ul>
+            <!-- </ul>
+        </div> -->
+        <div class="zlf-body" :controller="zlf_body">
+            <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
+                <a href="" target="" :css="{backgroundColor: @el.bg_color}"><img src="../images/imgcommon1.jpg"></a>
+                <div class="cover-info">
+                    <a href="jquery-info13028" target="_blank"><h4>响应式Bootstrap3婚礼HTML模板</h4></a>
+                    <small>响应式Bootstrap3红色大气婚礼HTML模板|单页面滚动</small>                       
+                </div>  
+            </div>
         </div>
-        <div class="zlf-body">
-            
+        <div class="zlf-pagination">
+            <ul class="zlf-pagination-nav">          	
+                <li class="previous"><a href="jquery-plugins布局-3-jq" class="previous">←</a></li>
+                <li class="next"><a href="jquery-plugins布局-5-jq" class="next">←</a></li>
+            </ul>
         </div>
         <div class="zlf-bottom">
 

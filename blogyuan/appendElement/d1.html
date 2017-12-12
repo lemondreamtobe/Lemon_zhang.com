@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body> 
+    <div class="demo-container">
+        <button id="add">添加图片</button>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script>
+        let mvvmImg = avalon.define({
+            $id: 'pictureShow',
+            imgArr: []
+        });
+        let $img = [
+                '../../images/imgcommon1.jpg',
+                '../../images/imgcommon2.jpg',
+                '../../images/imgcommon3.jpg',
+                '../../images/imgcommon4.jpg',
+                '../../images/imgcommon5.jpg',
+                '../../images/imgcommon6.jpg',
+                '../../images/imgcommon1.jpg',
+                '../../images/imgcommon2.jpg',
+                '../../images/imgcommon3.jpg',
+                '../../images/imgcommon4.jpg',
+                '../../images/imgcommon5.jpg',
+                '../../images/imgcommon6.jpg',
+            ];
+        let count = 0;
+        var addImg = function(){
+
+			if(count >= $img.length){
+
+				$(".finishedInfo").css("display","block");
+				return;
+			}
+			else{
+
+                //jq way
+				var picHref = $("<a></a>").attr("class","zxx_image_list");
+				var picSrc = $("<img></img>").attr("src",$img[count]).attr("class","zxx_image");
+				picHref.append(picSrc);
+                picHref.appendTo($("#jqCover"));
+                
+                //vm way
+                mvvmImg.imgArr.push($img[count]);
+
+				count++;
+			}
+		};
+		$("#add").click(function(){
+			addImg();							
+		});
+    </script>
+
+</body>
+</html>
