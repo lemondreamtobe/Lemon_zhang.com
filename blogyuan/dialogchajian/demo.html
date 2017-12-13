@@ -1,40 +1,28 @@
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>jQuery实现弹出层效果</title>
+<title>柠檬树下的过客</title>
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet">
 <style type="text/css">
-    .title{
-        background:#eeeeee; 
-        border:1px solid #cccccc; 
-        padding:1em;
-        margin-bottom: 25px;
-    }
-    .content{
-        padding:1em;
-    }
-    #tinybox{
-        position:absolute; 
-        display:none; 
-        padding:10px; 
-        background:#ffffff url(./image/preload.gif) no-repeat 50% 50%; 
-        border:10px solid #e3e3e3; 
-        z-index:2000;
-    }
-    #tinymask{
-        position:absolute; 
-        display:none; 
-        top:0; left:0; 
-        height:100%; 
-        width:100%; 
-        background:#000000; 
-        z-index:1500;
-    }
-    #tinycontent{background:#ffffff; font-size:1.1em;}
+
 </style>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/demo.js"></script>
 <script type="text/javascript" src="./js/tinybox.js"></script>
 </head>
 <body>
-    <div class="title">
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">一种弹窗插件</h3>
+<div class="title">
         <b>加载一个静态页面</b>
         <a title="加载一个静态页面，这里可能无法测试出来，在服务器项目里可以看见效果"   href="# " id="click_test1">效果预览</a>
     </div>
@@ -50,9 +38,13 @@
         <b>自动隐藏</b>
         <a title="层显示一段时间后自动隐藏，当作操作提示用是个很不错的选择"  href="# " id="click_test4">效果预览</a>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-	<script type="text/javascript">
-        $('#click_test1').click(function(e) {
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">友情链接</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+	 $('#click_test1').click(function(e) {
             TINY.box.show('blank-for-test.html', 1, 300, 150, 1);
         });
         var content2 = "<img width='640' height='466' src='../../images/imgcommon4.jpg' />";
@@ -67,6 +59,8 @@
         $('#click_test4').click(function(e) {
            TINY.box.show(content4, 0, 0, 0, 0, 3);
         });
+        //文章信息操作
+        var blogTool = new Tools();
     </script>
 </body>
 </html>
