@@ -41,10 +41,10 @@
             </div>
             <div class="zlf-body" :controller="zlf_body">
                 <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
-                    <a href="" target="" :css="{backgroundColor: @el.bg_color}"><img src="../images/imgcommon1.jpg"></a>
+                    <a href="" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
                     <div class="cover-info">
-                        <a href="jquery-info13028" target="_blank"><h4>响应式Bootstrap3婚礼HTML模板</h4></a>
-                        <small>响应式Bootstrap3红色大气婚礼HTML模板|单页面滚动</small>                       
+                        <a href="jquery-info13028" target="_blank"><h4>{{@el.title}}</h4></a>
+                        <small>{{@el.small}}</small>                       
                     </div>  
                 </div>
                 <br style="clear: both">
