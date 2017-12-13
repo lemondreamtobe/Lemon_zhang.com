@@ -43,16 +43,16 @@
                 <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
                     <a href="" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
                     <div class="cover-info">
-                        <a href="jquery-info13028" target="_blank"><h4>{{@el.title}}</h4></a>
+                        <a href="" target="_blank"><h4>{{@el.title}}</h4></a>
                         <small>{{@el.small}}</small>                       
                     </div>  
                 </div>
                 <br style="clear: both">
             </div>
-            <div class="zlf-pagination">
+            <div class="zlf-pagination" :controller="zlf_pagination">
                 <ul class="zlf-pagination-nav">          	
-                    <li class="previous"><a href="jquery-plugins布局-3-jq" class="previous">←</a></li>
-                    <li class="next"><a href="jquery-plugins布局-5-jq" class="next">←</a></li>
+                    <li class="previous"><a :click="@previous" class="previous">←</a></li>
+                    <li class="next"><a :click="@next" class="next">←</a></li>
                 </ul>
             </div>
             <div class="zlf-bottom">
