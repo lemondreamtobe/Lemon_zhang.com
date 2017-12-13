@@ -1,234 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="./demo.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet">
-    <style>
-        .g_a{
-            display:inline-block; 
-            border-width:1px 0; 
-            border-color:#bbbbbb; 
-            border-style:solid; 
-            vertical-align:middle;
-        }
-        .g_b{
-            float:left; 
-            background:#e3e3e3; 
-            border-width:0 1px; 
-            border-color:#bbbbbb; 
-            border-style:solid; 
-            margin:0 -1px; 
-            position:relative;
-        }
-        .g_c{
-            display:block; 
-            line-height:0.6em;
-            background:#f9f9f9;
-            border-bottom:2px solid #eeeeee;
-        }
-        .g_d{
-            display:block; 
-            padding:0.1em 0.6em; 
-            margin-top:-0.6em; 
-            cursor:pointer;
-            color: #536b82;
-        }
-        .btn-container{
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .g_a:hover{border-color:#999999;}
-        .g_a:hover .g_b{border-color:#999999;}
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
 
-        .x_a{
-            display:inline-block; 
-            border-top:1px solid #d6d6d6; 
-            border-bottom:1px solid #e5e5e5; 
-            font-size:12px;
-        }
-        .x_b{
-            float:left; 
-            border-left:1px solid #d6d6d6; 
-            border-right:1px solid #c2c2c2; 
-            border-bottom:1px solid #c2c2c2; 
-            margin:0 -1px; 
-            position:relative;
-        }
-        .x_c{
-            display:inline-block; 
-            padding:0.3em 0.6em 0; 
-            background:#f4f4f4; 
-            border-left:1px solid #ffffff; 
-            border-top:1px solid #ffffff; 
-            border-bottom:0.2em solid #f0f0f0; 
-            line-height:1.1em; 
-            cursor:pointer;
-            color:#536b82;
-        }
-        .x_a_p{
-            display:inline-block; 
-            border-top:1px solid #FBD0B2; 
-            border-bottom:1px solid #FCE1CE; 
-            font-size:12px;
-        }
-        .x_b_p{
-            float:left; 
-            border-left:1px solid #FBD0B2; 
-            border-right:1px solid #F9B88C;
-            border-bottom:1px solid #F9B88C; 
-            margin:0 -1px; 
-            position:relative;
-        }
-        .x_c_p{
-            display:inline-block; 
-            padding:0.3em 0.6em 0; 
-            background:#FEF3EB; 
-            border-left:1px solid #ffffff;
-            border-top:1px solid #ffffff; 
-            border-bottom:0.2em solid #FEEEE3; 
-            line-height:1.1em; 
-            cursor:pointer;
-            color:#536b82;
-        }
-        .x_a:hover{
-            border-top-color:#c0c0c0; 
-            border-bottom-color:#cecece;
-        }
-        .x_a:hover .x_b{
-            border-left-color:#c0c0c0;
-            border-right-color:#aeaeae; 
-            border-bottom-color:#aeaeae;
-        }
-        .x_a:hover .x_c{
-            background:#dbdbdb; 
-            border-left-color:#e3e2e1; 
-            border-top-color:#e5e5e5; 
-            border-bottom-color:#d7d7d7;
-        }
-        .x_a_p:hover{
-            border-top-color:#FFBE91; 
-            border-bottom-color:#FFCEAD;
-        }
-        .x_a_p:hover .x_b_p{
-            border-left-color:#FFBE91; 
-            border-right-color:#FFA76B; 
-            border-bottom-color:#FFA76B;
-        }
-        .x_a_p:hover .x_c_p{
-            background:#FFDFC9; 
-            border-left-color:#FFE7D7; 
-            border-top-color:#FFEBDD; 
-            border-bottom-color:#FFDAC1;
-        }
-        .btn-container > a{
-            vertical-align: middle;
-        }
-        .btn-container > button{
-            cursor: pointer;
-        }
-        .tc-15-btn{
-            display: block;
-            line-height: 45px;
-            margin: 0 auto;
-            width: 218px;
-            height: 47px;
-            border: 1px solid #2277da;
-            color: #2277da;
-            padding: 0;
-            font-size: 16px;
-            border-radius: 2px;
-            box-sizing: border-box;
-            min-width: 24px;
-            text-align: center;
-            transition: .2s ease background;
-            background-color: rgba(237,113,31,0);
-            /* background: #0071ce; */
-        }
-        .tc-15-btn:hover{
-            background: #0071ce;
-            color: white;
-            text-decoration: none;
-        }
-        .tc-15-btn{
-            -webkit-tap-highlight-color: transparent;
-        }
-        .tc-15-btn{
-            text-decoration: none;
-        }
     </style>
-
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
+
 <body>
     <div class="demo-container">
-        <div class="header">
-            <i><b>按钮也是一门大学问</b></i>
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
         </div>
-        <div class="method-title">
-            谷歌按钮
+        <div class="demo-content">
+            <h3 id="blogTitle">按钮也是一门大学问</h3>
+            <div class="method-title">
+                谷歌按钮
+            </div>
+            <div class="btn-container">
+                <a href="#nogo" class="g_a">
+                    <span class="g_b">
+                        <span class="g_c">&nbsp;</span>
+                        <span class="g_d">谷歌按钮</span>
+                    </span>
+                </a>
+            </div>
+            <div class="method-title">
+                虾米按钮
+            </div>
+            <div class="btn-container">
+                <a href="#" class="x_a">
+                    <span class="x_b">
+                        <span class="x_c">投影按钮</span>
+                    </span>
+                </a>
+                - 连接按钮的文字 -
+                <a href="#" class="x_a_p">
+                    <span class="x_b_p">
+                        <span class="x_c_p">粉色按钮</span>
+                    </span>
+                </a>
+            </div>
+            <div class="method-title">
+                bootstrap按钮
+            </div>
+            <div class="btn-container">
+                <!-- <button class="btn">bootstrap按钮</button> -->
+                <button class="btn btn-default">bootstrap按钮</button>
+                <button type="button" class="btn btn-primary">bootstrap按钮</button>
+
+                <!-- Indicates a successful or positive action -->
+                <button type="button" class="btn btn-success">bootstrap按钮</button>
+
+                <!-- Contextual button for informational alert messages -->
+                <button type="button" class="btn btn-info">bootstrap按钮</button>
+
+                <!-- Indicates caution should be taken with this action -->
+                <button type="button" class="btn btn-warning">bootstrap按钮</button>
+
+                <!-- Indicates a dangerous or potentially negative action -->
+                <button type="button" class="btn btn-danger">bootstrap按钮</button>
+
+                <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+                <button type="button" class="btn btn-link">bootstrap按钮链接</button>
+            </div>
+            <div class="method-title">
+                最原始按钮
+            </div>
+            <div class="btn-container">
+                <button type="button">原始按钮</button>
+            </div>
+            <div class="method-title">
+                腾讯云按钮
+            </div>
+            <div class="btn-container">
+                <a class="tc-15-btn" href="#">腾讯云按钮</a>
+            </div>
         </div>
-        <div class="btn-container">
-            <a href="#nogo" class="g_a">
-                <span class="g_b">
-                    <span class="g_c">&nbsp;</span>
-                    <span class="g_d">谷歌按钮</span>
-                </span>
-            </a>
-        </div>
-        <div class="method-title">
-            虾米按钮
-        </div>
-        <div class="btn-container">
-            <a href="#" class="x_a">
-                <span class="x_b">
-                    <span class="x_c">投影按钮</span>
-                </span>
-            </a>
-            - 连接按钮的文字 -
-            <a href="#" class="x_a_p">
-                <span class="x_b_p">
-                    <span class="x_c_p">粉色按钮</span>
-                </span>
-            </a>
-        </div>
-        <div class="method-title">
-            bootstrap按钮
-        </div>
-        <div class="btn-container">
-            <!-- <button class="btn">bootstrap按钮</button> -->
-            <button class="btn btn-default">bootstrap按钮</button>
-            <button type="button" class="btn btn-primary">bootstrap按钮</button>
-            
-            <!-- Indicates a successful or positive action -->
-            <button type="button" class="btn btn-success">bootstrap按钮</button>
-            
-            <!-- Contextual button for informational alert messages -->
-            <button type="button" class="btn btn-info">bootstrap按钮</button>
-            
-            <!-- Indicates caution should be taken with this action -->
-            <button type="button" class="btn btn-warning">bootstrap按钮</button>
-            
-            <!-- Indicates a dangerous or potentially negative action -->
-            <button type="button" class="btn btn-danger">bootstrap按钮</button>
-            
-            <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-            <button type="button" class="btn btn-link">bootstrap按钮链接</button>
-        </div>
-        <div class="method-title">
-            最原始按钮
-        </div>
-        <div class="btn-container">
-            <button type="button">原始按钮</button>
-        </div>
-        <div class="method-title">
-            腾讯云按钮
-        </div>
-        <div class="btn-container">
-            <a class="tc-15-btn" href="#">腾讯云按钮</a>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
         </div>
     </div>
+    <script type="text/javascript">
+        //文章信息操作
+        var blogTool = new Tools();
+    </script>
 </body>
+
 </html>
