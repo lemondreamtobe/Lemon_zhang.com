@@ -36,7 +36,7 @@ body{
     display: block;
     width: 300px;
     height: 60px;
-    background: url(../../images/title.png) no-repeat;
+    background: url(../images/title.png) no-repeat;
     background-size: 100% 100%;
     text-indent: -999px;
     overflow: hidden;
