@@ -1,114 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .demo-container{
-            width: 80%;
-            margin: 0 auto;
-            border-left: 1px solid #e4e4e4;
-            border-right: 1px solid #e4e4e4;
-        }
-        .zxx_image_list{
-            display:inline-block; 
-            width:1.2em; 
-            margin-top:20px; 
-            text-align:center; 
-            font-size:128px; 
-            vertical-align:middle;
-        }
-        .zxx_image_list img.zxx_image{
-            padding:3px; 
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <style type="text/css">
+        .zxx_image_list {
+            display: inline-block;
             width: 1.2em;
-            height:0.72em;
-            border:1px solid #828da1; 
-            background:white; 
-            vertical-align:middle; 
-            position:relative;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 128px;
+            vertical-align: middle;
         }
-        .zxx_image_list:hover,.zxx_image_list:hover .zxx_image{border-color:#ff3300;}
-        .img-container{
+
+        .zxx_image_list img.zxx_image {
+            padding: 3px;
+            width: 1.2em;
+            height: 0.72em;
+            border: 1px solid #828da1;
+            background: white;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .zxx_image_list:hover,
+        .zxx_image_list:hover .zxx_image {
+            border-color: #ff3300;
+        }
+
+        .img-container {
             padding-right: 252px;
             padding-left: 250px;
         }
-        .finishedInfo{
+
+        .finishedInfo {
             text-align: center;
             display: none;
         }
         .title{
+            display: block;
+            margin: 10px 0px;
             text-align: center;
         }
     </style>
-</head>
-<body> 
-    <div class="demo-container">
-        <button id="add">添加图片</button>
-        <h4 class="finishedInfo">图片加载完成</h4>
-        <div class="title">
-            jquery方式
-        </div>
-        <div class="img-container" id="jqCover">
-            
-        </div>
-        <div class="title">
-            mvvm方式
-        </div>
-        <div class="img-container" id="vmCover" :controller="pictureShow">
-            <a href="#" class="zxx_image_list" ms-for="(key,el) in @imgArr">
-                <img class="zxx_image" :attr="{src:@el}" />
-            </a>           
-        </div>
-    </div>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
-    <script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
+</head>
+
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">jquery和mvvm的元素插入操作比较</h3>
+            <button id="add">添加图片</button>
+            <h4 class="finishedInfo">图片加载完成</h4>
+            <div class="title">
+                jquery方式
+            </div>
+            <div class="img-container" id="jqCover">
+
+            </div>
+            <div class="title">
+                mvvm方式
+            </div>
+            <div class="img-container" id="vmCover" :controller="pictureShow">
+                <a href="#" class="zxx_image_list" ms-for="(key,el) in @imgArr">
+                    <img class="zxx_image" :attr="{src:@el}" />
+                </a>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
+        </div>
+    </div>
+    <script type="text/javascript">
         let mvvmImg = avalon.define({
             $id: 'pictureShow',
             imgArr: []
         });
         let $img = [
-                '../../images/imgcommon1.jpg',
-                '../../images/imgcommon2.jpg',
-                '../../images/imgcommon3.jpg',
-                '../../images/imgcommon4.jpg',
-                '../../images/imgcommon5.jpg',
-                '../../images/imgcommon6.jpg',
-                '../../images/imgcommon1.jpg',
-                '../../images/imgcommon2.jpg',
-                '../../images/imgcommon3.jpg',
-                '../../images/imgcommon4.jpg',
-                '../../images/imgcommon5.jpg',
-                '../../images/imgcommon6.jpg',
-            ];
+            '../../images/imgcommon1.jpg',
+            '../../images/imgcommon2.jpg',
+            '../../images/imgcommon3.jpg',
+            '../../images/imgcommon4.jpg',
+            '../../images/imgcommon5.jpg',
+            '../../images/imgcommon6.jpg',
+            '../../images/imgcommon1.jpg',
+            '../../images/imgcommon2.jpg',
+            '../../images/imgcommon3.jpg',
+            '../../images/imgcommon4.jpg',
+            '../../images/imgcommon5.jpg',
+            '../../images/imgcommon6.jpg',
+        ];
         let count = 0;
-        var addImg = function(){
+        var addImg = function () {
 
-			if(count >= $img.length){
+            if (count >= $img.length) {
 
-				$(".finishedInfo").css("display","block");
-				return;
-			}
-			else{
+                $(".finishedInfo").css("display", "block");
+                return;
+            } else {
 
                 //jq way
-				var picHref = $("<a></a>").attr("class","zxx_image_list");
-				var picSrc = $("<img></img>").attr("src",$img[count]).attr("class","zxx_image");
-				picHref.append(picSrc);
+                var picHref = $("<a></a>").attr("class", "zxx_image_list");
+                var picSrc = $("<img></img>").attr("src", $img[count]).attr("class", "zxx_image");
+                picHref.append(picSrc);
                 picHref.appendTo($("#jqCover"));
-                
+
                 //vm way
                 mvvmImg.imgArr.push($img[count]);
 
-				count++;
-			}
-		};
-		$("#add").click(function(){
-			addImg();							
-		});
+                count++;
+            }
+        };
+        $("#add").click(function () {
+            addImg();
+        });
     </script>
-
 </body>
+
 </html>

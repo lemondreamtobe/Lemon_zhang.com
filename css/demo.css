@@ -50,6 +50,7 @@ body{
 .demo-content{
     padding: 10px 3%;
     min-height: 580px;
+    text-align: center;
     /* background-color: #ffffff; */
 }
 .demo-bottom{
