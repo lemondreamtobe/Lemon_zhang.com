@@ -35,16 +35,20 @@ h3{
     margin: 0 auto;
 }
 </style>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/demo.js"></script>
 </head>
 <body>
     <div class="demo-container">
         <div class="demo-header">
             <a href="/" class="head-img">柠檬张的博客</a>
-            <div class="zlf-head-description">最后更新时间: 2017-12-13 14:51</div>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
         </div>
         <div class="demo-content">
-            <h3>jQuery图片关联伸缩效果的实现</h3>
+            <h3 id="blogTitle">jQuery图片关联伸缩效果的实现</h3>
             <div class="ul-container">
                 <ul id="test_box" class="fix">
                     <li class="imgList showImg_1"></li>
@@ -114,6 +118,9 @@ h3{
                     width:"20%"	
                 },'slow');	
             });
+
+            //文章信息操作
+           var blogTool = new Tools();
         });
     </script>
 </body>
