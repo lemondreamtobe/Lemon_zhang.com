@@ -1,280 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="styleSheet" href="./demo.css">
-    <title>Document</title>
-    <style>
-        .ml20{
-            margin: 0 auto;
-            display: inline-block;
-        }
-        .sharp_square{
-            width: 333px;
-            height: 110px;
-            background: #a0b3d6;
-            position: relative;
-            color: #a0b3d6;
-        }
-        .sharp_top_corner{
-            line-height: 1;
-            position: absolute;
-            font-size: 34px;
-            top: 32px;
-            /* right: 80px; */
-            left: -17px;
-        }
-        .sharp_square .quarter_round {
-            position: absolute;
-        }
-        .quarter_round{
-            display:inline-block; 
-            width:8px; 
-            height:8px; 
-            overflow:hidden; 
-            font-family:'宋体';
-        }
-        .quarter_round span{
-            display:inline-block; 
-            font-size:16px; 
-            line-height:1;
-        }
-        .sharp_square .round_lt {
-            left: -1px;
-            top: -1px;
-        }
-        .sharp_square .round_rt {
-            right: -1px;
-            top: -1px;
-        }
-        .sharp_square .round_lb {
-            left: -1px;
-            bottom: 0px;
-        }
-        .sharp_square .round_rb {
-            right: -1px;
-            bottom: 0px;
-        }
-        .content_square{
-            color: #fff;
-            padding: 20px;
-            font-size: 14px;
-        }
-        .sharp_square .quarter_round span {
-            background: white;
-        }
-        .quarter_round .lt{}
-        .quarter_round .rt{margin-left:-7px;}
-        .quarter_round .lb{
-            position: absolute;
-            left: 0px;
-            top: -6px;
-        }
-        .quarter_round .rb{
-            position: absolute;
-            /* left: 0px; */
-            top: -5px;
-            right: -1px;
-        }
-        .square_out_border {
-            width: 472px;
-            border: 1px solid #dadada;
-            background: #f8f8f8;
-            position: relative;
-            color: #dadada;
-        }
-        .square_inner_border {
-            border: 1px solid #ffffff;
-            padding: 20px;
-            font-size: 14px;
-            color: #333333;
-        }
-        .square_top_corner{
-            line-height: 1;
-            height: 15px;
-            font-size: 30px;
-            position: absolute;
-            top: -15.99px;
-            right: 80px;
-        }
-        .square_top_corner2 {
-            line-height: 1;
-            font-size: 30px;
-            color: #f8f8f8;
-            position: absolute;
-            top: 2px;
-            right: 0;
-        }
-        .square_out_border .round_lt {
-            left: -3px;
-            top: -3px;
-        }
-       
-        .square_out_border .quarter_round {
-            position: absolute;
-            z-index: 1;
-        }
-       
-        .quarter_round {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            overflow: hidden;
-            font-family: '宋体';
-        }
-        .square_out_border .quarter_round span {
-            background: #f8f8f8;
-        }
-        
-        .quarter_round .lt {
-        }
-         
-        .quarter_round span {
-            display: inline-block;
-            font-size: 16px;
-            line-height: 1;
-        }
-        .square_out_border .round_lb {
-            left: -3px;
-            bottom: -1px;
-        }
-        .square_out_border .round_rb {
-            right: -2px;
-            bottom: -1px;
-        }
-        .square_out_border .round_rt {
-            right: -2px;
-            top: -4px;
-        }
-        .square_out_border .round_lt2 {
-            left: -2px;
-            top: -2px;
-        }
-         
-        .square_out_border .quarter_round2 {
-            color: #f8f8f8;
-            z-index: 2;
-        }
-        .square_out_border .round_rt2 {
-            right: -1px;
-            top: -3px;
-        }
-         
-        .square_out_border .quarter_round2 {
-            color: #f8f8f8;
-            z-index: 2;
-        }
-        .square_out_border .round_lb2 {
-            left: -2px;
-            bottom: 0px;
-        }
-        
-        .square_out_border .quarter_round2 {
-            color: #f8f8f8;
-            z-index: 2;
-        }
-        .square_out_border .round_rb2 {
-            right: -1px;
-            bottom: 0px;
-        }
-        
-        .square_out_border .quarter_round2 {
-            color: #f8f8f8;
-            z-index: 2;
-        }
-        .square_out_border .quarter_round2 span {
-            background: none;
-        }
-        .method4{
-            float: left;
-        }
-        .con1{
-            float: left;
-        }
-        .method3{
-            margin: 0 auto;
-        }
-        .method3 .zxx_ul_image{
-            display: inline-block;
-            margin-left: 100px;
-        }
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
+
     </style>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
+
 <body>
     <div class="demo-container">
-            <div class="header">
-                    <i>
-                        <b>字符圆角和尖角实现对话框</b>
-                    </i>
-                </div>
-        <div class="method-title">
-            对话框
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
         </div>
-        <div class="method-container">
-            <div class="method4">
-                <ul class="zxx_ul_image">
-                    <li>
-                        <img src="../../images/monkey.jpg" />
-                    </li>                    
-                </ul>
-            </div>
-            <div class="ml20 con1">
-                <div class="sharp_square mt20">
-                    <span class="sharp_top_corner">◄</span>
-                    <span class="quarter_round round_lt"><span class="lt">●</span></span>
-                    <span class="quarter_round round_rt"><span class="rt">●</span></span>
-                    <span class="quarter_round round_lb"><span class="lb">●</span></span>
-                    <span class="quarter_round round_rb"><span class="rb">●</span></span>
-                    <div class="content_square"><span>以四分之一实体圆填充四个角，添加尖角符，实现带尖角的实色圆角矩形。</span></div>
+        <div class="demo-content">
+            <h3 id="blogTitle">字符圆角和尖角实现对话框</h3>
+            <div class="method-container">
+                <div class="method4">
+                    <ul class="zxx_ul_image">
+                        <li>
+                            <img src="../../images/monkey.jpg" />
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <br style="clear:both">
-        </div>
-        <div class="method-container">
-            <div class="method3">
-                <ul class="zxx_ul_image">
-                    <li>
-                        <img src="../../images/insect.jpg" />
-                    </li>
-                </ul>
-            </div>
-            <div class="ml20">
-                <div class="square_out_border mt20">
-                    <span class="square_top_corner">◆
-                        <span class="square_top_corner2">◆</span>
-                    </span>
-                    <span class="quarter_round round_lt">
-                        <span class="lt">●</span>
-                    </span>
-                    <span class="quarter_round round_rt">
-                        <span class="rt">●</span>
-                    </span>
-                    <span class="quarter_round round_lb">
-                        <span class="lb">●</span>
-                    </span>
-                    <span class="quarter_round round_rb">
-                        <span class="rb">●</span>
-                    </span>
-                    <div class="square_inner_border">
-                        以四分之一实体圆填充四个角，重复一次，1像素错位。添加尖角符，2像素上下错位，矩形双层标签，实现最终的双边框效果。
+                <div class="ml20 con1">
+                    <div class="sharp_square mt20">
+                        <span class="sharp_top_corner">◄</span>
+                        <span class="quarter_round round_lt">
+                            <span class="lt">●</span>
+                        </span>
+                        <span class="quarter_round round_rt">
+                            <span class="rt">●</span>
+                        </span>
+                        <span class="quarter_round round_lb">
+                            <span class="lb">●</span>
+                        </span>
+                        <span class="quarter_round round_rb">
+                            <span class="rb">●</span>
+                        </span>
+                        <div class="content_square">
+                            <span>以四分之一实体圆填充四个角，添加尖角符，实现带尖角的实色圆角矩形。</span>
+                        </div>
                     </div>
-                    <span class="quarter_round quarter_round2 round_lt2">
-                        <span class="lt">●</span>
-                    </span>
-                    <span class="quarter_round quarter_round2 round_rt2">
-                        <span class="rt">●</span>
-                    </span>
-                    <span class="quarter_round quarter_round2 round_lb2">
-                        <span class="lb">●</span>
-                    </span>
-                    <span class="quarter_round quarter_round2 round_rb2">
-                        <span class="rb">●</span>
-                    </span>
+                </div>
+                <br style="clear:both">
+            </div>
+            <div class="method-container">
+                <div class="method3">
+                    <ul class="zxx_ul_image">
+                        <li>
+                            <img src="../../images/insect.jpg" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="ml20">
+                    <div class="square_out_border mt20">
+                        <span class="square_top_corner">◆
+                            <span class="square_top_corner2">◆</span>
+                        </span>
+                        <span class="quarter_round round_lt">
+                            <span class="lt">●</span>
+                        </span>
+                        <span class="quarter_round round_rt">
+                            <span class="rt">●</span>
+                        </span>
+                        <span class="quarter_round round_lb">
+                            <span class="lb">●</span>
+                        </span>
+                        <span class="quarter_round round_rb">
+                            <span class="rb">●</span>
+                        </span>
+                        <div class="square_inner_border">
+                            以四分之一实体圆填充四个角，重复一次，1像素错位。添加尖角符，2像素上下错位，矩形双层标签，实现最终的双边框效果。
+                        </div>
+                        <span class="quarter_round quarter_round2 round_lt2">
+                            <span class="lt">●</span>
+                        </span>
+                        <span class="quarter_round quarter_round2 round_rt2">
+                            <span class="rt">●</span>
+                        </span>
+                        <span class="quarter_round quarter_round2 round_lb2">
+                            <span class="lb">●</span>
+                        </span>
+                        <span class="quarter_round quarter_round2 round_rb2">
+                            <span class="rb">●</span>
+                        </span>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
         </div>
     </div>
+    <script type="text/javascript">
+        //文章信息操作
+        var blogTool = new Tools();
+    </script>
 </body>
+
 </html>

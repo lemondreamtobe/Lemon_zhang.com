@@ -1,103 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        div {
-            font-size: 12px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
 
-        .method1 {
-            vertical-align: text-bottom;
-            margin-bottom: 1px;
-        }
-
-        .method2 {
-            height: 13px;
-            vertical-align: text-top;
-            margin-top: 2px;
-        }
-
-        .method3 {
-            height: 13px;
-            vertical-align: bottom;
-            margin-bottom: 1px;
-            margin-top: -1px;
-        }
-
-        .method4 {
-            height: 13px;
-            vertical-align: top;
-            margin-top: 2px;
-        }
-
-        .method5 {
-            vertical-align: middle;
-            margin-top: -1px;
-            margin-bottom: 1px;
-        }
-
-        .method6 {
-            vertialc-align: -3px
-        }
     </style>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
 
 <body>
-    <div>
-        <input class="method1" name="Fruit" type="checkbox" value="" />
-        <span>苹果</span>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">单选复选框和文字对齐</h3>
+            <div>
+                <input class="method1" name="Fruit" type="checkbox" value="" />
+                <span>苹果</span>
+            </div>
+            <div>
+                <input class="method2" name="Fruit" type="checkbox" value="" />
+                <span>桃子</span>
+            </div>
+            <div>
+                <input class="method3" name="Fruit" type="checkbox" value="" />
+                <span>香蕉</span>
+            </div>
+            <div>
+                <input class="method4" name="Fruit" type="checkbox" value="" />
+                <span>梨</span>
+            </div>
+            <div>
+                <input class="method5" name="Fruit" type="checkbox" value="" />
+                <span>西瓜</span>
+            </div>
+            <div>
+                <input class="method6" name="Fruit" type="checkbox" value="" />
+                <span>火龙果</span>
+            </div>
+            <div>
+                <input class="method1" name="Fruit" type="radio" value="" />
+                <span>苹果</span>
+            </div>
+            <div>
+                <input class="method2" name="Fruit" type="radio" value="" />
+                <span>桃子</span>
+            </div>
+            <div>
+                <input class="method3" name="Fruit" type="radio" value="" />
+                <span>香蕉</span>
+            </div>
+            <div>
+                <input class="method4" name="Fruit" type="radio" value="" />
+                <span>梨</span>
+            </div>
+            <div>
+                <input class="method5" name="Fruit" type="radio" value="" />
+                <span>西瓜</span>
+            </div>
+            <div>
+                <input class="method6" name="Fruit" type="radio" value="" />
+                <span>火龙果</span>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
+        </div>
     </div>
-    <div>
-        <input class="method2" name="Fruit" type="checkbox" value="" />
-        <span>桃子</span>
-    </div>
-    <div>
-        <input class="method3" name="Fruit" type="checkbox" value="" />
-        <span>香蕉</span>
-    </div>
-    <div>
-        <input class="method4" name="Fruit" type="checkbox" value="" />
-        <span>梨</span>
-    </div>
-    <div>
-        <input class="method5" name="Fruit" type="checkbox" value="" />
-        <span>西瓜</span>
-    </div>
-    <div>
-        <input class="method6" name="Fruit" type="checkbox" value="" />
-        <span>火龙果</span>
-    </div>
-    <div>
-        <input class="method1" name="Fruit" type="radio" value="" />
-        <span>苹果</span>
-    </div>
-    <div>
-        <input class="method2" name="Fruit" type="radio" value="" />
-        <span>桃子</span>
-    </div>
-    <div>
-        <input class="method3" name="Fruit" type="radio" value="" />
-        <span>香蕉</span>
-    </div>
-    <div>
-        <input class="method4" name="Fruit" type="radio" value="" />
-        <span>梨</span>
-    </div>
-    <div>
-        <input class="method5" name="Fruit" type="radio" value="" />
-        <span>西瓜</span>
-    </div>
-    <div>
-        <input class="method6" name="Fruit" type="radio" value="" />
-        <span>火龙果</span>
-    </div>
+    <script type="text/javascript">
+        //文章信息操作
+        var blogTool = new Tools();
+    </script>
 </body>
 
 </html>

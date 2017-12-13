@@ -1,13 +1,61 @@
-.demo-container{
-    width: 80%;
-    margin: 0 auto;
-    border-left: 1px solid #e4e4e4;
-    border-right: 1px solid #e4e4e4;
-}
-.method-title{
+.text_overflow_1{
+    width:27em; 
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    overflow:hidden;
     text-align: center;
-    font-size: 18px;
-    color: #536b82;
-    margin-bottom: 15px;
-    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.text_overflow_2{
+    width:27em; 
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    -moz-binding:url('ellipsis.xml#ellipsis'); 
+    overflow:hidden;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.zxx_text_overflow3{
+    width:24em; 
+    height:1.3em; 
+    overflow:hidden; 
+    zoom:1;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.zxx_text_overflow3 .text_con{
+    float:left; 
+    height:1.3em; 
+    margin-right:3em; 
+    overflow:hidden;
+}
+.zxx_text_overflow3 .text_dotted{
+    width:3em; 
+    height:1.31em; 
+    float:right; 
+    margin-top:-1.3em;
+}
+.zxx_text_overflow4{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.zxx_text_overflow5{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    width:400px;
+}
+.zxx_text_overflow6{
+    width: 400px; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
 }

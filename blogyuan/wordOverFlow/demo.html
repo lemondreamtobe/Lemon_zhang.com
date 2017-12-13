@@ -1,78 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="./demo.css" rel="stylesheet">
-    <style>
-    .text_overflow_1{
-        width:27em; 
-        white-space:nowrap; 
-        text-overflow:ellipsis; 
-        -o-text-overflow:ellipsis; 
-        overflow:hidden;
-        text-align: center;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    .text_overflow_2{
-        width:27em; 
-        white-space:nowrap; 
-        text-overflow:ellipsis; 
-        -o-text-overflow:ellipsis; 
-        -moz-binding:url('ellipsis.xml#ellipsis'); 
-        overflow:hidden;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    .zxx_text_overflow3{
-        width:24em; 
-        height:1.3em; 
-        overflow:hidden; 
-        zoom:1;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    .zxx_text_overflow3 .text_con{
-        float:left; 
-        height:1.3em; 
-        margin-right:3em; 
-        overflow:hidden;
-    }
-    .zxx_text_overflow3 .text_dotted{
-        width:3em; 
-        height:1.31em; 
-        float:right; 
-        margin-top:-1.3em;
-    }
-    .zxx_text_overflow4{
-        margin: 0 auto;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .zxx_text_overflow5{
-        margin: 0 auto;
-        margin-bottom: 20px;
-        text-align: center;
-        width:400px;
-    }
-    .zxx_text_overflow6{
-        width: 400px; 
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    </style>
+<title>柠檬树下的过客</title>
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/demo.js"></script>
 </head>
 <body>
     <div class="demo-container">
-        <div class="method-title">方法1</div>
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">用省略号解决文字溢出</h3>
+<div class="method-title">方法1</div>
         <div title="look at here!" class="text_overflow_1">
             这种方法除了火狐下表现不尽人意，其他IE， 谷歌下表现可以。很多文字，这里有很多文字
         </div>
@@ -101,10 +50,13 @@
         <div class="zxx_text_overflow6">
             这种方法用的是多行文字句末显示省略号，这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点
         </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">友情链接</a>
+        </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(function() {
+    <script type="text/javascript">
+$(function() {
            
             //限制字符个数
             // $(".zxx_text_overflow").each(function(){
@@ -139,6 +91,8 @@
             }
             wordLimit();         
         })
+        //文章信息操作
+        var blogTool = new Tools();
     </script>
 </body>
 </html>

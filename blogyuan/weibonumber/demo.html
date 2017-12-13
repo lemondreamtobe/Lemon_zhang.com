@@ -1,43 +1,27 @@
-<!DOCTYPE html>
-<div lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./demo.css" />
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-    <style>
-        .person_atten_r{
-            height: 34px;
-            padding: 0 5px;
-            display: inline-block;
-        }
-        .person_atten .num {
-            height: 23px;
-            font-size: 18px;
-            color: #333;
-        }
-        #sendNum{
-            zoom: 1;
-            opacity: 1;
-        }
-        .num a{
-            text-decoration: none;
-        }
-    </style>
+<title>柠檬树下的过客</title>
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/demo.js"></script>
 </head>
-<div>
+<body>
     <div class="demo-container">
-        <div class="header">
-            <i>
-                <b>数字闪现放大动画</b>
-            </i>
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
         </div>
-        <div class="method-title">
-            数字放大
-        </div>
-        <div class="method-container">
+        <div class="demo-content">
+            <h3 id="blogTitle">数字闪现放大动画</h3>
+<div class="method-container">
             <button class="tc-btn" >放大</button>
             <div class="person_atten_r" style="position: relative;">
                 <p class="num">
@@ -50,9 +34,13 @@
                
             </div>
         </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">友情链接</a>
+        </div>
     </div>
-    <script>
-        $('.tc-btn').click(function(e) {
+    <script type="text/javascript">
+$('.tc-btn').click(function(e) {
             number(document.getElementById("absNum"), document.getElementById("sendNum"), 18, 26);
         });
         // setInterval(function() {
@@ -105,6 +93,8 @@
                 }
             };
         };
+        //文章信息操作
+        var blogTool = new Tools();
     </script>
 </body>
 </html>

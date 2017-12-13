@@ -1,0 +1,33 @@
+.method1 {
+    vertical-align: text-bottom;
+    margin-bottom: 1px;
+}
+
+.method2 {
+    height: 13px;
+    vertical-align: text-top;
+    margin-top: 2px;
+}
+
+.method3 {
+    height: 13px;
+    vertical-align: bottom;
+    margin-bottom: 1px;
+    margin-top: -1px;
+}
+
+.method4 {
+    height: 13px;
+    vertical-align: top;
+    margin-top: 2px;
+}
+
+.method5 {
+    vertical-align: middle;
+    margin-top: -1px;
+    margin-bottom: 1px;
+}
+
+.method6 {
+    vertialc-align: -3px
+}
