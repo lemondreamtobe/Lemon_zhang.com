@@ -54,12 +54,13 @@ body{
     /* background-color: #ffffff; */
 }
 .demo-bottom{
-    position: absolute;
-    display: block;
-    bottom: 0px;
+    /* position: absolute; */
+    /* display: block; */
+    /* bottom: 0px;
     left: 0px;
-    right: 0px;
-    padding-bottom: 25px;
+    right: 0px; */
+    /* padding-bottom: 25px; */
+    margin-top: 25px;
     text-align: center;
 }
 .demo-bottom a{
