@@ -152,7 +152,7 @@ ul, menu, dir {
     background-position: 20px 23px;;
     background-color: yellow;
 }
-small {
+.cover-info small {
     font-size: 100%;
     font-weight: 800;
 }
