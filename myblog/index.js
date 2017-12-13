@@ -50,7 +50,7 @@ let articleInfo = (function () {
         'scroll',
         'selectLineWithWord',
         'weibonumber',
-        'wordOverflow',
+        'wordOverFlow',
         'zifuwork'
     ];
 
