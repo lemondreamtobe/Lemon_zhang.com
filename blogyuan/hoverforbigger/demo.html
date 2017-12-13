@@ -1,53 +1,63 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<title>图片放大显示的jQuery插件演示页面</title>
-<link rel="stylesheet" href="./css/common.css" type="text/css" />
-<script type="text/javascript" src="./js/jquery-1.2.6.pack.js"></script>
-<script type="text/javascript" src="./js/jquery.imagePreview.1.0.js"></script>
-<script type="text/javascript">
-$(function(){
-	$("a.preview").preview();	  
-});
-</script>
-<style type="text/css">
-html{overflow-y:scroll;}
-a.preview,a.preview:hover{text-decoration:none;}
-a.preview img{margin:20px 10px;}
-.img-list{
-    padding:1em; 
-    font-size:1.1em; 
-    border-bottom:1px dashed #cccccc; 
-    line-height:1.4; 
-    overflow:hidden; 
-    zoom:1;
-}
-</style>
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
+    <link rel="stylesheet" href="./css/common.css" type="text/css" />
+    <script type="text/javascript" src="./js/jquery.imagePreview.1.0.js"></script>
 </head>
 
 <body>
     <div class="demo-container">
-        <h3 class="method-title">图片放大显示的jQuery插件演示页面</h3>
-        <div class="img-list">
-            <a class="preview" href="../../images/imgbig1.jpg">
-                <img src="../../images/imgcommon1.jpg" />
-            </a>
-            <a class="preview" href="../../images/imgbig2.jpg">
-                <img src="../../images/imgcommon2.jpg" />
-            </a>
-            <a class="preview" href="../../images/imgbig3.jpg">
-                <img src="../../images/imgcommon3.jpg" />
-            </a>
-            <a class="preview" href="../../images/imgbig4.jpg">
-                <img src="../../images/imgcommon4.jpg" />
-            </a>
-            <a class="preview" href="../../images/imgbig5.jpg">
-                <img src="../../images/imgcommon5.jpg" />
-            </a>
-            <p>
-                <a class="preview" href="">请勿点击</a>
-            </p>
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">图片放大显示的jQuery插件演示页面</h3>
+            <div class="img-list">
+                <a class="preview" href="../../images/imgbig1.jpg">
+                    <img src="../../images/imgcommon1.jpg" />
+                </a>
+                <a class="preview" href="../../images/imgbig2.jpg">
+                    <img src="../../images/imgcommon2.jpg" />
+                </a>
+                <a class="preview" href="../../images/imgbig3.jpg">
+                    <img src="../../images/imgcommon3.jpg" />
+                </a>
+                <a class="preview" href="../../images/imgbig4.jpg">
+                    <img src="../../images/imgcommon4.jpg" />
+                </a>
+                <a class="preview" href="../../images/imgbig5.jpg">
+                    <img src="../../images/imgcommon5.jpg" />
+                </a>
+                <p>
+                    <a class="preview" href="">请勿点击</a>
+                </p>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function () {
+            $("a.preview").preview();
+        });
+        //文章信息操作
+        var blogTool = new Tools();
+    </script>
 </body>
+
 </html>

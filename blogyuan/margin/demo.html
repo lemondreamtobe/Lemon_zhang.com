@@ -1,94 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        body{
-            padding: 5px;
-        }
-        .demo-container{
-            line-height: 400px;
-            color: white;
-        }
-        .demo{
-            width: 400px;
-            height: 400px;
-            /* display: inline-block; */
-            background: gold;
-            margin: 5px;
-            text-align: center;
-        }
-        .zxx_test_btn{float:left; margin-right:1em; padding-bottom:0.5em;}
-        .zxx_test_btn li{width:160px; height:40px; position:relative; overflow:hidden;}
-        .zxx_test_btn li a:hover{border:0;}
-        .margin_pos_1 .just_a_flag{margin:-21px 0px 0px 0px;}/*事实上，调用png插件后，img标签处于display:none的状态，而被一个span标签所代替，而这个span标签的一些样式属性与img一致，所以这里的just_a_flag是需要的，因为标签类型换了，而class并没有改换。在IE6下，这里的效果其实等同于.margin_pos_1 span.just_a_flag或者是.margin_pos_1 span，但是考虑到兼容性，这里使用一个起标志作用的class是非…不可的*/
-        .margin_pos_1:hover .just_a_flag{margin:-21px 0px 0px 0px;}
-        .margin_pos_2 .just_a_flag{margin:-21px 0 0 -160px;;}
-        .margin_pos_2:hover .just_a_flag{margin:-21px 0 0 -160px;;}
-        .margin_pos_3 .just_a_flag{margin:-21px 0px 0px -320px;;}
-        .margin_pos_3:hover .just_a_flag{margin:-21px 0 0 -160px;;}
-        .margin_pos_4 .just_a_flag{margin:-21px 0 0 -479px;}
-        .margin_pos_4:hover .just_a_flag{margin:-21px 0 0 -160px;;}
-        .likeTh{
-            display: inline-block;
-            border: 1px solid #e4e4e4;
-            width: 100px;
-            height: 20px;
-            margin-right: -1px;
-            margin-left: -5px;
-        }
-        .demo-img{
-           margin:0 3px -3px 0;
-        }
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
+
     </style>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
+
 <body>
     <div class="demo-container">
-        <div class="demo">
-            demo1
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
         </div>
-        <div class="demo">
-            demo2
+        <div class="demo-content">
+            <h3 id="blogTitle">margin学习探索</h3>
+            <div class="demo">
+                demo1
+            </div>
+            <div class="demo">
+                demo2
+            </div>
+            <div>
+                <p>margin定位</p>
+                <ul class="zxx_test_btn">
+                    <li>
+                        <a class="margin_pos_1" href="javascript:void(0);">
+                            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="margin_pos_2" href="javascript:void(0);">
+                            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="margin_pos_3" href="javascript:void(0);">
+                            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="margin_pos_4" href="javascript:void(0);">
+                            <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
+                        </a>
+                    </li>
+                </ul>
+                <br style="clear:both">
+            </div>
+            <div class="table-div">
+                <div>选项卡等边框线的处理</div>
+                <div class="likeTh"></div>
+                <div class="likeTh"></div>
+                <div class="likeTh"></div>
+                <div class="likeTh"></div>
+            </div>
+            <div>
+                <img class="demo-img" src="./filemt.png">一般img标签打头的小图标与文字对齐的话，img{margin:0 3px -3px 0;}
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
         </div>
     </div>
-<div>
-    <p>margin定位</p>
-    <ul class="zxx_test_btn">
-        <li>
-            <a class="margin_pos_1" href="javascript:void(0);">
-                <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
-            </a>
-        </li>
-        <li>
-            <a class="margin_pos_2" href="javascript:void(0);">
-                <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
-            </a>
-        </li>
-        <li>
-            <a class="margin_pos_3" href="javascript:void(0);">
-                <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
-            </a>
-        </li>
-        <li>
-            <a class="margin_pos_4" href="javascript:void(0);">
-                <img class="just_a_flag" src="http://image.zhangxinxu.com/image/blog/200908/png_btn.png" />
-            </a>
-        </li>
-    </ul>
-    <br style="clear:both">
-</div>
-<div class="table-div">
-    <div>选项卡等边框线的处理</div>
-    <div class="likeTh"></div>
-    <div class="likeTh"></div>
-    <div class="likeTh"></div>
-    <div class="likeTh"></div>
-</div>
-<div>
-    <img class="demo-img" src="./filemt.png">一般img标签打头的小图标与文字对齐的话，img{margin:0 3px -3px 0;}
-</div>
+    <script type="text/javascript">
+        //文章信息操作
+        var blogTool = new Tools();
+    </script>
 </body>
+
 </html>

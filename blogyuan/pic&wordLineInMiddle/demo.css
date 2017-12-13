@@ -1,0 +1,126 @@
+div{
+    height: 120px;
+    background: #536b82;
+    border: 1px solid #e4e4e4;
+    color: white;
+}
+.demo1{
+    line-height: 120px;
+}
+.demo2{
+    display:table-cell; 
+    height: 120px;
+    width:550px; 
+    /* height:1.14em;  */
+    /* padding:0 0.;  */
+    /* border:1px solid #beceeb;  */
+    color:white; 
+    font-size:14px; 
+    vertical-align:middle;
+}
+.demo2 span{
+    /* display:inline-block;  */
+    /* font-size:0.1em;  */
+    /* vertical-align:middle; */
+}
+ul{
+    list-style: none;
+}
+.zxx_align_box_3 li{
+    width:250px; 
+    height:250px; 
+    padding:1px; 
+    margin:1px; 
+    font-size:128px; 
+    float:left; 
+    border:1px solid #beceeb;
+}
+.fix {
+    zoom: 1;
+}
+.fix:after, .fix:before {
+    display: table;
+    content: "";
+    clear: both;
+}
+.zxx_align_box_3 li img{
+    display:block; 
+    width:100%; 
+    height:100%; 
+    background-repeat:no-repeat; 
+    background-position:center;
+}
+.zxx_align_box_4 li{
+    float:left; 
+    margin-right:2px;
+}
+.zxx_align_box_4 li div{
+    display:table-cell; 
+    width:252px; 
+    height:252px; 
+    border:1px solid #beceeb;
+    font-size:58px; 
+    text-align:center; 
+    vertical-align:middle;
+}
+.zxx_align_box_4 li div img{vertical-align:middle;}
+.zxx_align_box_4 div{
+    background: none;
+}
+.zxx_align_box_5{
+    height: 100%;
+    background: none;
+    margin-bottom: 40px;
+}
+.zxx_align_box_5 a{
+    display:inline-block; 
+    /* width:1.2em;  */
+    font-size:128px; 
+    text-align:center; 
+    vertical-align:middle;
+    }
+.zxx_align_box_5 a img{
+    vertical-align:middle; 
+    padding:2px; 
+    border:1px solid #beceeb;
+    }
+    .zxx_align_box_6 li{
+        /* height:128px;  */
+        /* width:150px;  */
+        padding:13px 0; 
+        float:left; 
+        margin-right:10px; 
+        border:1px solid #beceeb; 
+        text-align:center; 
+        font-size:0;
+        }
+    .zxx_align_box_6 li .alpha_img{
+        height:100%;
+         width:1px; 
+         vertical-align:middle;
+         }
+    .zxx_align_box_6 li .show_img{vertical-align:middle;}
+    .method4{
+        background: none;
+        height: 100%;
+    }
+    .title{
+        background: none;
+        text-align: center;
+        border: none;
+    }
+    .title h3{
+        color: #536b82;
+    }
+    .zxx_ul_image{overflow:hidden; zoom:1;}
+    .zxx_ul_image li{
+        float:left; 
+        /* width:150px;  */
+        /* height:150px;  */
+        text-align:center; 
+        line-height:150px; 
+        padding: 5px;
+        *font-size:125px;
+    }
+    .zxx_ul_image li:after{content:' '; vertical-align:middle;}
+    .zxx_ul_image li img{vertical-align:middle;}

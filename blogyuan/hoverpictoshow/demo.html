@@ -1,82 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./demo.css" type="text/css" />
+    <title>柠檬树下的过客</title>
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
+
 <body>
     <div class="demo-container">
-        <div class="img-container">
-            <div class="method4">
-                <ul class="zxx_ul_image">
-                    <li>
-                        <img src='../../images/imgcommon1.jpg' />
-                    </li>
-                    <li>
-                        <img src="../../images/imgcommon3.jpg" />
-                    </li>
-                    <li>
-                        <img src="../../images/imgcommon2.jpg" />
-                    </li>
-                    <li>
-                        <img src="../../images/imgcommon4.jpg" />
-                    </li>
-                    <li>
-                        <img src="../../images/imgcommon5.jpg" />
-                    </li>
-                    <li>
-                        <img src="../../images/imgcommon7.jpg" />
-                    </li>
-                </ul>
-            </div>
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-13 14:51</div>
         </div>
-        <div class="show-platform">
-            <div class="round_shade_box" id="zoom"> 
-                <div class="round_shade_top"> 
-                    <span class="round_shade_topleft"></span> 
-                    <span class="round_shade_topright"></span> 
-                </div> 
-                <div class="round_shade_centerleft"> 
-                    <div class="round_shade_centerright"> 
-                        <div class="round_shade_center" id="zoom_content">
-                            <img id="showPic" src="">
-                        </div> 
+        <div class="demo-content">
+            <h3 id="blogTitle">滑动并在特定区域显示放大</h3>
+            <div class="img-container">
+                <div class="method4">
+                    <ul class="zxx_ul_image">
+                        <li>
+                            <img src='../../images/imgcommon1.jpg' />
+                        </li>
+                        <li>
+                            <img src="../../images/imgcommon3.jpg" />
+                        </li>
+                        <li>
+                            <img src="../../images/imgcommon2.jpg" />
+                        </li>
+                        <li>
+                            <img src="../../images/imgcommon4.jpg" />
+                        </li>
+                        <li>
+                            <img src="../../images/imgcommon5.jpg" />
+                        </li>
+                        <li>
+                            <img src="../../images/imgcommon7.jpg" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="show-platform">
+                <div class="round_shade_box" id="zoom">
+                    <div class="round_shade_top">
+                        <span class="round_shade_topleft"></span>
+                        <span class="round_shade_topright"></span>
+                    </div>
+                    <div class="round_shade_centerleft">
+                        <div class="round_shade_centerright">
+                            <div class="round_shade_center" id="zoom_content">
+                                <img id="showPic" src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="round_shade_bottom">
+                        <span class="round_shade_bottomleft"></span>
+                        <span class="round_shade_bottomright"></span>
                     </div>
                 </div>
-                <div class="round_shade_bottom">
-                    <span class="round_shade_bottomleft"></span>
-                    <span class="round_shade_bottomright"></span>
-                </div> 
             </div>
         </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">友情链接</a>
+        </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(function() {
+    <script type="text/javascript">
+        $(function () {
             function hoverOut(e) {
                 $('#zoom').animate({
-                    opacity : "hide"
-                    }, 500, null, function() {
-                        
-                        //动画完成回调
-                        $('#showPic').css('display', 'none');
-                    });
+                    opacity: "hide"
+                }, 500, null, function () {
+
+                    //动画完成回调
+                    $('#showPic').css('display', 'none');
+                });
             };
+
             function hoverIn(e) {
                 $('#zoom').animate({
-                    opacity : "show"
-                    }, 500, null, function() {
+                    opacity: "show"
+                }, 500, null, function () {
 
-                        //动画完成回调
-                        $('#showPic').attr('src', $(e.currentTarget).find('img').attr('src'));
-                        $('#showPic').css('display', 'block');
-                    });
+                    //动画完成回调
+                    $('#showPic').attr('src', $(e.currentTarget).find('img').attr('src'));
+                    $('#showPic').css('display', 'block');
+                });
             };
-            $('.zxx_ul_image li').hover(hoverIn, hoverOut);                    
+            $('.zxx_ul_image li').hover(hoverIn, hoverOut);
         });
+        //文章信息操作
+        var blogTool = new Tools();
     </script>
 </body>
+
 </html>

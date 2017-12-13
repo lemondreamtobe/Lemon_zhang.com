@@ -1,0 +1,8 @@
+html{background:#999;margin:100px; border:30px solid #093;}
+body{background:#069; margin:100px; border:30px solid #093;}
+
+html{overflow-y:scroll;}
+
+html{background:white url(../image/404.png) no-repeat fixed center center;}
+
+html{height: 100%;}
