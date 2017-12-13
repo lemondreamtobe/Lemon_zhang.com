@@ -1,25 +1,5 @@
-.demo-container{
-    width: 80%;
-    margin: 0 auto;
-    /* border-left: 1px solid #e4e4e4; */
-    /* border-right: 1px solid #e4e4e4; */
-    /* border-bottom: 1px solid #e4e4e4; */
-    border: 1px solid #e4e4e4;
-    margin-top: 10px;
+.clickClass {
     padding: 5px;
-}
-.method-title{
-    text-align: center;
-    font-size: 18px;
-    color: #536b82;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-.header{
-    font-size: 27px;
-    color: #536b82;
-}
-.method-container{
-    margin-bottom: 25px;
-    text-align: center;
+    border: 2px solid #e4e4e4;
+    background: #868e96;
 }
