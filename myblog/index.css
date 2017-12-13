@@ -152,3 +152,10 @@ ul, menu, dir {
     background-position: 20px 23px;;
     background-color: yellow;
 }
+small {
+    font-size: 100%;
+    font-weight: 800;
+}
+.cover-info h4{
+    color: #0078db;
+}
