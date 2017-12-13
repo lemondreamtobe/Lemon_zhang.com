@@ -41,9 +41,9 @@
             </div>
             <div class="zlf-body" :controller="zlf_body">
                 <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
-                    <a href="" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
+                    <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
                     <div class="cover-info">
-                        <a href="" target="_blank"><h4>{{@el.title}}</h4></a>
+                        <a :attr="{href: @el.site}" target="_blank"><h4>{{@el.title}}</h4></a>
                         <small>{{@el.small}}</small>                       
                     </div>  
                 </div>
