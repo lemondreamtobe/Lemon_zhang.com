@@ -300,4 +300,5 @@ let body_pagination = avalon.define({
 body_pagination.init();
 console.log(articleInfo.handle('site', 'length'));
 console.log(body_pagination.pageTotal);
+
 // })
