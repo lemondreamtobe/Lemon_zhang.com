@@ -1,6 +1,6 @@
 var Noticer = (function ($) {
     return {
-        createContainer: function() {
+        createUl: function() {
 
             if ($('#noty_topRight_layout_container').length == 0) {
                 var ul_string = '<ul id="noty_topRight_layout_container" class="" style="top: 20px; right: 20px; position: fixed; width: 310px; height: auto; margin: 0px; padding: 0px; list-style-type: none; z-index: 10000000;"></ul>';
@@ -18,12 +18,13 @@ var Noticer = (function ($) {
             var num = Min + Math.round(Rand * Range); //四舍五入
             return num;
         },
-        setId: function (li) {
+        setIdForLi: function (li) {
             var id = 'id_';
             for (var i = 0; i < 15; i++) {
                 id += this.getRandomNumer();
             };
             li.attr('id', id);
+            return li;
         },
         createLi: function(text) {
             var li_string = '<li style="overflow: hidden; margin: 4px 0px; border-radius: 2px; position: relative; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px; width: 310px; cursor: pointer;" class="i-am-closing-now">'
@@ -102,12 +103,14 @@ var Noticer = (function ($) {
             }, 3000);
         },
         notice: function(type, text) {
-            var ul = this.createContainer();
+            var ul = this.createUl();
             var li = this.createLi(text);
-            ul.append(this.addColorForLi(type, li));
-            li.animate({
+            ul.append(this.addColorForLi(type, this.setIdForLi(li)));
+            li.animate(
+                {
                     height: '62px'
-                    }, 'slow');
+                }, 
+            'slow');
             this.hide(li);
         }       
     }

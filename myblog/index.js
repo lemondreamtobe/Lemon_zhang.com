@@ -211,9 +211,12 @@ let articleInfo = (function () {
     }
 })();
 
-/*常规操作文章*/
+/*常规操作文章日志*/
 //2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
 articleInfo.delete('dialogchajian');
+
+//2017-12-14 16:49 修复完毕重新恢复提示插件这篇文章
+articleInfo.reback('dialogchajian');
 
 
 
