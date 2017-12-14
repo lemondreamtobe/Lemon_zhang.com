@@ -109,6 +109,59 @@ let articleInfo = (function () {
         modify: function (aim, value, index) {
             aim[index] = value;
         },
+        delete: function (val) {
+           var index = siteArr.indexOf(val);
+
+           if (index !== -1) {
+               [siteArr, title, small].forEach(function(value, key, arr) {
+                   
+                    if (Array.isArray(value.delete)) {
+                        value.delete.push({
+                            index: index,
+                            content: value[index]
+                        });
+                    } else {
+                        value.delete = [];
+                        value.delete.push({
+                            index: index,
+                            content: value[index]
+                        });
+                    }
+               });
+               siteArr.splice(index, 1);
+               title.splice(index, 1);
+               small.splice(index, 1);
+           } else {
+               throw error('文章不存在');
+           }
+        },
+        reback: function(article) {
+            var exist = true;
+            var key = 0;
+
+            siteArr.delete.forEach(function (value, index, arr) {
+
+                if (value.content == article) {
+                    key = value.index;
+                    exist = true;
+                    siteArr.splice(value.index, 0, value.content);
+                    return;
+                }
+            });    
+            
+            if (exist) {
+                [title, small].forEach(function(value, index, arr) {
+                    value.delete.forEach(function(value_inner, index_inner, arr_inner) {
+
+                        if (value_inner.index == key) {
+                            value.splice(value_inner.index, 0, value_inner.content);
+                        }
+                    });
+                });
+            } else {
+                throw error('文章不存在');
+            }
+        },
         check: function (aim, index) {
             return aim[index];
         },
@@ -157,6 +210,12 @@ let articleInfo = (function () {
         }
     }
 })();
+
+/*常规操作文章*/
+//2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
+articleInfo.delete('dialogchajian');
+
+
 
 //文章类
 function Articles(name, color, title, small) {
