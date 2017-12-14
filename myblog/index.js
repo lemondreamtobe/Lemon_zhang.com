@@ -5,6 +5,31 @@ $('.zlf-menu li').each(function () {
     })
 });
 
+//文章类
+function Articles(name, color, title, small) {
+    this.name = name;
+    this.bg_color = color;
+    this.title = title;
+    this.small = small;
+    this.site = 'http://www.lemon-zhang.cn/blogyuan/' +this.name + '/demo.html';
+    this.src = '../images/' + this.name + '.png';
+};
+
+//常用函数工具
+function Tools() {
+
+};
+Tools.prototype = {
+    constructor: Tools,
+    getNumFromRange: function (Min, Max) {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        var num = Min + Math.round(Rand * Range); //四舍五入
+        return num;
+    }
+};
+let blogTool = new Tools();
+
 //文章信息
 let articleInfo = (function () {
 
@@ -211,40 +236,6 @@ let articleInfo = (function () {
     }
 })();
 
-/*常规操作文章日志*/
-//2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
-articleInfo.delete('dialogchajian');
-
-//2017-12-14 16:49 修复完毕重新恢复提示插件这篇文章
-articleInfo.reback('dialogchajian');
-
-
-
-//文章类
-function Articles(name, color, title, small) {
-    this.name = name;
-    this.bg_color = color;
-    this.title = title;
-    this.small = small;
-    this.site = 'http://www.lemon-zhang.cn/blogyuan/' +this.name + '/demo.html';
-    this.src = '../images/' + this.name + '.png';
-};
-
-//常用函数工具
-function Tools() {
-
-};
-Tools.prototype = {
-    constructor: Tools,
-    getNumFromRange: function (Min, Max) {
-        var Range = Max - Min;
-        var Rand = Math.random();
-        var num = Min + Math.round(Rand * Range); //四舍五入
-        return num;
-    }
-};
-let blogTool = new Tools();
-
 //vm body
 let body_content = avalon.define({
     $id: 'zlf_body',
@@ -300,8 +291,19 @@ let body_pagination = avalon.define({
         this.fetch(this.pagination);
     }
 });
+
+/*常规操作文章日志*/
+
+//2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
+articleInfo.delete('dialogchajian');
+
+//2017-12-14 16:49 修复完毕重新恢复提示插件这篇文章
+articleInfo.reback('dialogchajian');
+
+/*日志结束*/
+
+//文章初始化
 body_pagination.init();
-console.log(articleInfo.handle('site', 'length'));
-console.log(body_pagination.pageTotal);
+
 
 // })
