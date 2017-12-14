@@ -267,7 +267,7 @@ let body_pagination = avalon.define({
     previous: function (e) {
 
         if (this.pagination.current == 0) {
-            alert('当前已是首页');
+            Noticer.notice('warn', '当前已是首页');
         } else {
             this.pagination.current = this.pagination.current -this.pagination.pageSize;
             this.fetch(this.pagination);
@@ -275,7 +275,7 @@ let body_pagination = avalon.define({
     },
     next: function (e) {
         if (this.pagination.current >=  this.pageTotal) {
-            alert('当前已是最后一页');
+            Noticer.notice('warn', '当前已是最后一页');
         } else {
             this.pagination.current = this.pagination.current + this.pagination.pageSize;
             this.fetch(this.pagination);
