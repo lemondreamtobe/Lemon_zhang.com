@@ -132,9 +132,15 @@ let articleInfo = (function () {
             siteArr.push(obj.site);
             title.push(obj.site);
             small.push(obj.small);
+            return this;
+        },
+        addColor: function(color) {
+            colorArr.push(color);
+            return this;
         },
         modify: function (aim, value, index) {
             aim[index] = value;
+            return this;
         },
         delete: function (val) {
            var index = siteArr.indexOf(val);
@@ -158,6 +164,7 @@ let articleInfo = (function () {
                siteArr.splice(index, 1);
                title.splice(index, 1);
                small.splice(index, 1);
+               return this;
            } else {
                throw error('文章不存在');
            }
@@ -185,6 +192,7 @@ let articleInfo = (function () {
                         }
                     });
                 });
+                return this;
             } else {
                 throw error('文章不存在');
             }
@@ -283,7 +291,7 @@ let body_pagination = avalon.define({
         var title = articleInfo.getTitle().slice(pagi.current, pagi.current + pagi.pageSize);
         var small = articleInfo.getSmall().slice(pagi.current, pagi.current + pagi.pageSize);
         body_content.article = articleInfo.getSite().slice(pagi.current, pagi.current + pagi.pageSize).map(function (value, index, arr) {
-            return new Articles(value, articleInfo.getColor()[blogTool.getNumFromRange(0, 15)], title[index], small[index]);
+            return new Articles(value, articleInfo.getColor()[blogTool.getNumFromRange(0, articleInfo.handle('color', 'length'))], title[index], small[index]);
         });
     },
     init: function() {
@@ -314,6 +322,9 @@ articleInfo.addArticle({
     title: 'CSS lineheight',
     small: '个人对lineheight的学习'
 });
+
+//2017-12-15 14:26 增加两种颜色
+articleInfo.addColor('#4cc5f4').addColor('#48a76e');
 
 /*日志结束*/
 
