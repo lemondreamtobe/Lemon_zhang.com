@@ -304,7 +304,11 @@ articleInfo.delete('dialogchajian');
 //2017-12-14 16:49 修复完毕重新恢复提示插件这篇文章
 articleInfo.reback('dialogchajian');
 
-//2017-12-15 12:00 学习探索lineheight，初步完成这篇文章
+/*
+ *2017-12-15 12:00 学习探索lineheight，初步完成这篇文章
+ *编辑过程中发现avalon的cdn影响多行垂直居中样式呈现，特此注明
+ *因为模板文件都引入该CDN，以后可能会有同样的问题
+ */
 articleInfo.addArticle({
     site: 'lineheight',
     title: 'CSS lineheight',
