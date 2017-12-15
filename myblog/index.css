@@ -159,4 +159,6 @@ ul, menu, dir {
 }
 .cover-info h4{
     color: #0078db;
+    font-size: 20px;
+    font-weight: bold;
 }
