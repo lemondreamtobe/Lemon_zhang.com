@@ -1,0 +1,35 @@
+.test1{
+    font-size:20px; 
+    line-height:0; 
+    border:1px solid #cccccc; 
+    background:#eeeeee;
+}
+.test2{
+    font-size:0; 
+    line-height:20px; 
+    margin-top: 25px;
+    border:1px solid #cccccc; 
+    background:#eeeeee;
+}
+.mulit_line{line-height:150px; border:1px dashed #cccccc; padding-left:5px;}
+.mulit_line span{display:-moz-inline-stack; display:inline-block; line-height:1.4em; vertical-align:middle;}
+.mulit_line i{width:0; display:-moz-inline-stack; display:inline-block; vertical-align:middle; font-size:0;}
+.out{display:inline-block; background:#a0b3d6; margin-top:20px;}
+.in1{display:block; height:20px;}
+.in2{display:block; line-height:20px;}
+p{
+    text-align: left;
+}
+.demo-content h3, h4{
+    margin-bottom: 25px;
+    color: #536b82;
+    font-weight: bold;
+}
+.sum{
+    line-height: 2.5;
+    text-align: left;
+}
+.height-text{
+    border: 1px solid #ccc;
+    padding: 15px;
+}

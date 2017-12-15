@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>柠檬树下的过客</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+    <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../js/notice.js"></script>
+    <script src="../../js/demo.js"></script>
+    <link href="./demo.css" rel="styleSheet" rel="styleSheet">
+</head>
+
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: 2017-12-15 11:43</div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">CSS lineheight探索</h3>
+
+            <p style="border:1px solid #ccc">lineheight字面意思: 一行文字的高度，也可以说是两行文字间基线之间的距离，基线大概处于一个汉字的二分之一偏下一点的位置</p>
+
+            <h4>第一部分:lineheight高度之谜</h4>
+            <div class="height-text">
+                <div class="test1">
+                    诸位好汉请看，这里是没有lineheight
+                </div>
+                <div class="test2" title="诸位好汉请看，这里有20像素lineheight">
+                    诸位好汉请看，这里有20像素lineheight
+                </div>
+                <div class="sum">
+                    第一个没有lineheight的div有20大小的字体，但是div高度为2
+                    <br> 第二个有20像素lineheight的div字体为0，所以文字看不见，但是div高度为20像素
+                    <br> 反证了:撑开div高度的是line-height不是文字内容;
+                    <br> 产生高度的原因:在inline box模型中，有个line boxes，非显式可见，只是负责包裹每行文字。一行文字一个line boxes。
+                    <br> 在同一行文字中只有一个line boxes；
+                    <br> 也就是说，多行文字每行有一个line boxes，合起来就有多个line boxes。
+                    <br> line boxes只是决定高度。所以一个没有设置height属性的div的高度就是由一个一个line boxes的高度堆积而成的。
+                    <br> 其实line boxes不是直接决定高度的始作俑者。而是inline boxes(也就是就是一个个文字啦，图片啊，span之类的inline属性的标签)。
+                    <br> line boxes取手下inline boxes最高的那个高度。
+                    <br> 例如下面的例子:
+                    <br>
+                    <div style="border:1px solid blue">
+                        <span style="line-height:20px;">取手下line-height
+                            <span style="line-height:40px;">最高</span>的值</span>。
+                        <br>
+                    </div>
+                    则line boxes的高度就是40像素了,所以你看到的蓝色表框的div高度为40。
+                </div>
+            </div>
+            <div class="character">
+                <h4>第二部分：特性--垂直居中</h4>
+                <div class="height-text">
+                    <p>这里拿第一个部分的第一个例子</p>
+                    <div class="test1" style="border:1px solid red;margin:10px 0px">
+                        诸位好汉请看，这里是没有lineheight
+                    </div>
+                    <div style="border:1px solid yellow;margin:30px 0px;line-height:0px;font-size:40px">
+                        最高
+                    </div>
+                    <div class="sum">
+                        此时line boxes的高度为0，但是它是以文字的水平中垂线对称分布的。这一重要的特性可以用来实现文字或图片的垂直居中对齐。
+                    </div>
+                </div>
+            </div>
+            <div class="application">
+                <h4>第三部分：应用</h4>
+                <div class="height-text">
+                    <div style="line-height: 40px; border:1px solid #ccc">
+                        把line-height设置为您需要的box的大小可以实现单行文字的垂直居中;(假设你要用一个40高度的div来让里面的行字垂直居中，可以直接设置lineheight,而不是先设置height:40px, 再设置lineheight;)
+                    </div>
+                    <div>
+                        <!-- <p class="mulit_line mt10">
+                                <span style="font-size:20px;">这里是高度为150像素的标签内的多行文字，文字大小为20像素。
+                                    <br>这里是第二行，用来测试多行的显示效果。</span>
+                                <i class="vm dib">&nbsp;</i>
+                            </p> -->
+                        <div>多行文字垂直居中请点击
+                            <a href="./test.html">多行文字垂直</a>
+                        </div>
+                        <div>大小不固定容器内文字图片垂直居中
+                            <a href="../pic&wordLineInMiddle/demo.html">文字图片垂直居中</a>
+                        </div>
+                    </div>
+                    <div>
+                        <p>使用行高代替高度避免haslayout</p>
+                        <p>IE6，IE7下，类似inline-block属性的元素里如果有block属性的元素，如果该block haslayout，则该标签会冲破外部inline-block的显示而宽度100%显示，从使按钮自适应文字大小的效果失效，解决方法就是使用line-height代替height。</p>
+                        <p>不过现在主流浏览器已经很强大了，上述问题基本不会再出现，前提是不用ie6, ie7浏览</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demo-bottom">
+        <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+    </div>
+    </div>
+    <script type="text/javascript">
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+
+        /*日志结束*/
+    </script>
+</body>
+
+</html>

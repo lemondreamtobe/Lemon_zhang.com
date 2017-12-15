@@ -128,8 +128,10 @@ let articleInfo = (function () {
         '字符很多时候有出人意外的作用'
     ];
     return {
-        add: function (aim, name) {
-            aim.push(name);
+        addArticle: function(obj) {
+            siteArr.push(obj.site);
+            title.push(obj.site);
+            small.push(obj.small);
         },
         modify: function (aim, value, index) {
             aim[index] = value;
@@ -215,9 +217,11 @@ let articleInfo = (function () {
             };
             if (type == 'check') {
                 return _self[type](which, index) 
-            } else if (type == 'add' || type == 'modify') {
+            } else if (type == 'modify') {
                 return _self[type](which, value, index);
             } else {
+
+                //length
                 return _self[type](which);
             }
         },
@@ -299,6 +303,13 @@ articleInfo.delete('dialogchajian');
 
 //2017-12-14 16:49 修复完毕重新恢复提示插件这篇文章
 articleInfo.reback('dialogchajian');
+
+//2017-12-15 12:00 学习探索lineheight，初步完成这篇文章
+articleInfo.addArticle({
+    site: 'lineheight',
+    title: 'CSS lineheight',
+    small: '个人对lineheight的学习'
+});
 
 /*日志结束*/
 
