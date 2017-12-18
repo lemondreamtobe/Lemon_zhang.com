@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../images/webhead.jpg" />
     <link rel="stylesheet" href="../bootstrap-3.3.5/css/bootstrap.css">   
     <link href="../font-awesome/css/font-awesome.css" rel="styleSheet">
+    <link href="../z-tree/css/zTreeStyle/zTreeStyle.css" rel="styleSheet">
     <link href="./index.css" rel="styleSheet">
     <title>柠檬树下的过客</title>
 </head>
@@ -33,6 +34,7 @@
                     <li>
                         <a href="#">吉他爱好</a>
                     </li>
+
                     <!-- <li>
                         <a href="#">Java</a>
                     </li>
@@ -42,24 +44,34 @@
                 </ul>
             </div>
             <div class="zlf-body" :controller="zlf_body">
-                <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
-                    <!-- <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a> -->
-                    <div class="flip-container" :css="{backgroundColor: @el.bg_color}" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                             <div class="front">
+                <div class="col-md-2">
+                    <div class="zlf-type">
+                        <ul id="zlf-tree" class="ztree"></ul>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
+                        <!-- <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a> -->
+                        <div class="flip-container" :css="{backgroundColor: @el.bg_color}" ontouchstart="this.classList.toggle('hover');">
+                            <div class="flipper">
+                                <div class="front">
                                     <!-- 前面内容 -->
                                     <img :attr="{src: @el.src}">
-                            </div>
-                            <div class="back">
+                                </div>
+                                <div class="back">
                                     <!-- 背面内容 -->
                                     <img src="../images/lufei.png">
+                                </div>
                             </div>
                         </div>
+                        <div class="cover-info">
+                            <a :attr="{href: @el.site}" target="_blank">
+                                <h4>{{@el.title}}</h4>
+                            </a>
+                            <small>{{@el.small}}</small>
+                        </div>
                     </div>
-                    <div class="cover-info">
-                        <a :attr="{href: @el.site}" target="_blank"><h4>{{@el.title}}</h4></a>
-                        <small>{{@el.small}}</small>                       
-                    </div>  
+                    <br style="clear: both">
                 </div>
                 <br style="clear: both">
             </div>
@@ -78,6 +90,7 @@
     <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
     <script src="../bootstrap-3.3.5/js/bootstrap.js"></script>
     <script src="../js/notice.js"></script>
+    <script src="../z-tree/js/jquery.ztree.all.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>

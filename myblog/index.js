@@ -1,21 +1,4 @@
-$('.zlf-menu li').each(function () {
-    $(this).click(function () {
-        $('.zlf-menu').find('.active').removeClass('active');
-        $(this).addClass('active');
-    })
-});
-
-//文章类
-function Articles(name, color, title, small) {
-    this.name = name;
-    this.bg_color = color;
-    this.title = title;
-    this.small = small;
-    this.site = 'http://www.lemon-zhang.cn/blogyuan/' +this.name + '/demo.html';
-    this.src = '../images/' + this.name + '.png';
-};
-
-//常用函数工具
+//博客工具
 function Tools() {
 
 };
@@ -26,15 +9,144 @@ Tools.prototype = {
         var Rand = Math.random();
         var num = Min + Math.round(Rand * Range); //四舍五入
         return num;
-    }
+    },
+    addIcon: function (arr) {
+
+        // 深拷贝原始数据
+        var dataSource = JSON.parse(JSON.stringify(arr))
+        var res = [];
+
+        // 每一层的数据都 push 进 res
+        res.push(...dataSource);
+
+        // res 动态增加长度
+        for (var i = 0; i < res.length; i++) {
+            var curData = res[i];
+
+            //对数据节点进行处理
+            curData.icon = '';
+
+            // 如果有 children 则 push 进 res 中待搜索
+            if (curData.children) {
+                res.push(...curData.children.map(d => {
+                    return d;
+                }));
+            }
+        }
+        return dataSource;
+    },
+    findPathBFS: function (source, goal) {
+
+        // 深拷贝原始数据
+        var dataSource = JSON.parse(JSON.stringify(source));
+        var res = [];
+
+        // 每一层的数据都 push 进 res
+        res.push(...dataSource);
+
+        // res 动态增加长度
+        for (var i = 0; i < res.length; i++) {
+            var curData = res[i];
+
+            // 匹配成功
+            if (curData.orgName === goal) {
+                var result = [];
+
+                // 返回当前对象及其父节点所组成的结果
+                // return (function findParent(data) {
+                //     result.unshift(curData);
+                //     return result;
+                // })(curData);
+
+                //返回匹配成功的节点
+                return curData;
+            }
+
+            // 如果有 children 则 push 进 res 中待搜索
+            if (curData.childs) {
+                res.push(...curData.childs.map(d => {
+
+                    // 在每一个数据中增加 parent，为了记录路径使用
+                    d.parent = curData;
+                    return d;
+                }))
+            }
+        }
+
+        // 没有搜索到结果，默认返回空数组
+        return []
+    },
 };
 let blogTool = new Tools();
+
+//博客首页顶部导航栏
+$('.zlf-menu li').each(function () {
+    $(this).click(function () {
+        $('.zlf-menu').find('.active').removeClass('active');
+        $(this).addClass('active');
+    })
+});
+
+//侧边导航栏
+var zlf_tree = null;
+var setting = {
+    data: {
+        key: {
+            children: 'children',
+            name: 'name',
+            title: 'title',
+            checked: 'checked'
+        }
+    },
+    view: {
+        showLine: false,
+        showIcon: false
+    },
+    callback: {
+        onClick: changeArticles
+    }
+};
+
+//切换文章类型
+function changeArticles(e, aim, obj) {
+    var type = obj.type;
+    articleInfo.changeArticle(type);
+};
+var zNodes =[
+    {name:"文章全部分类",title: '文章全部分类', type:"all", children: [
+        {name:"日常工作的总结",title: '日常工作的总结', type:"work_sum", children:[]},
+        {name:"CSS学习探秘",title: 'CSS学习探秘', type:"css", children:[]},
+        {name:"实验室助手: 框架",title: '实验室助手: 框架', type:"frame", children:[]},
+    ]},
+];
+$.fn.zTree.init($("#zlf-tree"), setting, zNodes);
+zlf_tree = $.fn.zTree.getZTreeObj("zlf-tree");
+
+//获取所有节点并展开首节点
+var nodes = zlf_tree.getNodes();
+
+if (nodes.length>0) {
+    zlf_tree.expandNode(nodes[0], true, true, true);
+};
+zlf_tree.selectNode(nodes[0]);
+
+//对指定的父节点插入节点 zlf_tree.addNodes(zlf_tree.getNodeByParam("type", 'css', null), {name:"CSS学习探秘",title: 'CSS学习探秘1.1', type:"css", children:[]});
+//文章类
+function Articles(name, color, title, small, type) {
+    this.name = name;
+    this.bg_color = color;
+    this.title = title;
+    this.small = small;
+    this.site = 'http://www.lemon-zhang.cn/blogyuan/' +this.name + '/demo.html';
+    this.src = '../images/' + this.name + '.png';
+    this.type = type;
+};
 
 //文章信息
 let articleInfo = (function () {
 
     //边框颜色集
-    let colorArr = [
+    let color = [
         '#ef7040',
         '#f95422',
         '#303030',
@@ -54,7 +166,7 @@ let articleInfo = (function () {
     ];
 
     //文章
-    let siteArr = [
+    let site = [
         'accordion',
         'addClass',
         'appendElement',
@@ -103,6 +215,30 @@ let articleInfo = (function () {
         '文字溢出的省略号处理',
         '强大的字符'
     ];
+    let type = [
+        'work_sum',
+        'frame',
+        'frame',
+        'css',
+        'work_sum',
+        'work_sum',
+        'frame ',
+        'work_sum',
+        'css',
+        'work_sum',
+        'work_sum',
+        'css',
+        'css',
+        'css',
+        'work_sum',
+        'css',
+        'css',
+        'work_sum',,
+        'css',
+        'css',
+        'css',
+        'css'
+    ]
     let small = [
         '通过jquery animate让不同长度大小图片动态拉长',
         '两种不同的框架下操作dom元素的类名方式对比',
@@ -127,123 +263,107 @@ let articleInfo = (function () {
         '用省略号避免文字溢出导致的页面错乱不美观',
         '字符很多时候有出人意外的作用'
     ];
+    let information = {
+        color: color,
+        site: site,
+        title, title,
+        small: small,
+        type: type,
+        article: []
+    };
     return {
-        addArticle: function(obj) {
-            siteArr.push(obj.site);
-            title.push(obj.site);
-            small.push(obj.small);
-            return this;
+        addArticle: function(value, title, small, type) {
+            information.article.push(new Articles(value, articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))], title, small, type));
+            body_pagination.init();
         },
         addColor: function(color) {
-            colorArr.push(color);
+            information.color.push(color);
             return this;
         },
-        modify: function (aim, value, index) {
-            aim[index] = value;
-            return this;
+        initArticle: function() {
+            information.site.forEach(function(value, index, arr) {
+                information.article.push(new Articles(value, articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))], articleInfo.get('title')[index], articleInfo.get('small')[index], articleInfo.get('type')[index]));
+            });
+            body_pagination.init();
         },
-        delete: function (val) {
-           var index = siteArr.indexOf(val);
+        changeArticle: function(type) {
 
-           if (index !== -1) {
-               [siteArr, title, small].forEach(function(value, key, arr) {
-                   
-                    if (Array.isArray(value.delete)) {
-                        value.delete.push({
-                            index: index,
-                            content: value[index]
+            if (Array.isArray(information.all)) {
+
+            } else {
+                information.all = information.article.concat();
+            }
+
+            if (type == 'all') {
+                information.article = information.all
+            } else {
+                information.article = information.all.filter(function(value, index, arr) {
+                    return value.type == type;
+                });
+            }
+            body_pagination.init();
+        },
+        modify: function(type, index, value) {
+            information[type][index] = value;
+            this.initArticle();
+            body_pagination.init();
+        },
+        get: function(type) {
+            return information[type]
+        },
+        length: function(type) {
+            return information[type].length;
+        },
+        check: function(type, index) {
+            return information[type][index];
+        },
+        deleteArticle: function(val) {
+            var exist = false;
+            information.article.forEach(function(value, index, arr) {
+
+                if (value.name == val) {
+                    var index = index;
+                    exist = true;
+                    var articleAfterDelete = information.article.splice(index, 1);
+
+                    if (Array.isArray(information.article.delete)) {
+                        information.article.delete.push({
+                            article: articleAfterDelete[0],
+                            index: index
                         });
                     } else {
-                        value.delete = [];
-                        value.delete.push({
-                            index: index,
-                            content: value[index]
+                        information.article.delete = [];
+                        information.article.delete.push({
+                            article: articleAfterDelete[0],
+                            index: index
                         });
-                    }
-               });
-               siteArr.splice(index, 1);
-               title.splice(index, 1);
-               small.splice(index, 1);
-               return this;
-           } else {
-               throw error('文章不存在');
-           }
+                    };
+                    return;
+                } 
+            });
+
+            if (exist) {
+                body_pagination.init();
+            } else {
+                return -1
+            }
         },
-        reback: function(article) {
-            var exist = true;
-            var key = 0;
+        rebackArticle: function(val) {
+            var exist = false;
+            information.article.delete.forEach(function(value, index, arr) {
 
-            siteArr.delete.forEach(function (value, index, arr) {
-
-                if (value.content == article) {
-                    key = value.index;
+                if (value.article.name == val) {
                     exist = true;
-                    siteArr.splice(value.index, 0, value.content);
+                    information.article.splice(value.index, 0, value.article);
                     return;
                 }
-            });    
-            
+            });
+
             if (exist) {
-                [title, small].forEach(function(value, index, arr) {
-                    value.delete.forEach(function(value_inner, index_inner, arr_inner) {
-
-                        if (value_inner.index == key) {
-                            value.splice(value_inner.index, 0, value_inner.content);
-                        }
-                    });
-                });
-                return this;
+                body_pagination.init();
             } else {
-                throw error('文章不存在');
+                return -1;
             }
-        },
-        check: function (aim, index) {
-            return aim[index];
-        },
-        length: function(aim) {
-            return aim.length;
-        },
-        handle: function (aim, type, value, index) {
-            var which = '';
-            var _self = this;
-            switch (aim) {
-                case 'site':
-                    which = siteArr;
-                    break;
-
-                case 'title':
-                    which = title;
-                    break
-
-                case 'small':
-                    which = small;
-                    break;
-
-                case 'color':
-                    which = colorArr;
-                    break;
-            };
-            if (type == 'check') {
-                return _self[type](which, index) 
-            } else if (type == 'modify') {
-                return _self[type](which, value, index);
-            } else {
-
-                //length
-                return _self[type](which);
-            }
-        },
-        getColor: function () {
-            return colorArr;
-        },
-        getSite: function () {
-            return siteArr;
-        },
-        getTitle: function () {
-            return title;
-        },
-        getSmall: function () {
-            return small;
         }
     }
 })();
@@ -262,7 +382,7 @@ let body_pagination = avalon.define({
     $id: 'zlf_pagination',
     pagination: {
         current: 0,
-        total: articleInfo.handle('site', 'length'),
+        total: articleInfo.length('article'),
         pageSize: 12
     },
     $computed: {
@@ -288,55 +408,39 @@ let body_pagination = avalon.define({
         }
     },
     fetch: function(pagi) {
-        var title = articleInfo.getTitle().slice(pagi.current, pagi.current + pagi.pageSize);
-        var small = articleInfo.getSmall().slice(pagi.current, pagi.current + pagi.pageSize);
-        body_content.article = articleInfo.getSite().slice(pagi.current, pagi.current + pagi.pageSize).map(function (value, index, arr) {
-            return new Articles(value, articleInfo.getColor()[blogTool.getNumFromRange(0, articleInfo.handle('color', 'length'))], title[index], small[index]);
-        });
+        body_content.article = articleInfo.get('article').slice(pagi.current, pagi.current + pagi.pageSize);
     },
     init: function() {
         this.pagination = {
             current: 0,
-            total: articleInfo.handle('site', 'length'),
+            total: articleInfo.length('article'),
             pageSize: 12
         };
         this.fetch(this.pagination);
     }
 });
+articleInfo.initArticle();
 
 /*常规操作文章日志*/
 
 //2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
-articleInfo.delete('dialogchajian');
+articleInfo.deleteArticle('dialogchajian');
 
 //2017-12-14 16:49 修复完毕重新恢复提示插件这篇文章
-articleInfo.reback('dialogchajian');
+articleInfo.rebackArticle('dialogchajian');
 
 /*
  *2017-12-15 12:00 学习探索lineheight，初步完成这篇文章
  *编辑过程中发现avalon的cdn影响多行垂直居中样式呈现，特此注明
  *因为模板文件都引入该CDN，以后可能会有同样的问题
  */
-articleInfo.addArticle({
-    site: 'lineheight',
-    title: 'CSS lineheight',
-    small: '个人对lineheight的学习'
-});
+articleInfo.addArticle('lineheight','CSS lineheight',  '个人对lineheight的学习','css');
 
 //2017-12-15 14:26 增加两种颜色
 articleInfo.addColor('#4cc5f4').addColor('#48a76e');
 
 //2017-12-18 10:32 增加一篇学习像素概念的文章
-articleInfo.addArticle({
-    site: 'px',
-    title: '理解像素的世界',
-    small: '我在像素的世界里做像素的东西'
-});
+articleInfo.addArticle('px','理解像素的世界',  '我在像素的世界里做像素的东西','css');
 
 /*日志结束*/
 
-//文章初始化
-body_pagination.init();
-
-
-// })

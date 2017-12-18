@@ -19,7 +19,8 @@ body{
 }
 .zlf-body{
     margin-top: 10px;
-    padding: 0 8%;
+    padding: 0 1%;
+    position: relative;
 }
 .zlf-head .head-img{
     display: block;
@@ -205,4 +206,70 @@ ul, menu, dir {
 .back {
 	transform: rotateY(180deg);
 }
+.zlf-type{
+    /* list-style: none;
+    display: inline-block; */
+    /* position: fixed;
+    left: -8px;
+    top: 140px; */
+    /* padding: 0px 10px 0px 9px; */
+}
+#zlf-tree{
+    padding: 0px;
+}
+.ztree li a.level0{
+    margin-left: 20px;
+}
+.ztree li a.level0, 
+.ztree li a.level1{
+    width:150px;
+    height: 50px; 
+    text-align: center; 
+    display:block;
+}
+.ztree li a.level0.cur {background-color: #66A3D2; }
+.ztree li a.level0 span,.ztree li a.level1 span {display: block; font-size:12px;word-spacing: 2px;}
+.ztree li a.level0 span.button {float:right; margin-left: 10px; visibility: visible;display:none;}
+.ztree li span.button.switch.level0 {display:none;}
+.ztree li span{
+    line-height: 50px;
+}
+.level1 span:first-child{
+    display: none;
+}
+.ztree li a:visited{
+    text-decoration: none;
+}
+.ztree li a{
+    text-decoration: none;
+}
+.ztree li a:hover{
+    text-decoration: none;
+}
+.ztree .curSelectedNode{
+    background: tomato !important;
+    cursor: pointer;
+}
+.ztree li a.level1,
+.ztree li a.level0{
+    background: skyblue;
+    color: white;
+    transition: .5s ease background; 
+    border-radius: 8px;
+}
+.ztree li a.level1:hover,
+.ztree li a.level0:hover{
+    background: tomato !important;
+}
+.zlf-body .col-md-2,
+.zlf-body .col-md-10{
+    padding: 0px;
+}
+.zlf-body .col-md-2{
+    width: 9.7%;
+}
+.zlf-body .col-md-10{
+    width: 90%;
+}
+
 
