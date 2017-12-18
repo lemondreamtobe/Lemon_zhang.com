@@ -222,7 +222,7 @@ ul, menu, dir {
 }
 .ztree li a.level0, 
 .ztree li a.level1{
-    width:150px;
+    /* width:150px; */
     height: 50px; 
     text-align: center; 
     display:block;
