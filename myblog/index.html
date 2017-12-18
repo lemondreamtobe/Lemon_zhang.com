@@ -51,19 +51,19 @@
                 </div>
                 <div class="col-md-10">
                     <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
-                        <!-- <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a> -->
-                        <div class="flip-container" :css="{backgroundColor: @el.bg_color}" ontouchstart="this.classList.toggle('hover');">
+                        <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
+                        <!-- <div class="flip-container" :css="{backgroundColor: @el.bg_color}" ontouchstart="this.classList.toggle('hover');">
                             <div class="flipper">
                                 <div class="front">
-                                    <!-- 前面内容 -->
+                                    
                                     <img :attr="{src: @el.src}">
                                 </div>
                                 <div class="back">
-                                    <!-- 背面内容 -->
+                                    
                                     <img src="../images/lufei.png">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="cover-info">
                             <a :attr="{href: @el.site}" target="_blank">
                                 <h4>{{@el.title}}</h4>
