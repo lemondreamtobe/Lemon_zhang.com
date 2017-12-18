@@ -326,6 +326,13 @@ articleInfo.addArticle({
 //2017-12-15 14:26 增加两种颜色
 articleInfo.addColor('#4cc5f4').addColor('#48a76e');
 
+//2017-12-18 10:32 增加一篇学习像素概念的文章
+articleInfo.addArticle({
+    site: 'px',
+    title: '理解像素的世界',
+    small: '我在像素的世界里做像素的东西'
+});
+
 /*日志结束*/
 
 //文章初始化

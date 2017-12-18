@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<!-- <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script> -->
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">理解像素的世界</h3>
+            <div class="text-box">
+                <h4>像素的理解</h4>
+                <p class="mulit_line">
+                    <span>
+                        像素,英文简称px。也是一种在设计上非常常用的单位。但是与传统的厘米，米一样是一种长度单位。<br>
+                        但是如果不经常接触的人理解起来还是有点麻烦，像素怎么去单做单位，去丈量什么呢？<br>
+                        其实像素存在于我们生活中的方方面面，我们看到的多媒体广告，电脑，手机，投影等等等传导图像和视频的东西<br>
+                        都是由无数的像素构成。可以这么理解吧。一张1米长，1米高的正方形，像素就是一毫米长和高的小小小正方形><br>
+                        这些小正方形，有序得排列起来，就成了这个大大大的正方形，有点类似微积分。<br>
+                        当然，对于web设计和开发来说，px同样是组成一张网页的最小单位，所以说理解px对于web开发设计非常重要<br>
+                    </span>
+                    <i class="vm dib">&nbsp;</i>
+                </p>
+            </div>
+            <div class="text-box">
+                <h4>眼睛常常会欺骗人</h4>
+                <p>
+                    <span>
+                        最常见的一种欺骗手段: 人眼在一定距离之外看空间位置很靠近的颜色会自动对这些颜色进行混合。<br>
+                        请看下面的例子:
+                    </span>
+                    <div class="out">
+                        <div class="out-mid">
+                            <div class="mid">
+                                <div class="in">
+                                    这只是个容器,咋看之下觉得上下边框没什么其实另有乾坤。<br>
+                                    其实上边框按照，四种相近的颜色1px叠加而成<br>
+                                    下边框三种颜色叠加而成<br>
+                                    但是不仔细看完全是看不出来的，只是觉得颜色颜色很平滑<br>
+                                    因为颜色相近，有一定的观察距离，所以把这些颜色混合了，显得平滑<br>
+                                    提醒自己'我在像素的世界里做像素的东西' 这句话来自参考文章的作者<br>
+                                    高端的web工程师善于抓住本质，并善于去欺骗别人的眼睛
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+            <div class="text-box">
+                    <h4>像素的应用</h4>
+                    <p class="mulit_line">
+                        <span>
+                            '像素的角度讲，css其实就是图片，一个可以形成像素点，一个由像素点组成。css=>图片'><br>
+                            任何大小颜色的图片或者结构,都可以用css来构造<br>
+                            例如一下的例子,用了10个1px的像素画出了一条红色的横线<br>
+                        </span>
+                        <i class="vm dib">&nbsp;</i>
+                    </p>
+                    <p>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                        <div class="pixel"></div>
+                    </p>
+                    <p>
+                        主要应用:图片投影<br>
+                        css模拟平滑的圆角<br>
+                        css模拟渐变色<br>
+                        css模拟图片样子的按钮<br>
+                        '一切都是像素，将图片、将效果放大到像素级别，它就会原形毕露'<br>
+                    </p>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">参考文章</a>
+    </div>
+    <script type="text/javascript">
+
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2017-12-18 10:30');
+        /*日志结束*/
+    </script>
+</body>
+</html>
