@@ -68,16 +68,12 @@
                     diffY = e.clientY - dragging.offset().top;
                     dragdrap.fire({type: 'dragstart', target:dragging, x:e.clientX, y:e.clientY, event:e});
                     $(document).mousemove(states.mousemove);
-                    console.log(e);
-                    console.log(dragging);
                 },
                 mousemove: function(e) {
 
                     if (dragging == null) {
                         return;
                     }
-                    console.log(e.clientX - diffX);
-                    console.log(e.clientY - diffY);
                     dragging.css({
                         position: 'absolute',
                         left: (e.clientX - diffX) + 'px',
