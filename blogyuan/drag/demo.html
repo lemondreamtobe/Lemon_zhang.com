@@ -29,13 +29,13 @@
         <div class="demo-content">
             <h3 id="blogTitle">拖动拖动</h3>
             <div class="height-text" style="height:500px">
-                <div id="dragdemo" class="dragdemo">请拉动我试试看</div>
-                <div class="draginfo" :controller="draginfo">
+                <div style="height:100px; width:100%" class="draginfo" :controller="draginfo">
                     <div style="display:none" id="start"></div>
                     <div style="display:none" id="moving"></div>
                     <div style="display:none" id="end"></div>
                     <!-- <div id="start">23213123</div> -->
                 </div>
+                <div id="dragdemo" class="dragdemo">请拉动我试试看</div>
             </div>
         </div>
         <div class="demo-bottom">
@@ -45,6 +45,7 @@
 
         $('#dragdemo').lets_drag({
             dragstart: function(info) {
+                var e = info.event;
                 var str = '拖动开始的位置: x--' + info.x + ' y--' + info.y;
                 $('#start').text(str).fadeIn();
             },

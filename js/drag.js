@@ -66,7 +66,7 @@
                     dragging = $self;
                     diffX = e.clientX - dragging.offset().left;
                     diffY = e.clientY - dragging.offset().top;
-                    dragdrap.fire({type: 'dragstart', target:dragging, x:e.clientX, y:e.clientY});
+                    dragdrap.fire({type: 'dragstart', target:dragging, x:e.clientX, y:e.clientY, event:e});
                     $(document).mousemove(states.mousemove);
                     console.log(e);
                     console.log(dragging);
@@ -83,10 +83,10 @@
                         left: (e.clientX - diffX) + 'px',
                         top: (e.clientY - diffY) + 'px',
                     });
-                    dragdrap.fire({type: 'dragging', target:dragging, x:e.clientX, y:e.clientY});
+                    dragdrap.fire({type: 'dragging', target:dragging, x:e.clientX, y:e.clientY, event:e});
                 },
                 mouseup: function(e) {
-                    dragdrap.fire({type: 'dragend', target:dragging, x:e.clientX, y:e.clientY});
+                    dragdrap.fire({type: 'dragend', target:dragging, x:e.clientX, y:e.clientY,event:e});
                     dragging = null;
                 }
             };
