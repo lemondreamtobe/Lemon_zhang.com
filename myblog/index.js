@@ -455,5 +455,7 @@ articleInfo.addColor('#00ccff');
 //2017-12-19 11：51增加读书计划一览
 articleInfo.addArticle('bookplan', '每月读书计划一览', '多读书多动手多思考', 'book-plan');
 
+//2017-12-19 16:30 总结了之前做的拖动
+articleInfo.addArticle('drag', '拖动插件', '让我们拖动起来', 'work_sum');
 /*日志结束*/
 
