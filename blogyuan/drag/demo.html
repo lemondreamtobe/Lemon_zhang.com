@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/drag.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张的博客</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">拖动拖动</h3>
+            <div class="height-text" style="height:500px">
+                <div id="dragdemo" class="dragdemo">请拉动我试试看</div>
+                <div class="draginfo" :controller="draginfo">
+                    <div style="display:none" id="start"></div>
+                    <div style="display:none" id="moving"></div>
+                    <div style="display:none" id="end"></div>
+                    <!-- <div id="start">23213123</div> -->
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+    </div>
+    <script type="text/javascript">
+
+        $('#dragdemo').lets_drag({
+            dragstart: function(info) {
+                var str = '拖动开始的位置: x--' + info.x + ' y--' + info.y;
+                $('#start').text(str).fadeIn();
+            },
+            dragging: function(info) {
+                var str = '拖动现正在移动: x--' + info.x + ' y--' + info.y;
+                $('#moving').text(str).fadeIn();
+            },
+            dragend: function(info) {
+                var str = '拖动重点的位置: x--' + info.x + ' y--' + info.y;
+                $('#end').text(str).fadeIn();
+                setTimeout(function() {
+                    $('#start').fadeOut();
+                    $('#moving').fadeOut();
+                    $('#end').fadeOut();
+                }, 1000);
+            }
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('');
+        /*日志结束*/
+    </script>
+</body>
+</html>

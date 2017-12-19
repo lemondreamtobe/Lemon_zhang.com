@@ -1,0 +1,14 @@
+.dragdemo{
+    text-align: center;
+    width: 200px;
+    background: #00ccff;
+    color: yellow;
+    line-height: 200px;
+    display: inline-block;
+}
+.draginfo{
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
