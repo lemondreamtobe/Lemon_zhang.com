@@ -44,13 +44,13 @@
                 </ul>
             </div>
             <div class="zlf-body" :controller="zlf_body">
-                <div class="col-md-2">
+                <div class="col-xs-2 col-md-2">
                     <div class="zlf-type">
                         <ul id="zlf-tree" class="ztree"></ul>
                     </div>
                 </div>
-                <div class="col-md-10">
-                    <div class="col-lg-4 col-md-3 col-sm-4" ms-for="(key,el) in @article">
+                <div class="col-xs-10 col-md-10">
+                    <div class="article-box" ms-for="(key,el) in @article">
                         <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
                         <!-- <div class="flip-container" :css="{backgroundColor: @el.bg_color}" ontouchstart="this.classList.toggle('hover');">
                             <div class="flipper">
