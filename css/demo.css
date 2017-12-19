@@ -70,3 +70,16 @@ body{
 #blogTitle{
     color: #536b82;
 }
+.height-text{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px 0px;
+    background-color: #efffff;
+}
+.height-text h4{
+    color: #536b82;
+    font-weight: 700;
+}
+ul{
+    list-style: none;
+}

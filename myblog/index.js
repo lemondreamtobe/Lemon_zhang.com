@@ -110,7 +110,7 @@ var setting = {
 //切换文章类型
 function changeArticles(e, aim, obj) {
     var type = obj.type;
-    if (type == 'data-construct' || type == 'design-model' || type == 'book-plan') {
+    if (type == 'data-construct' || type == 'design-model') {
         Noticer.notice('primary', '暂无该类文章，敬请期待');
         return;
     }
@@ -135,7 +135,7 @@ var nodes = zlf_tree.getNodes();
 if (nodes.length>0) {
     zlf_tree.expandNode(nodes[0], true, true, true);
 };
-zlf_tree.selectNode(nodes[0]);
+zlf_tree.selectNode(nodes[0]); //选中首节点
 
 //对指定的父节点插入节点 zlf_tree.addNodes(zlf_tree.getNodeByParam("type", 'css', null), {name:"CSS学习探秘",title: 'CSS学习探秘1.1', type:"css", children:[]});
 //文章类
@@ -448,6 +448,12 @@ articleInfo.addColor('#4cc5f4').addColor('#48a76e');
 
 //2017-12-18 10:32 增加一篇学习像素概念的文章
 articleInfo.addArticle('px','理解像素的世界',  '我在像素的世界里做像素的东西','css');
+
+//2017-12-19 10:41 增加一种颜色
+articleInfo.addColor('#00ccff');
+
+//2017-12-19 11：51增加读书计划一览
+articleInfo.addArticle('bookplan', '每月读书计划一览', '多读书多动手多思考', 'book-plan');
 
 /*日志结束*/
 
