@@ -252,6 +252,7 @@ ul, menu, dir {
 .ztree .curSelectedNode{
     background: tomato !important;
     cursor: pointer;
+    opacity: 1 !important;
 }
 .ztree li a.level1,
 .ztree li a.level0{
@@ -289,4 +290,22 @@ ul, menu, dir {
     width: 25%;
     margin-bottom: 10px;
 }
+.top-bar{
+    display:inline-block;
+    width:1.2em;
+    margin-top:20px;
+    text-align:center;
+    font-size:128px;
+    vertical-align:middle;
+}
+.top-bar img.top-bar-img{
+    padding:3px;
+    border:1px solid #828da1;
+    background:white;
+    vertical-align:middle;
+    position:relative;
+    width: 1.20313em;
+    height: 0.71875em;
+}
+
 
