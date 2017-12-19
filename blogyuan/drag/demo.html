@@ -54,7 +54,7 @@
                 $('#moving').text(str).fadeIn();
             },
             dragend: function(info) {
-                var str = '拖动终点的位置: x--' + info.x + ' y--' + info.y;
+                var str = '拖动的终点位置: x--' + info.x + ' y--' + info.y;
                 $('#end').text(str).fadeIn();
                 setTimeout(function() {
                     $('#start').fadeOut();
