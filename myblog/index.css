@@ -307,5 +307,10 @@ ul, menu, dir {
     width: 1.20313em;
     height: 0.71875em;
 }
+.zlf-total{
+    margin-left: 50px;
+    display: inline-block;
+    margin-top: 10px;
+}
 
 

@@ -111,6 +111,7 @@ var setting = {
 function changeArticles(e, aim, obj) {
     var type = obj.type;
     if (type == 'data-construct' || type == 'design-model') {
+        body_content.total = 0;
         Noticer.notice('primary', '暂无该类文章，敬请期待');
         return;
     }
@@ -379,6 +380,7 @@ let articleInfo = (function () {
 let body_content = avalon.define({
     $id: 'zlf_body',
     article: [],
+    total: 0,
     pagination: {
         current: 0,
         total: 0,
@@ -424,6 +426,7 @@ let body_pagination = avalon.define({
             pageSize: 12
         };
         this.fetch(this.pagination);
+        body_content.total = this.pagination.total;
     }
 });
 articleInfo.initArticle();
