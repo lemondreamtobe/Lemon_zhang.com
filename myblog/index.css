@@ -256,7 +256,7 @@ ul, menu, dir {
 }
 .ztree li a.level1,
 .ztree li a.level0{
-    background: skyblue;
+    background: #00ccff;
     color: white;
     transition: .5s ease background; 
     border-radius: 8px;

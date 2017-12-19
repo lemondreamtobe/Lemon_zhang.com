@@ -110,13 +110,20 @@ var setting = {
 //切换文章类型
 function changeArticles(e, aim, obj) {
     var type = obj.type;
+    if (type == 'data-construct' || type == 'design-model' || type == 'book-plan') {
+        Noticer.notice('primary', '暂无该类文章，敬请期待');
+        return;
+    }
     articleInfo.changeArticle(type);
 };
 var zNodes =[
     {name:"文章全部分类",title: '文章全部分类', type:"all", children: [
         {name:"日常工作的总结",title: '日常工作的总结', type:"work_sum", children:[]},
         {name:"CSS学习探秘",title: 'CSS学习探秘', type:"css", children:[]},
-        {name:"实验室助手: 框架",title: '实验室助手: 框架', type:"frame", children:[]},
+        {name:"框架:实验室助手",title: '实验室助手: 框架', type:"frame", children:[]},
+        {name:"数据结构JS描述",title: '数据结构JS描述', type:"data-construct", children:[]},
+        {name:"设计模式:大护法",title: '设计模式:大护法', type:"design-model", children:[]},
+        {name:"进步的阶梯:书籍",title: '进步的阶梯:书籍', type:"book-plan", children:[]},
     ]},
 ];
 $.fn.zTree.init($("#zlf-tree"), setting, zNodes);
