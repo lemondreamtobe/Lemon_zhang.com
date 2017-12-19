@@ -395,20 +395,20 @@ let body_pagination = avalon.define({
         if (this.pagination.current == 0) {
             Noticer.notice('warn', '当前已是首页');
         } else {
-            this.pagination.current = this.pagination.current -this.pagination.pageSize;
+            this.pagination.current -= 1;
             this.fetch(this.pagination);
         }
     },
     next: function (e) {
-        if (this.pagination.current >=  this.pageTotal) {
+        if (this.pagination.current + 1 >=  this.pageTotal) {
             Noticer.notice('warn', '当前已是最后一页');
         } else {
-            this.pagination.current = this.pagination.current + this.pagination.pageSize;
+            this.pagination.current += 1;
             this.fetch(this.pagination);
         }
     },
     fetch: function(pagi) {
-        body_content.article = articleInfo.get('article').slice(pagi.current, pagi.current + pagi.pageSize);
+        body_content.article = articleInfo.get('article').slice(pagi.current * pagi.pageSize, pagi.current * pagi.pageSize + pagi.pageSize);
     },
     init: function() {
         this.pagination = {
