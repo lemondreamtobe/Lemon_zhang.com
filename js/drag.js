@@ -64,8 +64,9 @@
             var states = {
                 mousedown: function(e) {
                     dragging = $self;
-                    diffX = e.clientX - dragging.offset().left;
-                    diffY = e.clientY - dragging.offset().top;
+                    // $self.css('postion', 'absolute');       
+                    diffX = e.clientX - dragging.position().left;
+                    diffY = e.clientY - dragging.position().top;
                     dragdrap.fire({type: 'dragstart', target:dragging, x:e.clientX, y:e.clientY, event:e});
                     $(document).mousemove(states.mousemove);
                 },

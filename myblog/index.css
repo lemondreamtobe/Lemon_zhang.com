@@ -216,6 +216,7 @@ ul, menu, dir {
     left: -8px;
     top: 140px; */
     /* padding: 0px 10px 0px 9px; */
+    text-align: center;
 }
 #zlf-tree{
     padding: 0px;
@@ -308,7 +309,7 @@ ul, menu, dir {
     height: 0.71875em;
 }
 .zlf-total{
-    margin-left: 50px;
+    margin-left: 10px;
     display: inline-block;
     margin-top: 10px;
 }
