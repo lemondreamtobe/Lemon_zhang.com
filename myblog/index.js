@@ -145,7 +145,7 @@ function Articles(name, color, title, small, type) {
     this.bg_color = color;
     this.title = title;
     this.small = small;
-    this.site = 'http://www.lemon-zhang.cn/blogyuan/' +this.name + '/demo.html';
+    this.site = '../blogyuan/' +this.name + '/demo.html';
     this.src = '../images/' + this.name + '.png';
     this.type = type;
 };
