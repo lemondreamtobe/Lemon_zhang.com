@@ -1,0 +1,31 @@
+.zxx_ul_image{
+    overflow:hidden; 
+    zoom:1;
+    /* display: inline-block; */
+    padding: 0px;
+}
+.zxx_ul_image li{
+    /* float:left;  */
+    /* width:150px;  */
+    /* height:150px;  */
+    text-align:center; 
+    line-height:150px; 
+    padding: 5px;
+    *font-size:125px;
+}
+.zxx_ul_image li:after{content:' '; vertical-align:middle;}
+.zxx_ul_image li img{vertical-align:middle;}
+.textman{
+    line-height: 25px;
+}
+.ckbtngroup,.selectgroup,.disabalegroup{
+    margin: 10px 0px 10px 0px;
+}
+.ckbtngroup button,
+.selectgroup button,
+.disabalegroup button{
+    margin: 0px 15px;
+}
+.zlf-margin{
+    margin: 20px 0px;
+}

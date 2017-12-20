@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">Jquery.prop()方法</h3>
+            <div class="height-text">
+                <h4>方法简介</h4>
+                <ul class="zxx_ul_image">
+                    <li>
+                        <img src="../../images/propway.png" />
+                    </li>
+                </ul>
+                <div class="textman">
+                    prop方法属于DOM属性DOM操作的通用属性操作<br>
+                    方法实现:获取匹配的元素集中第一个元素的属性（property）值或设置每一个匹配元素的一个或多个属性。<br>
+                    有两种用途，第一种用途单纯用于获取名为propertyName的属性值<br>
+                    第二种用途用于设置属性值。代码示例如下<br><br><br>
+                    $('#id').prop('id', 'xxxx');<br>
+                    $('#id').prop({'id':'xxx','class':'xxxx');<br>
+                    $('#id').prop('id', function(){<br>
+                        return 'xxx'<br>
+                    }) ;<br>
+                    <span style="display:inline-block" class="warn zlf-margin">
+                        注意事项:第一种用途如果不传入具体的属性名会报错<br>
+                        传入了某个属性名但是不存在该属性返回undefined<br>
+                        试图改变通过HTML创建的，或已经在HTML文档中的input元素的type属性（property）（或特性attribute）<br>
+                        在Internet Explorer 6, 7, or 8下将会抛出一个错误<br>
+                        最后,对于jquery对象集合使用prop方法第一种用途获取属性值，文档注明只匹配第一个匹配元素的属性值<br>
+                        若要取得每个匹配元素的属性值（property），请使用循环结构，如jQuery .each()或.map()方法<br>
+                        但是，设置属性值不存在以上的问题。$('button').prop({disabled: true});将禁用所有按钮
+                    </span>
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>Attribute和Property的疑惑</h4>
+                <div class="textman">
+                        jQuery 1.6之前，prop方法来获得某些attribute值会返回property值<br>
+                        但是无需担心害怕，这个版本之后attribute的值只能由attr()方法获得,两个人分道扬镳了<br>
+                        之所以要提出这个是为了更好的分清attribute和property的概念<br>
+                        我们来看看英文中如何解释这两个词汇，摘自百度翻译<br>
+                        <ul class="zxx_ul_image">
+                            <li>
+                                 <img src="../../images/property.png" />
+                            </li>
+                            <li>
+                                    <img src="../../images/attr.png" />
+                               </li>
+                        </ul>
+                        很显然，都是说属性和特性，在词汇解释上可以说是混为一谈了。<br>
+                        或许很多人也会和百度翻译一样，在概念上对两者也是一致觉得是属性，其实不然<br>
+                        拿一个最常见的复选框做例子。<input type="checkbox" checked="checked" />(就是这家伙)<br>
+                        然后用elem去表式这个家伙.对他checked属性进行操作如下图:<br>
+                        <ul class="zxx_ul_image">
+                             <li>
+                                 <img src="../../images/checkboxprop.png" />
+                            </li>
+                        </ul>
+                        文档上说的太绕圈圈了，我都绕的糊涂了。我个人对这两种概念的理解如下:<br>
+                        elem的attribute(我更愿意叫做特性)和property(这个才是属性)都有checked这个属性。<br>
+                        但是attribute的checked并不对应property的checked两者进水不犯河水<br>
+                        property的checked随着复选框状态的改变,property的checked也可以随意改变复选框状态<br>
+                        但是attribute的checked只在HTML元素第一次定义的时候给定一个初始化状态<br>
+                        即使后面property的checked任意改变了状态，那家伙还是老样子;
+                        看个例子吧:<br>
+                        <div class="zlf-margin">
+                            <input type="checkbox" id="ck1" checked="checked" />请用下面四个按钮蹂躏我把！
+                            <div class="ckbtngroup">
+                                <button class="btn btn-success" id="setp_true">设定上面的复选框checked属性值为true</button>
+                                <button class="btn btn-success" id="setp_false">设定上面的复选框checked属性值为false</button>
+                                <button class="btn btn-success" id="seta_true">设定上面的复选框checked特性值为true</button>
+                                <button class="btn btn-success" id="seta_false">设定上面的复选框checked特性值为false</button>
+                                <div>
+                                    <span class="p_text"></span>
+                                </div>
+                            </div>
+                        </div>
+                        这个例子很明白的区分了两者的关系(即使百度翻译不是这样)，改变特性和属性是完全两码事<br>
+                        那么在代码端这两个家伙又是在哪呢<br>
+                        <ul class="zxx_ul_image">
+                            <li>
+                                <img src="../../images/checkeddiff.png" />
+                            </li>
+                        </ul>
+                        在浏览器对这个复选框输出，attribute的checked在上面，property的checked是最下面那个家伙。<br>
+                        相信明眼人可以看得出,作为属性的checked和attributes都是复选框元素的一级属性，关系更亲近。<br>
+                        作为特性的checked只是元素attributes属性的属性，关系远了(不是自家亲戚不给你改变状态)。<br>
+                        所以,个人总结。prop()方法是操作属性的方法，这个方法很强大，能直接改变元素状态<br>
+                        这些状态改变与否你可以通过浏览器看得出来,而特性即使改变了你眼睛是看不出来的，这也可以作为区分两者的依据吧<br>
+                        因此，跨浏览器兼容的方法来确定一个复选框是否被选中(判断当前状态或者外观的一些东西)，是使用属性（property）：
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>一起来应用prop加深理解吧</h4>
+                <div>
+                    <h4>判断状态</h4>
+                    <div>判断状态方法有三种,同样可以判断其他属性比如 selected 和 value.</div>
+                    <div>if ( elem.checked )<br>if ( $(elem).prop("checked") )<br>if ( $(elem).is(":checked") )</div>                    
+                    <div class="zlf-margin">
+                        <input type="checkbox" id="ck2" checked="checked" /><span class="statusInfo"></span>
+                        <button id="seeStatus">
+                            查看状态
+                        </button>
+                    </div>
+                    <div class="zlf-margin">
+                        <input id="check1" type="checkbox" checked="checked">
+                        <label for="check1">Check me</label>
+                        <p id="statustext"></p>
+                    </div>
+                </div>
+                <div class="zlf-margin">
+                    <h4>改变下拉框默认选中</h4>
+                    <div>
+                        <select id="sl1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                         </select>
+                    </div>
+                    <div class="selectgroup">
+                        <button class="btn btn-success"  id="select1">选中1</button>
+                        <button class="btn btn-success"  id="select2">选中2</button>
+                        <button class="btn btn-success"  id="select3">选中3</button>
+                    </div>
+                </div>
+                <div class="zlf-margin">
+                        <h4>改变、获得tagName, nodeName, nodeType</h4>
+                        <div class="text">标签名:</div>
+                        <div class="ad">这是一个div(请点击我获得nodeName)</div>
+                        <p class="pd">这是一个p(请点击我获得nodeName)</p>
+                        <span class="sd">这是一个span(请点击我获得nodeName)</span>
+                        <div class="zlf-margin">
+                            <input type="checkbox" id="sra2">(请点击下面两个按钮蹂躏我把！)
+                            <div class="zlf-margin">
+                                <button style="margin-right:20px;" class="btn btn-success changeTagName">获得tagName(不可改变input元素tagName)</button>
+                                <button class="btn btn-success changeType">改变上面复选框的nodeType</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zlf-margin">
+                        <h4>禁用元素</h4>
+                        <input type="checkbox" id="sra3">
+                        <input type="radio" id="sra4">
+                        <div class="disabalegroup">
+                            <button class=" btn btn-success banCk">禁用复选框</button>
+                            <button class=" btn btn-success banRd">禁用单选框</button>
+                            <button class="btn btn-success reset">一键恢复</button>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>给元素设置文本值</h4>
+                        <div class="zlf-margin">
+                            <input type="text" class="valueInput">
+                            <div>
+                                请在下方的输入框输入来蹂躏我！
+                            </div>
+                        </div>
+                        <div class="zlf-margin"></div>
+                            <input  type="text" id="valueForm">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+    </div>
+    <script type="text/javascript">
+        function showText() {
+            $('.p_text').text('属性值: '+$('#ck1').prop('checked') +' 特性值: '+$('#ck1').attr('checked'));
+        };
+        $('.ckbtngroup').click(function(e) {
+            switch(e.target.id) {
+                case 'setp_true':
+                    $('#ck1').prop('checked', true);
+                    showText();
+                    break;
+                case 'setp_false':
+                    $('#ck1').prop('checked', false);
+                    showText();
+                    break;
+                case 'seta_true':
+                    $('#ck1').attr('checked', true);
+                    showText();
+                    break;
+                case 'seta_false':
+                    $('#ck1').attr('checked', false);
+                    showText();
+                    break;
+            }
+        });
+        $('#seeStatus').click(function(e) {
+            $('.statusInfo').text('现在的选中状态: ' + $('#ck2').prop('checked'));
+            if ( $('#ck2').is(":checked") ) {
+                alert('现在选中啦!')
+            } else {
+                alert('可惜没选中!')
+            }
+        });
+        $("#check1").change(function() {
+            var $input = $(this);
+            $("#statustext").html(".attr('checked'): <b>" + $input.attr('checked') + "</b><br>"
+                        + ".prop('checked'): <b>" + $input.prop('checked') + "</b><br>"
+                        + ".is(':checked'): <b>" + $input.is(':checked') ) + "</b>";
+            }).change();
+        $('.selectgroup').click(function(e) {
+            switch(e.target.id) {
+                case 'select1':
+                    $('#sl1').prop('selectedIndex', 0);
+                    break;
+                case 'select2':
+                    $('#sl1').prop('selectedIndex', 1);
+                    break;
+                case 'select3':
+                    $('#sl1').prop('selectedIndex', 2);
+                    break;
+            }
+            alert('当前选中： ' + $("#sl1  option:selected").text());
+        });
+        $('.ad').click(function(e) {
+            $('.text').text('标签名:' + $(this).prop('nodeName'));
+        });
+        $('.pd').click(function(e) {
+            $('.text').text('标签名:' + $(this).prop('nodeName'));
+        });
+        $('.sd').click(function(e) {
+            $('.text').text('标签名:' + $(this).prop('nodeName'));
+        });
+        $('.changeTagName').click(function(e) {
+            alert($('#sra2').prop('tagName'));
+        });
+        $('.changeType').click(function(e) {
+
+            if ($('#sra2').prop('type') == 'radio') {
+                $('#sra2').prop('type', 'checkbox');
+            } else {
+                $('#sra2').prop('type', 'radio');
+            }
+        });
+        $('.banCk').click(function(e) {
+            $('#sra3').prop("disabled", true);
+        });
+        $('.banRd').click(function(e) {
+            $('#sra4').prop("disabled", true);
+        });
+        $('.reset').click(function(e) {
+            $('#sra3').prop("disabled", false);
+            $('#sra4').prop("disabled", false);
+        });
+        $('#valueForm').keydown(function(e) {
+            $('.valueInput').prop('value', $(this).prop('value'));
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2017-12-20 17:53');
+        /*日志结束*/
+    </script>
+</body>
+</html>

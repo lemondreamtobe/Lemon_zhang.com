@@ -460,5 +460,8 @@ articleInfo.addArticle('bookplan', '每月读书计划一览', '多读书多动�
 
 //2017-12-19 16:30 总结了之前做的拖动
 articleInfo.addArticle('drag', '拖动插件', '让我们拖动起来', 'work_sum');
+
+//2017-12-20 17:31 学习使用prop
+articleInfo.addArticle('prop', 'Jquery.prop()', '理解属性和特性概念', 'frame');
 /*日志结束*/
 
