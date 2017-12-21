@@ -71,19 +71,19 @@
                         <div>
                             在判断状态这里，有一个地方和Jquery是很不一样的
                             <br>
-                            <div>1.如果这个属性（attribute）是目前存在， 即使，该属性没有对应的值，或者被设置为空字符串值，或甚至是"false"，
+                            <div class="importtant">1.如果这个属性（attribute）是目前存在， 即使，该属性没有对应的值，或者被设置为空字符串值，或甚至是"false"，
                                 <br> 相应的属性（property）为true, 也就是说在HTML里面你只要设置了checked属性，无论什么值，只要出现了就会选中
                                 <br> 明白这个很重要，不然楞头青，在span标记里添加checked='false'，结果还是会选中而找不到北
                                 <br> 但是在指令里面，对checked设置，true/false，确实会出现选中和非选中，实实在在得会影响
                             </div>
-                            <div>
+                            <div class="importtant">
                                 2.在vm内部，也就是你指令上面指定属性值的地方，这个值并不会随着HTML元素状态变化而变化，但是在vm内部操作这个属性值确实影响元素外部状态
                                 <br> 理解起来很难？没关系看个例子
                             </div>
-                            <div>
+                            <div class="importtant">
                                 3.在vm内部操作该属性值，将同时影响该元素的attribute和property
                             </div>
-                            <div>
+                            <div class="importtant">
                                 证明第二点很简单:在复选框未选中的情况下，点击查看属性值，再选中复选框，在点击查看属性值，可以看到，只有property是相应改变的
                                 <br> 证明第三点很简单:在复选框未选中的情况下，点击查看属性值，再点击修改内部vm的checked值，结果元素外部状态和attribute和property都改变了
                             </div>
