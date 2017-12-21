@@ -480,7 +480,6 @@ let body_pagination = avalon.define({
     }
 });
 articleInfo.initArticle();
-
 /*常规操作文章日志*/
 
 //2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
@@ -516,5 +515,9 @@ articleInfo.addArticle('prop', 'Jquery.prop()', '理解属性和特性概念', '
 
 //2017-12-21 10:53 用mvvm下的属性指令操作进行对比
 articleInfo.addArticle('vmprop', 'avalon:attr={xx:@xx}', '跟jquery.prop()做对比', 'frame');
+
+//2017-12-21 14:52 自己总结了三种获取select选中元素的方法
+articleInfo.addArticle('getindex', '获取下拉框选中元素', '日常会用到东西当然要记起来', 'frame');
+
 /*日志结束*/
 
