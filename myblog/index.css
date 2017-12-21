@@ -120,6 +120,7 @@ ul, menu, dir {
 .zlf-pagination-nav li {
     margin: 0 10px;
     display: inline-block;
+    font-size: 25px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .05);
 }
 .zlf-pagination-nav .previous a {
@@ -312,6 +313,23 @@ ul, menu, dir {
     margin-left: 10px;
     display: inline-block;
     margin-top: 10px;
+}
+.pagCount{
+    width: 144px;
+    height: 53px;
+    line-height: 53px;
+    background-color: #999999;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .05);
+    cursor: pointer;
+    transition: all .20s ease-in-out;
+    /* font-size: 14px; */
+}
+.pagCount:hover{
+    background-color: yellow;
+    color: #0078d7;
+   
 }
 
 

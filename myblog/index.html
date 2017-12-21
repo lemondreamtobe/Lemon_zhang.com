@@ -81,6 +81,7 @@
             <div class="zlf-pagination" :controller="zlf_pagination">
                 <ul class="zlf-pagination-nav">          	
                     <li class="previous"><a :click="@previous" class="previous">←</a></li>
+                    <li class="pagCount">{{@pagination.current + 1}}/{{@pageTotal}}</li>
                     <li class="next"><a :click="@next" class="next">←</a></li>
                 </ul>
             </div>
