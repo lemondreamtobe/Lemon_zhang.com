@@ -463,5 +463,8 @@ articleInfo.addArticle('drag', '拖动插件', '让我们拖动起来', 'work_su
 
 //2017-12-20 17:31 学习使用prop
 articleInfo.addArticle('prop', 'Jquery.prop()', '理解属性和特性概念', 'frame');
+
+//2017-12-21 10:53 用mvvm下的属性指令操作进行对比
+articleInfo.addArticle('vmprop', 'avalon:attr={xx:@xx}', '跟jquery.prop()做对比', 'frame');
 /*日志结束*/
 

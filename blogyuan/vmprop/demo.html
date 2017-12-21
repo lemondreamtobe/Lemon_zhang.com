@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img">柠檬张</a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">Mvvm.prop()</h3>
+            <div class="height-text">
+                <h3>前瞻</h3>
+                <div class="zlf-margin">
+                    这里用的mvvm框架是avalon，作者司徒正美，要看框架文档的请点击<a href="http://avalonjs.coding.me/">API</a><br>
+                    要看作者的请点击他的<a href="https://github.com/RubyLouvre/avalon/tree/v2.2.7">github</a><br>
+                    之所以为什么选用avalon呢，一方面本项目在使用，自己有一定的熟悉程度，二来需要加深一下自己对他的熟练程度<br>
+                    不过据说他和Vue非常像，自己曾粗略翻阅过Vue.js至少在指令这块有所雷同
+                </div>
+                <div class="zlf-margin">
+                    对于html元素attribute和property的概念分析在Jquery.prop()的文章里有所分析<br>
+                    这里不再长篇累牍了，但是还是要明确一个概念,特性(attribute)和属性(property)是一个元素里的两个地方<br>
+                    一个元素的特性和属性会具有相同的属性名,比如checked, id等等，互不干扰<br>
+                    但是如果要操作DOM状态的时候，应该操作元素属性(property)<br>
+                    如果有不明白的地方可以去到另一篇文章，里面有些具体的demo，结合demo助于理解，请点击<a href="../prop/demo.html">Jquery.prop</a>
+                </div>
+                <div class="zlf-margin">
+                    在理解了元素特性(attribute)和属性(property)的概念之后，要用Jquery.prop和Jquery.attr方法多加深自己的理解<br>
+                    温故出新知,多看读写多练习，肯定有所收获<br>
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>mvvm下的jquery.prop实现</h3>
+                <div class="zlf-margin">
+                    对于mvvm模式的框架，最为人津津乐道的莫过于指令了<br>
+                    当然，jquery.prop方法自然也是用指令来实现<br>
+                    很可惜，本人也学艺不精,对于什么是mvvm框架，什么是指令,请点击这里有助于你理解使用<a href="http://avalonjs.coding.me/directive.html">例子</a>
+                </div>
+            </div>
+            <div class="height-text">
+                <div class="zlf-margin">
+                    这里不会赘述过多的概念分析，只对jquery.prop文章中的应用加以复现
+                    <br> 操作属性的指令ms-attr="{width:'width:20px'}",这是一条操作长度的指令，当然属性指令也有需要注意的地方
+                    <br> 属性绑定用于为元素节点添加一组属性, 因此要求属性值为对象或数组形式.
+                    <br> 数组最后也会合并成一个对象.然后取此对象的键名为属性名, 键值为属性值为元素添加属性
+                    <br> 如果键名如果为for, char这样的关键字,请务必在两边加上引号
+                    <br> 如果键名如果带横杠,请务必转换为驼峰风格或两边加上引号
+                    <br> 注意,不能在ms-attr中设置style属性
+                    <br> 好了，接下来看他大展身手吧
+                    <br>
+                    <div class="zlf-margin">
+                        <h4>判断状态</h4>
+                        <div>
+                            在判断状态这里，有一个地方和Jquery是很不一样的
+                            <br>
+                            <div>1.如果这个属性（attribute）是目前存在， 即使，该属性没有对应的值，或者被设置为空字符串值，或甚至是"false"，
+                                <br> 相应的属性（property）为true, 也就是说在HTML里面你只要设置了checked属性，无论什么值，只要出现了就会选中
+                                <br> 明白这个很重要，不然楞头青，在span标记里添加checked='false'，结果还是会选中而找不到北
+                                <br> 但是在指令里面，对checked设置，true/false，确实会出现选中和非选中，实实在在得会影响
+                            </div>
+                            <div>
+                                2.在vm内部，也就是你指令上面指定属性值的地方，这个值并不会随着HTML元素状态变化而变化，但是在vm内部操作这个属性值确实影响元素外部状态
+                                <br> 理解起来很难？没关系看个例子
+                            </div>
+                            <div>
+                                3.在vm内部操作该属性值，将同时影响该元素的attribute和property
+                            </div>
+                            <div>
+                                证明第二点很简单:在复选框未选中的情况下，点击查看属性值，再选中复选框，在点击查看属性值，可以看到，只有property是相应改变的
+                                <br> 证明第三点很简单:在复选框未选中的情况下，点击查看属性值，再点击修改内部vm的checked值，结果元素外部状态和attribute和property都改变了
+                            </div>
+                            <div class="zlf-margin" :controller="vm_diff1">
+                                <input type="checkbox" id="diff1" :attr="{checked: checked}" />
+                                <p :text="@attr"></p>
+                                <p :text="@property"></p>
+                                <p :text="@innerchecked"></p>
+                                <button style="margin-right: 25px" class="btn btn-success" :click="@seeProp">查看属性值</button>
+                                <button class="btn btn-success" :click="@modify">修改内部vm的checked值</button>
+                            </div>
+                            <div>
+                                总结: 在单纯判断元素状态的情况下，如果不做处理，是不能够判断的，除非使用另外一门强大的方法:双向绑定
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zlf-margin" :controller="selectedIndex">
+                        <h4>改变下拉框默认选中</h4>
+                        <div>
+                            下拉框的情形不同,改内部vm的selectedIndex属性值，元素attribute不改变，其他如同复选框checked的情况
+                        </div>
+                        <div class="zlf-margin">
+                            <select id="sl1" :attr="{selectedIndex: index}">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <p :text="@prop"></p>
+                            <p :text='@attr'>下拉框的attr:</p>
+                            <p :text="@inner">下拉框的内部vm的属性值:</p>
+                            <button class="btn btn-success" :click="@checkValue">查看各个属性值</button>
+                        </div>
+                        <div class="selectgroup" :click="@changeIndex">
+                            <button class="btn btn-success" id="select1">选中1</button>
+                            <button class="btn btn-success" id="select2">选中2</button>
+                            <button class="btn btn-success" id="select3">选中3</button>
+                        </div>
+                    </div>
+                    <div class="zlf-margin" :controller="tnn">
+                        <h4>改变、获得tagName, nodeName, nodeType</h4>
+                        <div class="text">标签名:</div>
+                        <div class="ad">这是一个div(请点击我获得nodeName)</div>
+                        <p class="pd">这是一个p(请点击我获得nodeName)</p>
+                        <span class="sd">这是一个span(请点击我获得nodeName)</span>
+                        <div class="zlf-margin">
+                            <input :attr="{type:@type}" id="sra2">(请点击下面两个按钮蹂躏我把！)
+                            <div class="zlf-margin">
+                                <button style="margin-right:20px;" class="btn btn-success" :click="@changeTagName">获得tagName(不可改变input元素tagName)</button>
+                                <button class="btn btn-success" :click="@changeType">改变上面复选框的nodeType</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zlf-margin" :controller="dis">
+                        <h4>禁用元素</h4>
+                        <input type="checkbox" :attr="{disabled: @ck_able}" id="sra3">
+                        <input type="radio" id="sra4" :attr="{disabled: @ra_able}">
+                        <div class="disabalegroup">
+                            <button class=" btn btn-success banCk" :click="@banCk">禁用复选框</button>
+                            <button class=" btn btn-success banRd" :click="@banRa">禁用单选框</button>
+                            <button class="btn btn-success reset" :click="@reset">一键恢复</button>
+                            <button class="btn btn-success reset" :click="@banAll">一键全禁</button>
+                        </div>
+                    </div>
+                    <div class="zlf-margin" :controller="inp">
+                        <h4>给元素设置文本值</h4>
+                        <div class="zlf-margin">
+                            <input :attr="{value: @val}" type="text" class="valueInput">
+                            <div>
+                                请在下方的输入框输入来蹂躏我！
+                            </div>
+                        </div>
+                        <div class="zlf-margin"></div>
+                        <input type="text" id="valueForm" :input="@keyValue">
+                    </div>
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>个人总结</h3>
+                <div class="zlf-margin">
+                    avalon下对元素属性的状态操作可以说相较于jquery更加简单，操作的都是属性和变量，少了抓取元素这个步骤<br>
+                    从而显得代码部分更加简洁直观<br>
+                    同时也有不足的地方，当外部改变了元素状态，比如下拉，勾选，聚焦等等用户代理操作内部vm不随之改变(非双向绑定)<br>
+                    所以在代码端要判断状态或者获取属性值还是得靠jquery<br>
+                    双向绑定确实十分强大，下次将会继续学习
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+    </div>
+    <script type="text/javascript">
+        let diffInfo = avalon.define({
+            $id: 'vm_diff1',
+            checked: false,
+            attr: '上面这个复选框attribute的checked的值:',
+            property: '上面这个复选框property的checked的值:',
+            innerchecked: '上面这个复选框内部vm的checked的值:',
+            seeProp: function() {
+                this.attr = '上面这个复选框attribute的checked的值：' + $('#diff1').attr('checked');
+                this.property = '上面这个复选框property的checked的值：' + $('#diff1').prop('checked');
+                this.innerchecked = '上面这个复选框内部vm的checked的值：' + this.checked;
+            },
+            modify: function() {
+                
+                if (this.checked == true) {
+                    this.checked = false;
+                } else {
+                    this.checked = true;
+                };
+                this.seeProp();
+            }
+        });
+        let select = avalon.define({
+            $id: 'selectedIndex',
+            index: 0,
+            prop: '下拉框的prop:',
+            attr: '下拉框的attr:',
+            inner: '内部vm的属性值:',
+            checkValue: function() {
+                this.prop = '下拉框的prop:' + $('#sl1').prop('selectedIndex');
+                this.attr = '下拉框的attr:' + $('#sl1').attr('selectedIndex');
+                this.inner = '内部vm的属性值:' + this.index;
+            },
+            changeIndex: function(e) {
+
+                switch(e.target.id) {
+                    case 'select1':
+                        this.index = 0;
+                        this.checkValue();
+                        break;
+                    case 'select2':
+                        this.index = 1;
+                        this.checkValue();
+                        break;
+                    case 'select3':
+                        this.index = 2;
+                        this.checkValue();
+                        break;
+                };
+            }
+        });
+        let mny = avalon.define({
+            $id: 'tnn',
+            type: 'checkbox',
+            changeTagName: function() {
+                alert($('#sra2').prop('tagName'));
+            },
+            changeType: function() {
+
+                if (this.type == 'checkbox') {
+                    this.type = 'radio';
+                } else {
+                    this.type = 'checkbox';
+                }
+            },
+        });
+        $('.ad').click(function(e) {
+            $('.text').text('标签名:' + $(this).prop('nodeName'));
+        });
+        $('.pd').click(function(e) {
+            $('.text').text('标签名:' + $(this).prop('nodeName'));
+        });
+        $('.sd').click(function(e) {
+            $('.text').text('标签名:' + $(this).prop('nodeName'));
+        });
+
+        let ckra = avalon.define({
+            $id: 'dis',
+            ck_able: false,
+            ra_able: false,
+            banCk: function() {
+                this.ck_able = true;
+            },
+            banRa: function() {
+                this.ra_able = true;
+            },
+            reset: function() {
+                this.ck_able = false;
+                this.ra_able = false;
+            },
+            banAll: function() {
+                this.ck_able = true;
+                this.ra_able = true;
+            }
+        });
+        let inputValue = avalon.define({
+            $id: 'inp',
+            val: '',
+            keyValue: function() {
+                this.val = $('#valueForm').prop('value');
+            },
+        })
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2017-12-21 10：51');
+        /*日志结束*/
+    </script>
+</body>
+</html>
