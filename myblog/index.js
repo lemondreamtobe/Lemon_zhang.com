@@ -293,7 +293,7 @@ let articleInfo = (function () {
             information.site.forEach(function(value, index, arr) {
                 information.article.push(new Articles(value, articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))], articleInfo.get('title')[index], articleInfo.get('small')[index], articleInfo.get('type')[index]));
             });
-            body_pagination.init();
+            // body_pagination.init();
         },
         changeArticle: function(type) {
 
@@ -315,7 +315,7 @@ let articleInfo = (function () {
         modify: function(type, index, value) {
             information[type][index] = value;
             this.initArticle();
-            body_pagination.init();
+            // body_pagination.init();
         },
         get: function(type) {
             return information[type]
@@ -518,6 +518,8 @@ articleInfo.addArticle('vmprop', 'avalon:attr={xx:@xx}', '跟jquery.prop()做对
 
 //2017-12-21 14:52 自己总结了三种获取select选中元素的方法
 articleInfo.addArticle('getindex', '获取下拉框选中元素', '日常会用到东西当然要记起来', 'frame');
+
+body_pagination.init();
 
 /*日志结束*/
 

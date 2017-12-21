@@ -1,19 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>柠檬树下的过客</title>
-<link rel="shortcut icon" href="../../images/webhead.jpg" />
-<link href="../../css/demo.css" rel="styleSheet">
-<link href="./demo.css" rel="styleSheet">
-<style type="text/css">
 
-</style>
-<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
-<script src="../../js/jquery-3.2.1.js"></script>
-<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
-<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
-<script src="../../js/demo.js"></script>
+<head>
+    <title>柠檬树下的过客</title>
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
+
 <body>
     <div class="demo-container">
         <div class="demo-header">
@@ -22,74 +24,75 @@
         </div>
         <div class="demo-content">
             <h3 id="blogTitle">数字闪现放大动画</h3>
-<div class="method-container">
-            <button class="tc-btn" >放大</button>
-            <div class="person_atten_r" style="position: relative;">
-                <p class="num">
-                    <strong style="width:46px; height:28px; line-height:28px; left:-4px; top:-3px; text-align:center;">
-                        <a href="javascript:void(0);" id="sendNum">166</a>
-                        <a href="#no" id="absNum" style="position:absolute; width:46px; height:28px; left:-7px; top:0px; display:none;"></a>
-                    </strong>
-                </p>
-                <!-- <p></p> -->
-               
+            <div class="method-container">
+                <button class="tc-btn">放大</button>
+                <div class="person_atten_r" style="position: relative;">
+                    <p class="num">
+                        <strong style="width:46px; height:28px; line-height:28px; left:-4px; top:-3px; text-align:center;">
+                            <a href="javascript:void(0);" id="sendNum">166</a>
+                            <a href="#no" id="absNum" style="position:absolute; width:46px; height:28px; left:-7px; top:0px; display:none;"></a>
+                        </strong>
+                    </p>
+                    <!-- <p></p> -->
+
+                </div>
             </div>
         </div>
-        </div>
         <div class="demo-bottom">
-            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">参考文章</a>
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">参考文章</a>
         </div>
     </div>
     <script type="text/javascript">
-$('.tc-btn').click(function(e) {
+        $('.tc-btn').click(function (e) {
             number(document.getElementById("absNum"), document.getElementById("sendNum"), 18, 26);
         });
         // setInterval(function() {
         //     $('.tc-btn').click();
         // }, 1000);
-        var number = function(node,aim,minnum,maxnum){
-            var num = parseInt(aim.innerHTML,10); //获取sendNum的数字
+        var number = function (node, aim, minnum, maxnum) {
+            var num = parseInt(aim.innerHTML, 10); //获取sendNum的数字
             aim.style.zoom = 1;
             node.style.display = "inline-block";
             node.innerHTML = num;
             var fontSize = minnum; //字体18
             var opacity = 1;
-            var step = function(){		
-                fontSize+=1; //字体逐渐放大
-                opacity-=0.09; //增加透明
+            var step = function () {
+                fontSize += 1; //字体逐渐放大
+                opacity -= 0.09; //增加透明
                 node.style.fontSize = fontSize + "px";
                 node.style.opacity = opacity;
                 aim.style.opacity = opacity;
 
-                node.style.filter = "Alpha(opacity="+opacity*100+")"; //IE下使用半透明需要使用IE半透明滤镜
-                aim.style.filter = "Alpha(opacity="+opacity*100+")";
+                node.style.filter = "Alpha(opacity=" + opacity * 100 + ")"; //IE下使用半透明需要使用IE半透明滤镜
+                aim.style.filter = "Alpha(opacity=" + opacity * 100 + ")";
                 node.style.zoom = 1; //设置a标签zoom为1的代码，是为了使其haslayout，IE半透明滤镜才可以生效。
 
-                if(fontSize < maxnum){
-                    setTimeout(step,40); //没超过最大上限继续放大
-                }else{
+                if (fontSize < maxnum) {
+                    setTimeout(step, 40); //没超过最大上限继续放大
+                } else {
 
                     //超过最大上限数字加1，开始缩小
-                    num+=1;
+                    num += 1;
                     node.innerHTML = num;
                     aim.innerHTML = num;
-                    setTimeout(step2,40);	
+                    setTimeout(step2, 40);
                 }
             };
-            setTimeout(step,10);
-            var step2 = function(){
+            setTimeout(step, 10);
+            var step2 = function () {
 
                 //这部分代码和上面放大字体的类似
-                fontSize-=1;
-                opacity+=0.09;
+                fontSize -= 1;
+                opacity += 0.09;
                 node.style.fontSize = fontSize + "px";
                 node.style.opacity = opacity;
                 aim.style.opacity = opacity;
-                node.style.filter = "Alpha(opacity="+opacity*100+")";
-                aim.style.filter = "Alpha(opacity="+opacity*100+")";
-                if(fontSize > minnum){
-                    setTimeout(step2,40);
-                }else{
+                node.style.filter = "Alpha(opacity=" + opacity * 100 + ")";
+                aim.style.filter = "Alpha(opacity=" + opacity * 100 + ")";
+                if (fontSize > minnum) {
+                    setTimeout(step2, 40);
+                } else {
                     node.style.display = "none";
                 }
             };
@@ -98,4 +101,5 @@ $('.tc-btn').click(function(e) {
         var blogTool = new Tools();
     </script>
 </body>
+
 </html>

@@ -1,19 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>柠檬树下的过客</title>
-<link rel="shortcut icon" href="../../images/webhead.jpg" />
-<link href="../../css/demo.css" rel="styleSheet">
-<link href="./demo.css" rel="styleSheet">
-<style type="text/css">
 
-</style>
-<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
-<script src="../../js/jquery-3.2.1.js"></script>
-<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
-<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
-<script src="../../js/demo.js"></script>
+<head>
+    <title>柠檬树下的过客</title>
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet">
+    <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+    <script src="../../js/demo.js"></script>
 </head>
+
 <body>
     <div class="demo-container">
         <div class="demo-header">
@@ -22,56 +24,57 @@
         </div>
         <div class="demo-content">
             <h3 id="blogTitle">用省略号解决文字溢出</h3>
-<div class="method-title">方法1</div>
-        <div title="look at here!" class="text_overflow_1">
-            这种方法除了火狐下表现不尽人意，其他IE， 谷歌下表现可以。很多文字，这里有很多文字
-        </div>
-        <div class="method-title">方法2</div>
-        <div title="look at here!" class="text_overflow_2">
-            这种方法主要解决火狐下的差异，这里有很多文字，这里有很多文字，这里有很多文字
-        </div>
-        <div class="method-title">方法3</div>
-        <div class="zxx_text_overflow3" >
-            <div class="text_con" >这是一段比较长的文字，用来测试是否文字溢出时会用省略号显示。</div>
-            <div class="text_dotted" >…</div>
-        </div>
-        <div class="zxx_text_overflow3" >
-            <div class="text_con" >这是一段很短的文字拿来对比。</div>
-            <div class="text_dotted" >…</div>
-        </div>
-        <div class="method-title">方法4</div>
-        <div class="zxx_text_overflow4">
-            这种方法用的是jquery的方法替换掉最大字符长度以外的字符，这里要写长一点
-        </div>
-        <div class="method-title">方法5</div>
-        <div class="zxx_text_overflow5">
-            这种方法用的是jquery的方法替换掉最大字符长度以外的字符，这里要写长一点
-        </div>
-        <div class="method-title">方法6</div>
-        <div class="zxx_text_overflow6">
-            这种方法用的是多行文字句末显示省略号，这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点
-        </div>
+            <div class="method-title">方法1</div>
+            <div title="look at here!" class="text_overflow_1">
+                这种方法除了火狐下表现不尽人意，其他IE， 谷歌下表现可以。很多文字，这里有很多文字
+            </div>
+            <div class="method-title">方法2</div>
+            <div title="look at here!" class="text_overflow_2">
+                这种方法主要解决火狐下的差异，这里有很多文字，这里有很多文字，这里有很多文字
+            </div>
+            <div class="method-title">方法3</div>
+            <div class="zxx_text_overflow3">
+                <div class="text_con">这是一段比较长的文字，用来测试是否文字溢出时会用省略号显示。</div>
+                <div class="text_dotted">…</div>
+            </div>
+            <div class="zxx_text_overflow3">
+                <div class="text_con">这是一段很短的文字拿来对比。</div>
+                <div class="text_dotted">…</div>
+            </div>
+            <div class="method-title">方法4</div>
+            <div class="zxx_text_overflow4">
+                这种方法用的是jquery的方法替换掉最大字符长度以外的字符，这里要写长一点
+            </div>
+            <div class="method-title">方法5</div>
+            <div class="zxx_text_overflow5">
+                这种方法用的是jquery的方法替换掉最大字符长度以外的字符，这里要写长一点
+            </div>
+            <div class="method-title">方法6</div>
+            <div class="zxx_text_overflow6">
+                这种方法用的是多行文字句末显示省略号，这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点这里要写长一点
+            </div>
         </div>
         <div class="demo-bottom">
-            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">参考文章</a>
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> |
+            <a href="http://www.zhangxinxu.com/">参考文章</a>
         </div>
     </div>
     <script type="text/javascript">
-$(function() {
-           
+        $(function () {
+
             //限制字符个数
             // $(".zxx_text_overflow").each(function(){
-                var maxwidth=43;
+            var maxwidth = 43;
 
-                if($('.zxx_text_overflow4').text().length>maxwidth){
-                    $('.zxx_text_overflow4').attr('title', $('.zxx_text_overflow4').text());
-                    $('.zxx_text_overflow4').text($('.zxx_text_overflow4').text().substring(0, maxwidth));
-                    $('.zxx_text_overflow4').html($('.zxx_text_overflow4').html()+'...');
-                }
+            if ($('.zxx_text_overflow4').text().length > maxwidth) {
+                $('.zxx_text_overflow4').attr('title', $('.zxx_text_overflow4').text());
+                $('.zxx_text_overflow4').text($('.zxx_text_overflow4').text().substring(0, maxwidth));
+                $('.zxx_text_overflow4').html($('.zxx_text_overflow4').html() + '...');
+            }
             // });
 
-            var wordLimit=function(){
-                $('.zxx_text_overflow5').each(function(){
+            var wordLimit = function () {
+                $('.zxx_text_overflow5').each(function () {
                     var copyThis = $(this.cloneNode(true)).hide().css({
                         'position': 'absolute',
                         'width': 'auto',
@@ -79,21 +82,22 @@ $(function() {
                     });
                     $(this).after(copyThis);
 
-                    if(copyThis.width() > $(this).width()) {
-                        $(this).text($(this).text().substring(0,$(this).html().length-4));
-                        $(this).html($(this).html()+'…');
+                    if (copyThis.width() > $(this).width()) {
+                        $(this).text($(this).text().substring(0, $(this).html().length - 4));
+                        $(this).html($(this).html() + '…');
                         copyThis.remove();
                         wordLimit();
-                    }else{
+                    } else {
                         copyThis.remove(); //清除复制
                         return;
                     }
                 });
             }
-            wordLimit();         
+            wordLimit();
         })
         //文章信息操作
         var blogTool = new Tools();
     </script>
 </body>
+
 </html>
