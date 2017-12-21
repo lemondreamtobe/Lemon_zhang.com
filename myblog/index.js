@@ -116,6 +116,7 @@ function changeArticles(e, aim, obj) {
         return;
     }
     articleInfo.changeArticle(type);
+    body_pagination.clearGo();
 };
 var zNodes =[
     {name:"文章全部分类",title: '文章全部分类', type:"all", children: [
@@ -406,6 +407,7 @@ let body_pagination = avalon.define({
         } else {
             this.pagination.current -= 1;
             this.fetch(this.pagination);
+            this.clearGo();
         }
     },
     next: function (e) {
@@ -414,6 +416,54 @@ let body_pagination = avalon.define({
         } else {
             this.pagination.current += 1;
             this.fetch(this.pagination);
+            this.clearGo();
+        }
+    },
+    first: function(e) {
+        this.pagination.current = 0;
+        this.fetch(this.pagination);
+        this.clearGo();
+    },
+    last: function(e) {
+        this.pagination.current = this.pageTotal - 1;
+        this.fetch(this.pagination);
+        this.clearGo();
+    },
+    go: function(e) {
+
+        var num = $('#count').val();
+        if (/^[1-9]\d*$/g.test(num) && Number(num) <= this.pageTotal) {
+            this.pagination.current = Number(num) - 1;
+            this.fetch(this.pagination);
+        } else {
+            Noticer.notice('fail', '请输入在页码范围内合理的整数');
+        }
+    },
+    clearGo: function(){
+        $('#count').val('');
+    },
+    deleteborder: function(){
+        var count_border =  $('#count').css('border');
+        var input_border =  $('.input-group-btn').css('border');
+        $('#count').css({
+            'border': '1px solid yellow'
+        });
+        $('.input-group-btn').css({
+            'border': '1px solid yellow',
+            'border-left': '0px'
+        });
+
+        if (this.resetborder) {
+
+        } else {
+            this.resetborder = function(b1, b2) {
+                $('#count').css({
+                    'border': count_border
+                });
+                $('.input-group-btn').css({
+                    'border': input_border
+                });
+            }
         }
     },
     fetch: function(pagi) {

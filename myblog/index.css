@@ -116,11 +116,12 @@ ul, menu, dir {
 }
 .zlf-pagination-nav{
     padding: 0px;
+    display: inline-block;
 }
 .zlf-pagination-nav li {
     margin: 0 10px;
     display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .05);
 }
 .zlf-pagination-nav .previous a {
@@ -330,6 +331,33 @@ ul, menu, dir {
     background-color: yellow;
     color: #0078d7;
    
+}
+.btnGroup{
+    display: inline-block;
+    width: 144px;
+    vertical-align: top;
+}
+.btnGroup input{
+    height: 53px;
+    background-color: #999999;
+    color: white;
+    font-size: 15px;
+}
+.btnGroup label{
+    height:51px;
+    background-color: #999999;
+    color: white;
+    transition: all .20s ease-in-out;
+    font-size: 15px;
+    line-height: 35px;
+}
+.btnGroup label:hover{
+    background-color: yellow;
+    color: #0078d7;
+    /* border-color: #0078d7; */
+}
+.btn-default{
+    border-color: #999999;
 }
 
 
