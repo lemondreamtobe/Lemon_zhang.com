@@ -1,0 +1,28 @@
+.bspw{
+    margin-left: 25px;
+    font-size: 0.9em;
+    color: #999;
+}
+.pwbtn{
+    /* text-align: left; */
+}
+#blank{
+    position:absolute; 
+    width:100%; 
+    height:0; 
+    background:black; 
+    opacity:0.6; 
+    filter:alpha(opacity=60); 
+    left:0; 
+    top:0;
+}
+#dialogInfo{
+    position: absolute;
+    width: 200px;
+    border: 1px solid #a0b3d6;
+    background: #f0f3f9;
+    padding: 10px 20px;
+    display: none;
+    top: 220px;
+    text-align: center;
+}

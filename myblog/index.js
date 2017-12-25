@@ -519,6 +519,12 @@ articleInfo.addArticle('vmprop', 'avalon:attr={xx:@xx}', '跟jquery.prop()做对
 //2017-12-21 14:52 自己总结了三种获取select选中元素的方法
 articleInfo.addArticle('getindex', '获取下拉框选中元素', '日常会用到东西当然要记起来', 'frame');
 
+//2017-12-25 14:12 增加操作样式的方式：改变CSS文件路径
+articleInfo.addArticle('changehref', '改变CSS文件路径', '一种常用操作样式的方法', 'work_sum');
+
+//2017-12-25 17:16 增加表单操作技巧
+articleInfo.addArticle('formmethod', '表单常用技巧集', '时常操作的表单', 'work_sum');
+
 body_pagination.init();
 
 /*日志结束*/

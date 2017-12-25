@@ -27,3 +27,23 @@ h3{
     padding-left: 108px;
     margin: 0 auto;
 }
+
+#zlf_box{
+    max-width: 640px;
+    padding: 5px;
+    margin: 0 auto;
+    list-style: none;
+}
+#zlf_box li{
+    width: 20%;
+    float: left;
+    height: 170px;
+}
+.fix2:after,.fix2:before{
+    display:block; 
+    content:"clear"; 
+    height:0; 
+    clear:both; 
+    overflow:hidden; 
+    visibility:hidden;
+}
