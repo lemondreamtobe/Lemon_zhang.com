@@ -525,6 +525,9 @@ articleInfo.addArticle('changehref', '改变CSS文件路径', '一种常用操�
 //2017-12-25 17:16 增加表单操作技巧
 articleInfo.addArticle('formmethod', '表单常用技巧集', '时常操作的表单', 'work_sum');
 
+//2017-12-26 15:04 因为摇号而感慨
+articleInfo.addArticle('yaohao', '摇号虐我千百遍', '模拟一下摇号的操作', 'frame');
+
 body_pagination.init();
 
 /*日志结束*/

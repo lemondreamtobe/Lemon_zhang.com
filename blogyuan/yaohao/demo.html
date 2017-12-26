@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">模拟车牌摇号</h3>
+            <div class="height-text">
+                <p>车牌摇号，一般是穷人开车的心结，有人欢喜有人忧(一般我是忧的那个)</p>
+                <p>虽然是公平公正纯粹随机概率事件，但是运气不好真的打死一辈子摇不到(默默哭泣)</p>
+                <p>下面来随意来测试测试你的名字的运气如何把？</p>
+                <div class="zlf-margin">
+                    <input type="text" class="form-control" id="user" placeholder="支持合法的中文以及英文名字">
+                    <button class="btn btn-primary" type="button" id="yh">摇号</button> 
+                    <div class="result"></div>
+                    <span>摇中总次数:</span><span class="total"></span>
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+    </div>
+    <script type="text/javascript">
+        $('#user').keyup(function(e) {
+
+            if ($('#user').val() == '') {
+                return;
+            }
+            if ($('#user').val().search(/^[\u4E00-\u9FA5A-Za-z0-9]+$/g) == -1) {
+                Noticer.notice('warn', '请输入中文或者英文的合法名字');
+                $('#user').focus().select();
+            } else {
+                //
+            }
+        });
+        var users = ['小华', '小涛', '小东', '小林', '小思', '小明', '小李', '小龙', '小张', '小勇'];
+        var apeendor = [];
+        function getNumFromRange (Min, Max) {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            var num = Min + Math.round(Rand * Range); //四舍五入
+            return num;
+        };
+        for (var i = 0; i < 20; i++) {
+            var copy = users.concat();
+            apeendor = apeendor.concat(copy.map(function(value, index, arr) {
+                var str = '';
+                for (var j = 0; j < 10; j++) {
+                    str += getNumFromRange(0, 9);
+                }
+                return value + str;
+            }));
+        };
+        var global_users = '';
+        var total = 0;
+        var lucky_index = getNumFromRange(0, apeendor.length - 1);
+        $('#yh').click(function() {
+
+            if ($('#user').val().trim() == '') {
+                Noticer.notice('warn', '名字不能为空');
+                return;
+            }
+
+            if ($('#user').val().search(/^[\u4E00-\u9FA5A-Za-z0-9]+$/g) == -1) {
+                Noticer.notice('warn', '请输入中文或者英文的合法名字');
+                $('#user').focus().select();
+                return;
+            } else {
+                //
+            }
+
+            if (global_users == $('#user').val()) {
+
+            } else {
+                var your_name = global_users = $('#user').val();
+                total = 0;
+                $('.total').text(total);
+            }
+            var lucky_one = [];
+            var appendor_copy = apeendor.concat();
+            appendor_copy.splice(lucky_index, 0, your_name);
+            for (var i = 0;i < 1; i++) {
+                var index = getNumFromRange(0, appendor_copy.length - 1);
+                lucky_one.push(appendor_copy.splice(index, 1)[0]);
+                console.log(index);
+            };
+            console.log(lucky_one);
+
+            if (lucky_one.indexOf(your_name) !== -1) {
+                $('.result').text('不容易啊，你中了！');
+                total += 1;
+            } else {
+                $('.result').text('很遗憾下个月再来吧');
+            }
+            $('.total').text(total);
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2017-12-26 14:54');
+        /*日志结束*/
+    </script>
+</body>
+</html>
