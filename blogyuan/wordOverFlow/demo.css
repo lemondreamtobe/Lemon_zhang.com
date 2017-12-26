@@ -8,6 +8,9 @@
     margin: 0 auto;
     margin-bottom: 20px;
 }
+span.text_overflow_1{
+    display: inline-block;
+}
 .text_overflow_2{
     width:27em; 
     white-space:nowrap; 
