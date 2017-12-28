@@ -534,6 +534,9 @@ articleInfo.addArticle('csshack', '几种常用的CSS Hack技巧', '记录一些
 //2017-12-28 12:00 学习使用一种fade插件
 articleInfo.addArticle('fade', '一种方便的淡入淡出插件', '学习一些工具的使用', 'frame');
 
+//2017-12-28 16:20用模拟下拉框解决项目中原生下拉的高度难处理
+articleInfo.addArticle('slidetoggle', '模拟下拉框', '用模拟下拉框解决项目中原生下拉的高度难处理', 'work_sum');
+
 body_pagination.init();
 
 /*日志结束*/

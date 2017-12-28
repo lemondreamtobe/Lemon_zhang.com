@@ -1,0 +1,43 @@
+.zlf-menu{
+    width: 120px;
+    position: relative;
+    display: inline-block;
+}
+.zlf-menu a:hover{
+    text-decoration: none;
+}
+.select-area{
+    padding: 1px;
+    border: 1px solid #dddddd;
+    background: #f9f9f9;
+}
+.select-list{
+    position: absolute;
+    width: 100%;
+    border: 1px solid #dddddd;
+    background: white;
+    left: 0px;
+    top: 32px;
+    font-size: 12px;
+    display: none;
+    text-align: left;
+    padding: 0px;
+    height:220px;
+    overflow: auto;
+}
+.select-list li{
+    padding-left: 24px;
+    width:auto;
+}
+.select-list li:hover{
+    background-color: #efffff;
+    /* color: white; */
+}
+.point_in{
+    float: right;
+    font-size: 1px;
+    cursor: pointer;
+}
+.select-list .active{
+    background-color: #efffff;
+}
