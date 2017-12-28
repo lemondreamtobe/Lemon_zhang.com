@@ -76,16 +76,16 @@ body{
     margin: 10px 0px;
     background-color: #efffff;
 }
-.height-text h4{
+.height-text h4,.height-text h3{
     color: #536b82;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 ul{
     list-style: none;
 }
 .zlf-margin{
     margin: 20px 0px;
-    line-height: 25px;
+    line-height: 30px;
 }
 .importtant{
     color: #0078d7;

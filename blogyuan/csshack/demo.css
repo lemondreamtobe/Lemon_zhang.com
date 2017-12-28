@@ -1,0 +1,9 @@
+.hack-type{
+    list-style: none;
+    padding: 0px;
+}
+.hack-type li {
+    color: #0078d7;
+    margin: 10px 0px;
+    font-size:17px;
+}

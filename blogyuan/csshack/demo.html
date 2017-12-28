@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">常用的CSS hack技巧</h3>
+            <p class="zlf-margin">
+                之前公司做的项目需要运行在客户的ie8环境下，开发环境在谷歌<br>
+                所以经常就是这边开发，测试的时候要开ie8来看是否一致，交互时候完成业务<br>
+                有时候真的遇到一些让人摸不着头脑的兼容问题，这类问题一般是CSS在ie8下属性不支持<br>
+                也有属性支持，但是表现不一致。还有一些对JS内置对象属性的支持不一致了。<br>
+                这里主要把一些常用的hack技巧总结总结，避免以后自己忘记了又得百度找半天<br>
+            </p>
+            <div class="height-text">
+                <h3>hack技巧的分类</h3>
+                <ul class="hack-type">
+                    <li>CSS属性前缀法</li>
+                    <li>选择器前缀法</li>
+                    <li>IE条件注释法（即HTML头部引用if IE）Hack</li>
+                </ul>
+            </div>
+            <div class="height-text">
+                <h3>CSS属性前缀法</h3>
+                <div class="zlf-margin">
+                    <span>属性前缀法是在CSS样式属性名前加上一些只有特定浏览器才能识别的hack前缀，以达到预期的页面展现效果</span>
+                    在标准模式中<br>
+                    “-”减号和下划线“_”是IE6专有的hack<br>
+                    “*, +”IE6， IE7生效<br>
+                    “\9” IE6/IE7/IE8/IE9/IE10都生效<br>
+                    “\0” IE8/IE9/IE10都生效，是IE8/9/10的hack<br>
+                    “\9\0” 只对IE9/IE10生效，是IE9/10的hack<br>
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>选择器前缀法</h3>
+                <div class="zlf-margin">
+                    *html *前缀只对IE6生效<br>
+                    *+html *+前缀只对IE7生效<br>
+                    @media screen\9{...}只对IE6/7生效<br>
+                    @media \0screen {body { background: red; }}只对IE8有效<br>
+                    @media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效<br>
+                    @media screen\0 {body { background: green; }} 只对IE8/9/10有效<br>
+                    @media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效<br>
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效<br>
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>条件注释法</h3>
+                <div class="zlf-margin">
+                    只在IE下生效
+                    <br>
+                    <!--[if IE]>
+                                    这段文字只在IE浏览器显示
+                                    <![endif]-->
+
+                    只在IE6下生效
+                    <br>
+                    <!--[if IE 6]>
+                                    这段文字只在IE6浏览器显示
+                                    <![endif]-->
+
+                    只在IE6以上版本生效
+                    <br>
+                    <!--[if gte IE 6]>
+                                    这段文字只在IE6以上(包括)版本IE浏览器显示
+                                    <![endif]-->
+
+                    只在IE8上不生效
+                    <br>
+                    <!--[if ! IE 8]>
+                                    这段文字在非IE8浏览器显示
+                                    <![endif]-->
+
+                    非IE浏览器生效
+                    <br>
+                    <!--[if !IE]>
+                                    这段文字只在非IE浏览器显示
+                                    <![endif]-->
+                    相应的方法可右键浏览器查看源代码中这部分的注释
+            </div>
+            <div class="height-text">
+                <h3>个人总结</h3>
+                <div class="zlf-margin">
+                    <p>CSS属性前缀法的hack对于书写顺序很重要，排在最前面的要适用性广，识别能力强<br>
+                        这点参考JS的类型检测的鸭式辩形<br>
+                    </p>
+                    <p>
+                        选择器前缀法是针对一些页面表现不一致或者需要特殊对待的浏览器
+                    </p>
+                    <p>
+                        条件注释法主要的用途在于文档中根据不同的浏览器来决定是否引入相应的JS文件
+                    </p>
+                    <p>
+                        Css hack能不用就不用，不仅CSS文件丑陋，对于后期开发者的维护成本也高<br>
+                        对于日益接近统一的浏览器，我想往后的兼容问题将会越来越少，所以hack也随之更加少用<br>
+                        当然前提是项目针对的客户群体不同，如果客户电脑是个老古董，停留在XP，用着老式IE8 IE7 IE6<br>
+                        那还是很头痛的
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://blog.csdn.net/freshlover/article/details/12132801">参考文章</a>
+    </div>
+    <script type="text/javascript">
+
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2017-12-28 10:13');
+        /*日志结束*/
+    </script>
+</body>
+</html>

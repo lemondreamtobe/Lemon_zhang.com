@@ -528,6 +528,8 @@ articleInfo.addArticle('formmethod', '表单常用技巧集', '时常操作的�
 //2017-12-26 15:04 因为摇号而感慨
 articleInfo.addArticle('yaohao', '摇号虐我千百遍', '模拟一下摇号的操作', 'frame');
 
+articleInfo.addArticle('csshack', '几种常用的CSS Hack技巧', '记录一些hack技巧以备后用', 'css');
+
 body_pagination.init();
 
 /*日志结束*/

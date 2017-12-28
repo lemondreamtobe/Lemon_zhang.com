@@ -44,17 +44,21 @@
     </div>
     <script type="text/javascript">
         $('#user').keyup(function(e) {
+            test();
+        });
+        function test () {
 
             if ($('#user').val() == '') {
                 return;
             }
+
             if ($('#user').val().search(/^[\u4E00-\u9FA5A-Za-z0-9]+$/g) == -1) {
                 Noticer.notice('warn', '请输入中文或者英文的合法名字');
-                $('#user').focus().select();
+                $('#user').focus().select(); //表单技巧
             } else {
                 //
             }
-        });
+        }
         var users = ['小华', '小涛', '小东', '小林', '小思', '小明', '小李', '小龙', '小张', '小勇'];
         var apeendor = [];
         function getNumFromRange (Min, Max) {
