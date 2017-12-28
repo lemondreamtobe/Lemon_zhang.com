@@ -1,0 +1,17 @@
+.zlf-margin {
+    line-height: 15px;
+}
+.newsCover{
+    display: inline-block;
+    width: 24%;
+    min-width: 326px;
+}
+ul{
+    padding:0px;
+}
+.fade{
+    opacity: 1px;
+}
+.fade p {
+    text-align: center;
+}
