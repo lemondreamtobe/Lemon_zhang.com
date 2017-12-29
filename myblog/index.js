@@ -537,6 +537,9 @@ articleInfo.addArticle('fade', '一种方便的淡入淡出插件', '学习一�
 //2017-12-28 16:20用模拟下拉框解决项目中原生下拉的高度难处理
 articleInfo.addArticle('slidetoggle', '模拟下拉框', '用模拟下拉框解决项目中原生下拉的高度难处理', 'work_sum');
 
+//2017-12-29 16:01对于项目中的表单验证功能进行总结
+articleInfo.addArticle('vmcheck', 'mvvm框架和jquery对表单字段转换的对比', '对比对比，一起vm', 'work_sum');
+
 body_pagination.init();
 
 /*日志结束*/

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">avalon和jquery的表单验证功能对比</h3>
+           <div class="zlf-margin">
+               <p>使用框架可以更方便我们做一些字段的格式转换<br>
+               这里就拿一个时间戳为例子，一般后台给时间戳，而前端去按照需求进行相应格式的改变<br>
+               两种方法都是靠相同的转换函数，但是形式不同<br></p>
+               <img src="../../images/code1.png">
+               <p>点击下方确定的按钮，jqeury方法会对数据率先处理一遍，再进行显示<br>
+               avalon方法更简单，直接复制给vm属性，vm自己监控该属性变化而调用转换函数<br>
+               或许少少的一个字段并不能看出那种更方便，但是假设后台抛来一个表单<br>
+               单纯用jquery方法可能要实现10多次这样的处理，而mvvm只需要把后台给的字段值赋给10多个变量而已<br></p>
+           </div>
+            <div class="height-text">
+                <h3>jquery方法</h3>
+                <div class="zlf-margin">
+                    <input type="text" id="jqtext">
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>mvvm之avalon方法</h3>
+                <div class="zlf-margin" :controller="vmcheck">
+                    <input type="text" :attr="{value:@text} | filterTime">
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>点击确定来试试</h3>
+               <button class="btn btn-success" id="sure">确定</button>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function formatOnlineTime(time, day){
+
+            if (time == 0) {
+                return '';
+            }
+            var d = new Date(time);
+            var year = d.getFullYear();
+            var month = (d.getMonth() + 1) < 10 ? ("0" + (d.getMonth() + 1)) : (d.getMonth() + 1);
+            var time = d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate();
+            var hour = d.getHours() < 10 ? ("0" + d.getHours()) : d.getHours();
+            var minute = d.getMinutes() < 10 ? ("0" + d.getMinutes()) : d.getMinutes();
+            var second = d.getSeconds() < 10 ? ("0" + d.getSeconds()) : d.getSeconds();
+        
+            if (day) {
+                return year + "-" + month + "-" + time + "";
+            } else {
+                return year + "-" + month + "-" + time + " " + hour + ":" + minute + ":" + second;
+            }
+        }
+        avalon.filters.filterTime = function(obj){
+            return {value : formatOnlineTime(obj['value'])};
+        };
+        var vm = avalon.define({
+            $id: 'vmcheck',
+            text: ''
+        });
+        $('#sure').click(function(e) {
+            var time = +new Date();
+
+            //jq
+            $('#jqtext').prop('value', formatOnlineTime(time));
+
+            //avalon
+            vm.text = time;
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2017-12-29 16:01');
+        /*日志结束*/
+    </script>
+</body>
+</html>
