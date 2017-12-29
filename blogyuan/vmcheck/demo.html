@@ -41,12 +41,14 @@
                 <h3>jquery方法</h3>
                 <div class="zlf-margin">
                     <input type="text" id="jqtext">
+                    <p id="jqp"></p>
                 </div>
             </div>
             <div class="height-text">
                 <h3>mvvm之avalon方法</h3>
                 <div class="zlf-margin" :controller="vmcheck">
                     <input type="text" :attr="{value:@text} | filterTime">
+                    <p id="vmp">{{@pv | filterNumber}}</p>
                 </div>
             </div>
             <div class="height-text">
@@ -81,18 +83,25 @@
         avalon.filters.filterTime = function(obj){
             return {value : formatOnlineTime(obj['value'])};
         };
+        avalon.filters.filterNumber= function(str){
+            return str.replace(/520+/g, ' zhang');
+        }
         var vm = avalon.define({
             $id: 'vmcheck',
-            text: ''
+            text: '',
+            pv: ''
         });
         $('#sure').click(function(e) {
             var time = +new Date();
+            var str = 'lemon520';
 
             //jq
             $('#jqtext').prop('value', formatOnlineTime(time));
+            $('#jqp').text(str.replace(/520+/g, ' zhang'));
 
             //avalon
             vm.text = time;
+            vm.pv = str;
         });
         /*文章信息操作日志*/
         var blogTool = new Tools();
