@@ -1,0 +1,25 @@
+.airport{
+    background-color: #FFFFFF;
+    height: 888px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+#plane{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    /* bottom: 0px; */
+}
+.ball{
+    width:30px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+}
+.prevent{
+    width:220px;
+    height:220px;
+    background-color: black;
+    position: absolute;
+}
