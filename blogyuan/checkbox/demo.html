@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+
+</style>
+<!-- <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">   -->
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <!-- <a href="/" class="head-img"></a> -->
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">checkbox不可告人的秘密</h3>
+            <div class="height-text">
+                <h4>对齐方式的表现差异</h4>
+                <div>
+                    这里是文本<input type="text" value="这里是文本输入框">
+                </div>
+                <div class="m10">
+                    这里是文本<img src="../../images/imgcommon1.jpg">
+                </div>
+                <div class="m10">
+                    基线：文字排版的用词，针对英文字母，指英文字母平时“坐”的位置，就是a,b,c等字母的底线<br>
+                    在中文上则不同在浏览器上，虽然没有直观的底线，基线，中线等概念的划分，<br>
+                    但是大多数情况下（IE6、IE7理解底线等有误，IE8已纠正），基线之类的概念浏览器是认的，<br>
+                    例如，某12像素的汉字，浏览器会把距离汉字底部（不妨假定为1像素的地方）当作基线。
+                    大多数文字和行内元素排列对齐的方式是一样的：基线(baseline)对齐<br>
+                    少部分会有差异。但是，跨浏览器的情况下差异会更加明显。<br>
+                    比如，文字和普通输入框对齐：输入框中线和文字基线对齐的方式<br>
+                    文字和图片的对齐则是基线(baseline)对齐<br>
+                    在两点在谷歌和ie11下表现是一致的，现在说回主角：复选框的对齐方式
+                </div>
+            </div>
+            <div class="height-text">
+                <div style="font-size:16px">
+                    <input type="checkbox">复选框
+                </div>
+                <div style="font-size:14px">
+                    <input type="checkbox">复选框
+                </div>
+                <div style="font-size:12px">
+                    <input type="checkbox">复选框
+                </div>
+                <div style="font-size:12px">
+                    <input type="checkbox">checkbox
+                </div>
+                <div class="m10">
+                    以上4行字体分别为16 14 12(中文) 12(英文),不同的字体大小同样是把距离汉字底部（不妨假定为1像素的地方）当作基线。<br>
+                    非常奇怪的是，谷歌浏览器下12像素的英文对齐如同中文一般对齐，IE11下则是正常的字母基线对齐<br>
+                    <img src="../../images/ie11duiqi.png">
+                    <img src="../../images/ggduiqi.png">
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>对齐间距的表现差异</h4>
+                <div style="font-size:16px">
+                    <input type="checkbox">复选框
+                </div>
+                <div class="m10">
+                    复选框为什么会和对齐的文字中有所间距，不同浏览器也表现不同<br>
+                    谷歌下: 我们看见的复选框只是冰山一角，如下图蓝色边框包围着的全是复选框，另外<br>
+                    还有margin: 3px 3px 3px 4px;的默认样式，所以会有这样的间距<br>
+                    ie11下: 除了具有相同margin样式值，还有边缘的选线圈，这也是checkbox的一部分<br>
+                    相较起来ie11下比谷歌距离文字更近
+                </div>
+                <img src="../../images/iecheckbox.png">
+                <img src="../../images/ggcheckbox.png">
+            </div>
+            <div class="height-text">
+                <h4>对齐方法补充</h4>
+                <div class="cp">
+                    对齐对齐<input class="cb" type="checkbox"><br>
+                    这里通过改变字体和margin达到对齐，放大6 7倍之后，IE11下的对齐效果仍然明显，谷歌下偏离
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>判断单个选中</h4>
+                <input type="checkbox" id="seeChecked"> 
+                <div class="zlf-margin">
+                    <button class="btn btn-success" id="btn-seeChecked">判断</button>
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>判断复选框是否选中</h4>
+                <input type="checkbox" name="test" />我	
+                <input type="checkbox" name="test" />沙
+                <input type="checkbox" name="test" />漠	
+                <input type="checkbox" name="test" />风
+                <input type="checkbox" name="test" />暴
+                <div class="zlf-margin">
+                    <button class="btn btn-success" id="btn-seeGroupChecked">判断</button>
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>判断复选框是否选中</h4>
+                <input type="checkbox" name="all" />我	
+                <input type="checkbox" name="all" />沙
+                <input type="checkbox" name="all" />漠	
+                <input type="checkbox" name="all" />风
+                <input type="checkbox" name="all" />暴
+                <div class="zlf-margin">
+                    <input type="checkbox"id="checkAll">全选
+                </div>
+            </div>
+            <div class="height-text" :controller="checkG">
+                <h4>判断复选框是否选中(MVVM方法)</h4>
+                <input type="checkbox" ms-duplex-checked="@me" name="all" />我
+                <input type="checkbox" ms-duplex-checked="@sha" name="all" />沙
+                <input type="checkbox" ms-duplex-checked="@mo" name="all" />漠
+                <input type="checkbox" ms-duplex-checked="@feng" name="all" />风
+                <input type="checkbox" ms-duplex-checked="@bao" name="all" />暴
+                <div class="zlf-margin">
+                    <input ms-duplex-checked="@cka" type="checkbox" :click="@checkAll">全选
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>获取选中项</h4>
+                <input type="checkbox" value="我" name="aim" />我	
+                <input type="checkbox" value="沙" name="aim" />沙
+                <input type="checkbox" value="漠" name="aim" />漠	
+                <input type="checkbox" value="风" name="aim" />风
+                <input type="checkbox" value="暴" name="aim" />暴
+                <div class="checkedText"></div>
+                <div>
+                    <button class="btn btn-sucess" id="seeCheckedOne">获取选中项</button>
+                </div>
+            </div>
+            <div class="height-text" :controller="getChecked">
+                <h4>获取选中项(MVVM方法)</h4>
+                <input type="checkbox" ms-duplex="@me" value="我" name="aimvm" />我
+                <input type="checkbox" ms-duplex="@sha" value="沙" name="aimvm" />沙
+                <input type="checkbox" ms-duplex="@mo" value="漠" name="aimvm" />漠
+                <input type="checkbox" ms-duplex="@feng" value="风" name="aimvm" />风
+                <input type="checkbox" ms-duplex="@bao" value="暴" name="aimvm" />暴
+                <div class="checkedText">{{@me | delPoint}} {{@sha  | delPoint}} {{@mo  | delPoint}} {{@feng  | delPoint}} {{@bao  | delPoint}}</div>
+                <div>
+                    <button class="btn btn-sucess" id="seeCheckedOne">获取选中项</button>
+                </div>
+            </div>
+            <div>
+                    以上应用的方法可以右键浏览器查看源码，有些方法有不止一种方法。
+                </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#btn-seeChecked').click(function() {
+
+            //way 1
+            // var checkbox = document.getElementById('seeChecked');
+            // alert(checkbox.checked);
+
+            //way2
+            alert($('#seeChecked').prop('checked'));
+
+        });
+        $('#btn-seeGroupChecked').click(function() {
+
+            //way 1
+            // var ckArr = document.getElementsByName('test');
+            // alert(Array.prototype.some.call(ckArr, function(value, index, arr) {
+            //     return value.checked == true
+            // }));
+
+            //way 2
+            alert(Array.prototype.some.call($(":checkbox[name='test']"), function(value, index, arr) {
+                return value.checked == true
+            }));
+        });
+        $('#checkAll').click(function(e) {
+
+            //way 1
+            // Array.prototype.forEach.call(document.getElementsByName('all'), function(value, index, arr) {
+            //     value.checked = e.target.checked;
+            // });
+
+            //way 2
+            Array.prototype.forEach.call($(":checkbox[name='all']"), function(value, index, arr) {
+
+                //2.1
+                // value.checked = e.target.checked;
+
+                //2.2
+                $(value).prop('checked', e.target.checked);
+            });
+        });
+        var ckg = avalon.define({
+            $id: 'checkG',
+            me: false,
+            sha: false,
+            mo:false,
+            feng: false,
+            bao: false,
+            cka: false,
+            checkAll: function(e) {
+                this.me = this.sha = this.mo = this.feng = this.bao = e.target.checked;
+            }
+        });
+        $('#seeCheckedOne').click(function() {
+
+            //way 1
+            var exist = Array.prototype.some.call(document.getElementsByName('aim'), function(value, index, arr) {
+                return value.checked == true
+            });
+
+            if (!exist) {
+                $('.checkedText').text('');
+                return;
+            }
+            var checkeds = Array.prototype.filter.call(document.getElementsByName('aim'), function(value, index, arr) {
+                return value.checked == true;
+            });
+            var value = checkeds.map(function(value, index, arr) {
+                return value.value;
+            });
+            $('.checkedText').text(value.join(' '));
+
+            //way 2就是选择方式和属性方式不同
+        });
+        var gck = avalon.define({
+            $id: 'getChecked',
+            me: [''],
+            sha: [''],
+            mo:[''],
+            feng: [''],
+            bao: [''],
+        });
+        avalon.filters.delPoint = function(str) {
+
+            if (str == '') {
+                return ''
+            } else {
+                return str.split(',')[0];
+            }
+        };
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('');
+        /*日志结束*/
+    </script>
+</body>
+</html>
