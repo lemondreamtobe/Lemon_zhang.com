@@ -312,7 +312,7 @@ let articleInfo = (function () {
                     return value.type == type;
                 });
             }
-            body_pagination.init();
+            // body_pagination.init();
         },
         modify: function(type, index, value) {
             information[type][index] = value;
@@ -550,6 +550,9 @@ articleInfo.addArticle('checkbox', '复选框不可告人的秘密', '复选框�
 
 //2018-1-4 10:00看到滑动放大的方式又学习了一种
 articleInfo.addArticle('hoverforbig3.0', '滑动放大再次升级版', '滑起来', 'frame');
+
+//2018-1-4 11:37看到一个照片墙觉得很有意思
+articleInfo.addArticle('transition', '旋转照片', '蛮有意思', 'css');
 
 body_pagination.init();
 
