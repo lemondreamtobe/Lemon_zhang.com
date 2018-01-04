@@ -546,6 +546,9 @@ articleInfo.addArticle('watch', '对VM属性进行watch(偷窥)', '非礼勿视�
 //2018-1-3 17:53对于avalon中的$watch方法进行预研究
 articleInfo.addArticle('checkbox', '复选框不可告人的秘密', '复选框真是个多变的家伙', 'css');
 
+//2018-1-4 10:00看到滑动放大的方式又学习了一种
+articleInfo.addArticle('hoverforbig3.0', '滑动放大再次升级版', '滑起来', 'frame');
+
 body_pagination.init();
 
 /*日志结束*/
