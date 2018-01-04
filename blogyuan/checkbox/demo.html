@@ -22,7 +22,7 @@
 <body>
     <div class="demo-container">
         <div class="demo-header">
-            <!-- <a href="/" class="head-img"></a> -->
+            <a href="/" class="head-img"></a>
             <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
         </div>
         <div class="demo-content">
@@ -63,8 +63,10 @@
                 <div class="m10">
                     以上4行字体分别为16 14 12(中文) 12(英文),不同的字体大小同样是把距离汉字底部（不妨假定为1像素的地方）当作基线。<br>
                     非常奇怪的是，谷歌浏览器下12像素的英文对齐如同中文一般对齐，IE11下则是正常的字母基线对齐<br>
-                    <img src="../../images/ie11duiqi.png">
-                    <img src="../../images/ggduiqi.png">
+                    <img src="../../images/ie11duiqi.png"><br>
+                    <div>ie11下</div>
+                    <img src="../../images/ggduiqi.png"><br>
+                    <div>谷歌下</div>
                 </div>
             </div>
             <div class="height-text">
@@ -79,15 +81,17 @@
                     ie11下: 除了具有相同margin样式值，还有边缘的选线圈，这也是checkbox的一部分<br>
                     相较起来ie11下比谷歌距离文字更近
                 </div>
-                <img src="../../images/iecheckbox.png">
-                <img src="../../images/ggcheckbox.png">
+                <img src="../../images/iecheckbox.png"><br>
+                <div>ie11下</div>
+                <img src="../../images/ggcheckbox.png"><br>
+                <div>谷歌下</div>
             </div>
             <div class="height-text">
                 <h4>对齐方法补充</h4>
                 <div class="cp">
                     对齐对齐<input class="cb" type="checkbox"><br>
-                    这里通过改变字体和margin达到对齐，放大6 7倍之后，IE11下的对齐效果仍然明显，谷歌下偏离
                 </div>
+                这里通过改变字体和margin达到对齐，放大6 7倍之后，IE11下的对齐效果仍然明显，谷歌下偏离
             </div>
             <div class="height-text">
                 <h4>判断单个选中</h4>
@@ -97,7 +101,7 @@
                 </div>
             </div>
             <div class="height-text">
-                <h4>判断复选框是否选中</h4>
+                <h4>判断复选框组是否选中</h4>
                 <input type="checkbox" name="test" />我	
                 <input type="checkbox" name="test" />沙
                 <input type="checkbox" name="test" />漠	
@@ -148,9 +152,9 @@
                 <input type="checkbox" ms-duplex="@mo" value="漠" name="aimvm" />漠
                 <input type="checkbox" ms-duplex="@feng" value="风" name="aimvm" />风
                 <input type="checkbox" ms-duplex="@bao" value="暴" name="aimvm" />暴
-                <div class="checkedText">{{@me | delPoint}} {{@sha  | delPoint}} {{@mo  | delPoint}} {{@feng  | delPoint}} {{@bao  | delPoint}}</div>
+                <div class="checkedText1">{{@me | delPoint}} {{@sha  | delPoint}} {{@mo  | delPoint}} {{@feng  | delPoint}} {{@bao  | delPoint}}</div>
                 <div>
-                    <button class="btn btn-sucess" id="seeCheckedOne">获取选中项</button>
+                    选取复选框即可
                 </div>
             </div>
             <div>
@@ -253,7 +257,7 @@
         };
         /*文章信息操作日志*/
         var blogTool = new Tools();
-        blogTool.updateTime('');
+        blogTool.updateTime('2017-1-3 17:53');
         /*日志结束*/
     </script>
 </body>
