@@ -282,8 +282,10 @@ let articleInfo = (function () {
     };
     return {
         addArticle: function(value, title, small, type) {
-            information.article.push(new Articles(value, articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))], title, small, type));
-            body_pagination.init();
+            var color = articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))];
+            information.article.push(new Articles(value, color, title, small, type));
+            console.log(color);
+            // body_pagination.init();
         },
         addColor: function(color) {
             information.color.push(color);
