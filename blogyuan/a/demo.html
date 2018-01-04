@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+    
+</style>
+<!-- <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">   -->
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">a链接标签探究</h3>
+            <div class="height-text">
+                <h4>庐山真面目</h4>
+                <a href="#">最原始的默认链接标签</a><br>
+                ↑上面这个就是完全素颜的a标签，虽然不太好看，颜值还是有的
+            </div>
+            <div class="height-text">
+                <h4>图片式的a标签</h4>
+                <div class="zlf-margin">
+                    <span>方法1：文字偏移</span>
+                    <div>
+                        <a href="#" class="img_link text_way">这是默认状态下，CSS文字缩进属性text-indent为-3000像素的表现。</a>
+                    </div>
+                </div>
+                <div class="zlf-margin">
+                    <span>方法2：绝对定位</span>
+                    <a href="#" class="img_link absolute_way">
+                        <span>这是默认状态下，a标签内部span标签绝对定位左偏移-3000像素的表现。</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-1-4 14:27');
+        /*日志结束*/
+    </script>
+</body>
+</html>

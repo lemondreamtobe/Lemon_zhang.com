@@ -554,6 +554,9 @@ articleInfo.addArticle('hoverforbig3.0', '滑动放大再次升级版', '滑起�
 //2018-1-4 11:37看到一个照片墙觉得很有意思
 articleInfo.addArticle('transition', '旋转照片', '蛮有意思', 'css');
 
+//2018-1-4 14:37看到一个照片墙觉得很有意思
+articleInfo.addArticle('a', 'a标签的图片显示', 'a标签不仅仅只有文字哦衣服', 'css');
+
 body_pagination.init();
 
 /*日志结束*/
