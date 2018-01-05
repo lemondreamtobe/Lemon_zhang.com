@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>柠檬树下的过客</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet" rel="styleSheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+    <!- -[if IE]>
+    <script type="text/javascript" src="../../js/excanvas.js"></script>
+    <![endif]- ->
+    <style type="text/css">
+        .imgr1 {
+            transform: rotate(90deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+        }
+
+        .imgr2 {
+            transform: rotate(180deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+        }
+
+        .imgr3 {
+            transform: rotate(270deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+        .imgr4{
+            transform:rotate(135deg); 
+            filter:progid:DXImageTransform.Microsoft.Matrix(M11=-0.707,M12=-0.707,M21=0.707,M22=-0.707,SizingMethod='auto expand');
+        }
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+    <script src="../../js/notice.js"></script>
+    <script src="../../js/demo.js"></script>
+</head>
+
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">图片旋转的2种方法</h3>
+            <div class="height-text">
+                <h4>不完全兼容CSS方法</h4>
+                <div class="zlf-margin">
+                        <span class="redword">transform的rotate属性,IE浏览器不支持，Opera也不支持。只有Firefox3+，Chrome与Safari浏览器支持</span><br>
+                        IE下用滤镜也可以旋转，filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);<br>
+                        上面这种是简单的旋转，rotation= 0/1/2/3，旋转角度为该值*90度。也就是只能旋转90度的倍数了。<br>
+                        矩阵变换滤镜:filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.5,M12=-0.866,M21=0.866,M22=0.5,SizingMethod='auto expand');<br>
+                        以上这条复杂滤镜可以实现多角度旋转，参数计算方式由你想要的旋转角度计算而来<br>
+                        sin = sin(roation);<br>
+                        cos = cos(roation);<br>
+                        M11 = cos;<br>
+                        M12 = -sin;<br>
+                        M21 = sin;<br>
+                        M22 = cos;<br>
+                        另外要注意:<span class="redword">ps:据说IE8浏览器（在非标准模式下），在CSS中，要使用“-ms-filter”代替“filter”。</span>
+                </div>
+                <div class="zlf-margin">
+                    <div>
+                        <img src="../../images/accordion.png">
+                    </div>
+                    <div style="margin-top: 50px;">
+                        <img class="imgr1" src="../../images/accordion.png">
+                    </div>
+                    <div>
+                        <img class="imgr2" src="../../images/accordion.png">
+                    </div>
+                    <div style="margin-top: 50px;">
+                        <img class="imgr3" src="../../images/accordion.png">
+                    </div>
+                    <div>
+                        <img class="imgr4" src="../../images/accordion.png">
+                    </div>
+                </div>
+                <div class="zlf-margin" style="margin-top:50px">
+                    假如你看到三张图片有所重叠，那是因为实际上CSS3下的旋转不改变原始图片占据的空间的大小，<br>
+                    所以您会看到使用CSS3 transform旋转的图片可那会覆盖在其他元素上，<br>
+                    如何证明？你可以检查第一个没有任何旋转的同一张图片的占据空间进行比较<br>
+                    但是IE却不是如此，图片占据空间的大小一致是跟着旋转后的图片走的，<br>
+                    所以IE滤镜实现的旋转就不会看到图片覆盖其他元素的情况，因为它会把它们挤开。
+                </div>
+            </div>
+            <div class="height-text">
+                <h4>canvas方法</h4>
+                <div class="zlf-margin">
+                        canvas属于HTML5元素<br>
+                        Opera浏览器以及低版本的Firefox的实现可以由canvas实现<br>
+                        IE下可以导入兼容文件excanvas.js来实现<br>
+                        兼容效果最佳的推荐方式
+                </div>
+                <div class="zlf-margin">
+                    <canvas id="zlf-c"></canvas>
+                    <img id="zlf-Img" width="128" height="96" src="../../images/accordion.png" />
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">参考文章</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            var canvas = document.getElementById("zlf-c");
+            var oImg = document.getElementById("zlf-Img");
+
+            // 旋转后canvas标签的大小
+            canvas.height = 128;
+            canvas.width = 96;
+
+            // 绘图开始
+            var context = canvas.getContext("2d");
+            context.save();
+
+            // 改变中心点
+            context.translate(96,0);
+
+            // 旋转90°
+            context.rotate(Math.PI/2);
+
+            // 绘制
+            context.drawImage(oImg, 0, 0, 128, 96);
+            context.restore();
+            oImg.style.display = "none";
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('');
+        /*日志结束*/
+    </script>
+</body>
+
+</html>

@@ -284,7 +284,7 @@ let articleInfo = (function () {
         addArticle: function(value, title, small, type) {
             var color = articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))];
             information.article.push(new Articles(value, color, title, small, type));
-            console.log(color);
+            // console.log(color);
             // body_pagination.init();
         },
         addColor: function(color) {
