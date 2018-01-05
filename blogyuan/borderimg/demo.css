@@ -1,0 +1,83 @@
+.buzhou{
+    padding-left: 350px;
+    padding-right: 50px;
+    text-align: left;
+}
+*{
+    font-size: 16px;
+}
+.borderImg {
+    width: 400px;
+    height: 100px;
+    border: 15px solid orange;
+    -webkit-border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27;
+    border-image:  url("https://mdn.mozillademos.org/files/4127/border.png") 27;
+    margin: 15px auto 40px;
+}
+.borderImg1 {
+    width: 400px;
+    height: 100px;
+    border: 15px solid orange;
+    -webkit-border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27 repeat;
+    border-image:  url("https://mdn.mozillademos.org/files/4127/border.png") 27 repeat;
+    margin: 15px auto 40px;
+}
+.borderImg2 {
+    width: 400px;
+    height: 100px;
+    border: 15px solid orange;
+    -webkit-border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27 round;
+    border-image:  url("https://mdn.mozillademos.org/files/4127/border.png") 27 round;
+    margin: 15px auto 40px;
+}
+.borderImg3 {
+    width: 400px;
+    height: 100px;
+    border: 15px solid orange;
+    -webkit-border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27 repeat stretch;
+    border-image:  url("https://mdn.mozillademos.org/files/4127/border.png") 27 repeat stretch;
+    margin: 15px auto 40px;
+}
+.borderImg4 {
+    width: 400px;
+    height: 100px;
+    border: 15px solid orange;
+    -webkit-border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27 stretch round;
+    border-image:  url("https://mdn.mozillademos.org/files/4127/border.png") 27 stretch round;
+    margin: 15px auto 40px;
+}
+.border_image{
+    width: 100px;
+    -moz-border-image: url( http://www.zhangxinxu.com/study/image/border_round.png) 20;
+    -webkit-border-image: url( http://www.zhangxinxu.com/study/image/border_round.png) 20;
+    border: double gray 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.border_image1{
+    -moz-border-image: url( http://www.zhangxinxu.com/study/image/border_shade.png) 2 5 6 2;
+    -webkit-border-image: url( http://www.zhangxinxu.com/study/image/border_shade.png) 2 5 6 2;
+    border-style: solid;
+    border-width: 2px 5px 6px 2px;
+    border-color: orange;
+}
+
+.border_image3 {
+    width: 80px;
+    height: 26px;
+    line-height: 22px;
+    margin: 0 auto;
+    -moz-border-image: url( http://www.zhangxinxu.com/study/image/border_tab.png) 5 5 0;
+    -webkit-border-image: url( http://www.zhangxinxu.com/study/image/border_tab.png) 5 5 0;
+    border-style: solid;
+    border-width: 5px 5px 0px;
+    border-color: orange;
+    text-align: center;
+}
+.border_image4 {
+    border: 30px solid;
+    width: 300px;
+    margin: 0 auto;
+  border-image: linear-gradient(red, yellow) 30;
+  /* padding: 20px; */
+}

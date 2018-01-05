@@ -557,6 +557,9 @@ articleInfo.addArticle('transition', '旋转照片', '蛮有意思', 'css');
 //2018-1-4 14:37看到一个照片墙觉得很有意思
 articleInfo.addArticle('a', 'a标签的图片显示', 'a标签不仅仅只有文字哦衣服', 'css');
 
+//2018-1-5 11:37对border-image的自我理解
+articleInfo.addArticle('borderimg', '边框图片非常炫酷', '效果炫酷，但是属性也比较复杂', 'css');
+
 body_pagination.init();
 
 /*日志结束*/
