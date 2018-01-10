@@ -27,10 +27,10 @@
 #animate_3d{
 	
 }
-.img_3d,.line_3d{
+.img_3d{
 	-webkit-perspective:600;  /*表示透视范围大小*/
 	-webkit-transform-style:preserve-3d;  /*表示变换类型，preserve-3d看上去就是3D效果*/
-	-webkit-animation-name:x-spin; /*自定义的动画名称*/
+	-webkit-animation-name:x-spin, y-spin; /*自定义的动画名称*/
 	-webkit-animation-duration:8s; /*一次动画持续的时间*/
 	-webkit-animation-iteration-count:infinite; /*表示动画循环的次数*/
 	-webkit-animation-timing-function:linear; /*运动类型*/
@@ -49,10 +49,22 @@
 	-webkit-animation-duration:3s;
 } */
  @-webkit-keyframes x-spin {
-	0%    { -webkit-transform:rotateX(0deg); }
-	50%   { -webkit-transform:rotateX(180deg); }
-	100%  { -webkit-transform:rotateX(360deg); }
-}/*
+	0%    { -webkit-transform:rotateZ(0deg); }
+	50%   { 
+        -webkit-transform:rotateZ(180deg);
+        /* -webkit-transform:scale(1.5); */
+     }
+	100%  { -webkit-transform:rotateZ(360deg); }
+}
+/* @-webkit-keyframes y-spin {
+	0%    { -webkit-transform:scale(1); }
+	50%   { 
+      
+        -webkit-transform:scale(1.5);
+     }
+	100%  { -webkit-transform:scale(1); }
+} */
+/*
 @-webkit-keyframes y-spin {
 	0%    { -webkit-transform:rotateY(0deg); }
 	50%   { -webkit-transform:rotateY(180deg); }
@@ -88,30 +100,6 @@
             </div>
             <div id="animate_3d" class="out_box">
                 <img class="img_3d" src="../../images/csshack.png">
-                <!-- <div id="animate_line_1" class="line_3d">
-                    <img class="img_3d" src="../../images/csshack.png" />
-                    <img class="img_3d" src="../../images/a.png" />
-                    <img class="img_3d" src="../../images/accordion.png" />
-                    <img class="img_3d" src="../../images/addClass.png" />
-                    <img class="img_3d" src="../../images/appendElement.png" />
-                    <br style="clear:both">
-                </div>
-                <div id="animate_line_2" class="line_3d"> 	        
-                    <img class="img_3d" src="../../images/addClass.png" />
-                    <img class="img_3d" src="../../images/autofix.png" />
-                    <img class="img_3d" src="../../images/base64.png" />
-                    <img class="img_3d" src="../../images/bookplan.png" />
-                    <img class="img_3d" src="../../images/csshack.png" />
-                    <br style="clear:both">
-                </div>
-                <div id="animate_line_3" class="line_3d">	     
-                    <img class="img_3d" src="../../images/accordion.png" />
-                    <img class="img_3d" src="../../images/a.png" />
-                    <img class="img_3d" src="../../images/accordion.png" />
-                    <img class="img_3d" src="../../images/addClass.png" />
-                    <img class="img_3d" src="../../images/appendElement.png" />
-                    <br style="clear:both">
-                </div> -->
             </div>
         </div>
         <div class="demo-bottom">
