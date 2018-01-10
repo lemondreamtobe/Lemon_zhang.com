@@ -483,7 +483,7 @@ let body_pagination = avalon.define({
 });
 articleInfo.initArticle();
 /*常规操作文章日志*/
-
+var start = new Date();
 //2017-12-14 9:14 因发现弹窗插件有问题，先删除, 后续修复
 articleInfo.deleteArticle('dialogchajian');
 
@@ -560,7 +560,12 @@ articleInfo.addArticle('a', 'a标签的图片显示', 'a标签不仅仅只有文
 //2018-1-5 11:37对border-image的自我理解
 articleInfo.addArticle('borderimg', '边框图片非常炫酷', '效果炫酷，但是属性也比较复杂', 'css');
 
+//2018-1-10 10:57学习了placeholder
+articleInfo.addArticle('placeholder', '输入框备注效果', '今天的项目偶然用到一时百度而来', 'css');
+
+console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
 /*日志结束*/
+console.log('初始化时间: '  + (Number(new Date()) - Number(start)));
 
