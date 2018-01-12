@@ -312,7 +312,7 @@ let articleInfo = (function () {
                     return value.type == type;
                 });
             }
-            // body_pagination.init();
+            body_pagination.init();
         },
         modify: function(type, index, value) {
             information[type][index] = value;
