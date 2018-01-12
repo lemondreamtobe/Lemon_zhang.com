@@ -49,6 +49,25 @@
 	-webkit-animation-duration:3s;
 } */
  @-webkit-keyframes x-spin {
+	0%    { -webkit-transform:rotateY(0deg); }
+	50%   { 
+        -webkit-transform:rotateY(180deg);
+        /* -webkit-transform:scale(1.5); */
+     }
+	100%  { -webkit-transform:rotateY(360deg); }
+}
+.sun{
+    width: 200px;
+    height: 200px;
+    margin-top: 80px;
+    -webkit-perspective:600;  /*表示透视范围大小*/
+	-webkit-transform-style:preserve-3d;  /*表示变换类型，preserve-3d看上去就是3D效果*/
+	-webkit-animation-name:sun; /*自定义的动画名称*/
+	-webkit-animation-duration:8s; /*一次动画持续的时间*/
+	-webkit-animation-iteration-count:infinite; /*表示动画循环的次数*/
+	-webkit-animation-timing-function:linear; /*运动类型*/
+}
+@-webkit-keyframes sun {
 	0%    { -webkit-transform:rotateZ(0deg); }
 	50%   { 
         -webkit-transform:rotateZ(180deg);
@@ -56,14 +75,6 @@
      }
 	100%  { -webkit-transform:rotateZ(360deg); }
 }
-/* @-webkit-keyframes y-spin {
-	0%    { -webkit-transform:scale(1); }
-	50%   { 
-      
-        -webkit-transform:scale(1.5);
-     }
-	100%  { -webkit-transform:scale(1); }
-} */
 /*
 @-webkit-keyframes y-spin {
 	0%    { -webkit-transform:rotateY(0deg); }
@@ -76,6 +87,49 @@
 	50%   { -webkit-transform:rotateY(180deg); }
 	100%  { -webkit-transform:rotateY(0deg); }
 } */
+.f1{
+    transform: translate(100px, 100px);
+}
+.f2{
+    transform: rotate(90deg);
+}
+.f3{
+    transform: scale(1.1);
+}
+.f4{
+    transform: skew(20deg, 45deg);
+}
+.f5{
+    transform: translate3d(12px, 50%, 3em);
+}
+.f6{
+    transform: translateZ(2px);
+}
+.f7{
+    transform:scale3d(2.5, 1.2, 0.3);
+}
+.f8{
+    transform:rotate3d(1, 2.0, 3.0, 10deg);
+}
+.f9{
+    transform:scaleZ(0.3);
+}
+@keyframes slidein {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.progresse {
+    background: red;
+    width: 100%;
+    height: 20px;
+    transform-origin: left center;
+    -webkit-transform-style:preserve-3d;  /*表示变换类型，preserve-3d看上去就是3D效果*/
+	-webkit-animation-name:slidein; /*自定义的动画名称*/
+	-webkit-animation-duration:8s; /*一次动画持续的时间*/
+	-webkit-animation-iteration-count:infinite; /*表示动画循环的次数*/
+	-webkit-animation-timing-function:ease-in; /*运动类型*/
+}
+}
 </style>
 <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
 <script src="../../js/jquery-3.2.1.js"></script>
@@ -98,8 +152,147 @@
                 当然我不是大神水平，抱着的是学徒心态，所以自己摸索和学习的东西当然不可能全对<br>
                 旨在自我学习和总结，和大家分享，不对之处望批评见谅
             </div>
-            <div id="animate_3d" class="out_box">
-                <img class="img_3d" src="../../images/csshack.png">
+            <div class="height-text">
+                分两个地方，1先来看看属性的定义，先定义在使用
+                <div>
+                    <img src="../../images/018111.png">
+                </div>
+                <div class="zlf-margin">
+                    总的来说这个属性是CSS3的动画属性，所以还是不支持低端浏览器，适用于：IE10+，Firefox5+，chrome或Safari4+浏览器。<br>
+                    先看这个定义@-webkit-keyframes x-spin，就是定义了一个叫做x-spin的动画名字.<br>
+                    下面有三条效果，你可以看作帧，也就是某时刻的变化。<br>
+                    0%,也就是一开始的时候， 50%就是定义动画时长的一半(时长不在这里定义), 100%就是动画时长的总结<br>
+                    -webkit-transform:rotateZ();这个就是旋转的意思，旋转等会再说。<br>
+                    除了旋转当然还有其他的动画比如缩放和移位。<br>
+                    总之，知道怎么定义就行了
+                </div>
+                <div class="zlf-margin">
+                    定义完就是如何使用了<br>
+                    <div>
+                        <img src="../../images/081112.png">
+                    </div>
+                    <div>
+                        在你要使用的元素的样式下面，写下这些使用动画的相关属性<br>
+                        表示透视范围大小，我暂时还不明白，以后补充吧<br>
+                        把把刚刚定义的x-spin动画填在动画名字上面，不过这个属性貌似只能填一个动画名字，还有就是运动类型<br>
+                        运动类型和transition属性类似，ease ease-in ease-out等等<br>
+                        不过他们的内在原理都是贝塞尔曲线，这个曲线真牛逼，景仰景仰<br>
+                        这里用的是线性类型，就是二维坐标轴的一条直线，最简单的了<br>
+                    </div>
+                </div>
+                <div class="zlf-margin">
+                    动画规则
+                    <div>
+                        这里我摸索了一下旋转的规则，主要是旋转方向这块
+                    </div>
+                    <img src="../../images/anipos2.png">
+                    <div>
+                        对于rotateX,rotateY,rotateZ的旋转规则如上图<br>
+                        在动画的世界里，有三个坐标轴，x,y,z不过跟数学上的不同，y和z轴调换了过来<br>
+                        图上标注的旋转方向都是正角度的方向<br>
+                    </div>
+                </div>
+                <div class="zlf-margin">
+                    <h4>一些例子</h4>
+                    <div>
+                        自己趁着看看其他动画规则和效果如何
+                    </div>
+                    <div>
+                        <h5>
+                            translate: 相对于原来的位置进行位置变化，可以为负值<br>
+                            不过并不撑开父元素，为父元素保持未动画之前的大小<br>
+                            translateX, translateY如其名是横向和纵向的位置改变
+                        </h5>
+                        <div>
+                                <img class="ani-img f1" src="../../images/9space.png">
+                        </div>
+                        
+                        <h5 style="margin-top:120px">
+                            rotate: 保持原有位置不变，但是本身顺时针旋转，不过并不撑开父元素，为父元素保持未动画之前的大小<br>
+                            可以负角度
+                        </h5>
+                        <div>
+                                <img class="ani-img f2" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin">
+                            scale:缩放，在元素本身位置不变的情况下，对元素横向和纵向的尺寸进行调整<br>
+                            调整规则: 只有一个值则元素所有尺寸乘于缩放值,两个值则按照横向尺寸乘第一个值<br>
+                            纵向尺寸乘于第二个值,单方便调整可以选：scaleX( <number> ) scaleY( <number> )
+                        </h5>
+                        <div>
+                                <img class="ani-img f3" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin">
+                            skew:倾斜,比较特殊<br>
+                            先保持原本元素大小位置不变，单个值时，把X轴逆时针旋转角度<br>
+                            如果有两个值，那么第二个值，就是Y周顺时针旋转的角度    
+                        </h5>
+                        <img src="../../images/skew.png">
+                        <div>
+                                <img class="ani-img f4" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin">
+                            translate3d(12px, 50%, 3em);<br>
+                            这个属性也是让我迷惑的
+                        </h5>
+                        <div>
+                                <img class="ani-img f5" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin" style="margin-top: 260px;">
+                            translateZ(2px);<br>
+                            Z轴是面向我们人的一个轴，可以说是控制跟我们人的距离，但是我们看不出他接近没有
+                        </h5>
+                        <div>
+                                <img class="ani-img f6" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin" style="margin-top:150px">
+                            scale3d(2.5, 1.2, 0.3);
+                            <br>这个属性也是第三这个值不为0的话都没有啥可见的效果
+                        </h5>
+                        <div>
+                                <img style="margin-top:25px" class="ani-img f7" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin" style="margin-top:150px">
+                            scaleZ(0.3);<br>
+                            根据scale讲的坐标的话这个属性如其名按Z轴缩放<br>
+                            发现这个属性只要不为0都没有效果
+                        </h5>
+                        <div>
+                                <img class="ani-img f9" src="../../images/9space.png">
+                        </div>
+                        <h5 class="zlf-margin">
+                            rotate3d(1, 2.0, 3.0, 10deg);<br>
+                            这个属性很强大啊感觉，可以模拟skew的效果
+                        </h5>
+                        <div>
+                                <img class="ani-img f8" src="../../images/9space.png">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>应用</h3>
+                <div>
+                    <h5>旋转太阳</h5>
+                    <img class="sun" src="../../images/sun.jpg">
+                </div>
+                <div class="zlf-margin">
+                    <h5>进度条</h5>        
+                    <div class="progresse">
+
+                    </div>
+                </div>
+            </div>
+            <div class="height-text">
+                <h3>个人总结</h3>
+                <div>
+                    CSS3动画真是多，有的浅显易懂有的奥妙颇深<br>
+                    不过碍于浏览器兼容问题，很多浏览器无法一见真身<br>
+                    上面只是列出了一些常见的动画，有些我还处于迷惑之中<br>
+                    有个印象上的概念就暂且，等以后再针对那些疑惑的家伙来搞搞吧
+                </div>
+               
             </div>
         </div>
         <div class="demo-bottom">
@@ -110,7 +303,7 @@
 
         /*文章信息操作日志*/
         var blogTool = new Tools();
-        blogTool.updateTime('');
+        blogTool.updateTime('2018-1-12 9:33');
         /*日志结束*/
     </script>
 </body>

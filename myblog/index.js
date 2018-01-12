@@ -563,6 +563,8 @@ articleInfo.addArticle('borderimg', '边框图片非常炫酷', '效果炫酷，
 //2018-1-10 10:57学习了placeholder
 articleInfo.addArticle('placeholder', '输入框备注效果', '今天的项目偶然用到一时百度而来', 'css');
 
+//2018-1-12 9:35之前写的一些动画属于做个总结
+articleInfo.addArticle('imganimate', 'CSS3动画:神奇的家伙', '本来看着rotateX的，就把感兴趣的动画一起粗略的罗列了', 'css');
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
