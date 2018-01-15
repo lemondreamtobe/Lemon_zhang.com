@@ -565,6 +565,10 @@ articleInfo.addArticle('placeholder', '输入框备注效果', '今天的项目�
 
 //2018-1-12 9:35之前写的一些动画属于做个总结
 articleInfo.addArticle('imganimate', 'CSS3动画:神奇的家伙', '本来看着rotateX的，就把感兴趣的动画一起粗略的罗列了', 'css');
+
+//2018-1-15 12:00认识了一种title换行方法
+articleInfo.addArticle('titlebr', 'title里的换行', '在项目中用到但是当时一脸蒙蔽', 'work_sum');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
