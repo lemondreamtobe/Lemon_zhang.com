@@ -569,6 +569,9 @@ articleInfo.addArticle('imganimate', 'CSS3动画:神奇的家伙', '本来看着
 //2018-1-15 12:00认识了一种title换行方法
 articleInfo.addArticle('titlebr', 'title里的换行', '在项目中用到但是当时一脸蒙蔽', 'work_sum');
 
+//2018-1-16 10:09以前写的现在才提交
+articleInfo.addArticle('float', 'float浮动清除', '浮动就是个魔鬼，利大于弊', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
