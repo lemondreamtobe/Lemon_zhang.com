@@ -13,6 +13,29 @@
 .test_btn{
     /* width: 20px; */
 }
+.ff img{
+    float: left;
+}
+.ff1 img{
+    float: left;
+}
+.ff1{
+    overflow:hidden; 
+    zoom:1;
+}
+.ff2 img{
+    float: left;
+}
+.ff2{
+    zoom:1;
+}
+.ff2:after{
+    display:block; 
+    content:'clear'; 
+    clear:both; 
+    line-height:0; 
+    visibility:hidden;
+}
 </style>
 <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
 <script src="../../js/jquery-3.2.1.js"></script>
@@ -32,14 +55,36 @@
             <div>
                 float这个属性用时一时爽，改时痛苦万分，不确定性不稳定性太大<br>
                 小白我后期维护的时候常常因为页面变化，但是浮动元素总是出来作祟头疼不已<br>
-                为了以后不头疼，今天就来解剖一番
+                为了以后不头疼，今天就来学习清除他
             </div>
             <div class="height-text zlf-margin">
-                <button class="test_btn">确定</button>
+                <h3>标签清除法</h3>
+                <span>用一个br标签，放在浮动元素的父级元素的的最后面(当然，和浮动元素是兄弟关系)，style="clear：both"</span>
+                <div class="ff">
+                    <img src="../../images/accordion.png">
+                    <br style="clear:both">
+                </div>
+            </div>
+            <div class="height-text zlf-margin">
+                <h3>overflow + zoom方法</h3>
+                <div class="ff1">
+                    <img src="../../images/accordion.png">
+                </div>
+            </div>
+            <div class="height-text zlf-margin">
+                <h3>after + zoom方法</h3>
+                <div class="ff2">
+                    <img src="../../images/accordion.png">
+                </div>
+            </div>
+            <div class="height-text zlf-margin">
+                <h3>设置浮动方法</h3>
+                <p>Jquery方法:$('XX').css('float', 'left')</p>
+                <p>DOM方法:IE下obj.style.styleFloat = "left";其他浏览器obj.style.cssFloat = "left";</p>
             </div>
         </div>
         <div class="demo-bottom">
-            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a> | <a href="http://www.zhangxinxu.com/">参考来源</a>
         </div>
     </div>
     <script type="text/javascript">
