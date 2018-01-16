@@ -572,6 +572,9 @@ articleInfo.addArticle('titlebr', 'title里的换行', '在项目中用到但是
 //2018-1-16 10:09以前写的现在才提交
 articleInfo.addArticle('float', 'float浮动清除', '浮动就是个魔鬼，利大于弊', 'css');
 
+//2018-1-16 15:09绝对定位的一些秘密
+articleInfo.addArticle('absolute', 'position:absolute', '绝对定位的一些秘密', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
