@@ -293,7 +293,7 @@ let articleInfo = (function () {
         },
         initArticle: function() {
             information.site.forEach(function(value, index, arr) {
-                information.article.push(new Articles(value, articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))], articleInfo.get('title')[index], articleInfo.get('small')[index], articleInfo.get('type')[index]));
+                information.article.push(new Articles(value, articleInfo.get('color')[blogTool.getNumFromRange(0, articleInfo.length('color'))] || '#e45c5c', articleInfo.get('title')[index], articleInfo.get('small')[index], articleInfo.get('type')[index]));
             });
             // body_pagination.init();
         },
