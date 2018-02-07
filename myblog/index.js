@@ -578,6 +578,9 @@ articleInfo.addArticle('absolute', 'position:absolute', '绝对定位的一些�
 //2018-1-17 10:04理解包裹的概念
 articleInfo.addArticle('baoguo', '包裹', '包裹存在于浮动的领域', 'css');
 
+//2018-2-7 14:41幽灵空白节点
+articleInfo.addArticle('strut', '幽灵空白节点', '犹如幽灵一般存在', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
