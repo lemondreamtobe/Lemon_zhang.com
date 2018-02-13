@@ -130,7 +130,7 @@
                     <span>[title="xzq1"],指定特定的属性值选择器</span>
                 </div>
                 <div class="xzq" title="xzq2 qa">
-                    <span>[title~="xzq2 qa"],选择title属性包含单词 "xzq2" 的所有元素</span>
+                    <span>[title~="xzq2"],选择title属性包含单词 "xzq2" 的所有元素</span>
                 </div>
                 <div class="xzq" title="xzq3qa">
                     <span>[title^="xzq3"],选择title属性以"xzq3"开头的所有元素</span>
@@ -208,6 +208,18 @@
             <div class="zlf-margin height-text">
                     <input type="checkbox" name="vehicle" value="Car" checked="checked" /> I have a car
                     <input class="inse" type="text" value="I have a car">
+            </div>
+            <div class="zlf-margin height-text">
+                <article>
+                    未定义行为：并不是说一个浏览器属性支持而另一个不支持的概念(这属于浏览器兼容的范畴)<br>
+                    而所谓未定义行为，我个人认为是属于所有浏览器都支持的表现，但是表现方式不统一<br>
+                    相信大家都有过这样的感受，要是所有浏览器都表现一致就好了。<br>
+                    拿书中的例子来说吧，a:active按下执行默认样式，外圈发光，抬起还原，在IE8以上的浏览器都一致<br>
+                    给予CSS a:active{background:red};<br>
+                    假设用JS赋予点击事件，阻止默认事件，火狐下点击不变红，其他浏览器正常<br>
+                    问题在于火狐浏览器认为:active发生在点击事件之后，这种不统一的表现形式纷繁且多，默默就变成了口口相传的BUG了<br>
+                    如果再次遇见不同浏览器差异性表现可以从这个角度去思考或许就有新的发现也说不定。
+                </article>
             </div>
             <div class="zlf-margin height-text">
                 <h3>个人总结</h3>
