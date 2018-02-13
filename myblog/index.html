@@ -34,39 +34,19 @@
                     <li>
                         <a href="#">吉他爱好</a>
                     </li>
-
-                    <!-- <li>
-                        <a href="#">Java</a>
-                    </li>
-                    <li>
-                        <a href="#">PHP</a>
-                    </li> -->
                 </ul>
             </div>
             <div class="zlf-body" :controller="zlf_body">
                 <div class="col-xs-2 col-md-2">
                     
                     <div class="zlf-type">
-                            <!-- <a class="top-bar"><img class="top-bar-img" src="../images/book.jpg"></a> -->
                         <ul id="zlf-tree" class="ztree"></ul>
                         <span class="zlf-total">文章总数: {{@total}}篇</span>
                     </div>
                 </div>
                 <div class="col-xs-10 col-md-10">
                     <div class="article-box" ms-for="(key,el) in @article">
-                        <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>
-                        <!-- <div class="flip-container" :css="{backgroundColor: @el.bg_color}" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    
-                                    <img :attr="{src: @el.src}">
-                                </div>
-                                <div class="back">
-                                    
-                                    <img src="../images/lufei.png">
-                                </div>
-                            </div>
-                        </div> -->
+                        <a :attr="{href: @el.site}" target="" :css="{backgroundColor: @el.bg_color}"><img :attr="{src: @el.src}"></a>                      
                         <div class="cover-info">
                             <a :attr="{href: @el.site}" target="_blank">
                                 <h4>{{@el.title}}</h4>

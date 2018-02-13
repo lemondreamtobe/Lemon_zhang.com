@@ -1,0 +1,201 @@
+<!doctype>
+<html>
+
+<head>
+    <title>柠檬树下的过客</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet" rel="styleSheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+    <style type="text/css">
+        .ff {
+            padding: 10px;
+            background: #e4e4e4;
+        }
+
+        .ff::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .nnb{
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid red;
+            padding: 10px 0px;
+        }
+        .nnbb{
+            display: inline-block;
+            text-align: left;
+        }
+        .wbox{
+            width: 250px;
+            margin: 0 auto;
+        }
+        .son{
+            border: 1px solid red;
+            padding: 5px;
+            background: gray;
+        }
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+    <script src="../../js/notice.js"></script>
+    <script src="../../js/demo.js"></script>
+</head>
+
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">浅析CSS世界第三章节</h3>
+            <div class="zlf-margin height-text">
+                <p>浅析第一章的时候已经说了，CSS的流的能力让CSS有着崇高使命，是因为CSS的流影响了CSS世界的基石HTML</p>
+                <p>
+                    HTML标签，我更偏向于叫做HTML元素，尽管有许许多多元素但是整个CSS世界的元素派系分为两类
+                    <br> 块级元素和内联元素，所有的元素都属于这二者其中之一，无出其右
+                    <br>
+                </p>
+            </div>
+            <div class="zlf-margin height-text">
+                <h4>块级元素</h4>
+                <p>
+                    display：block的元素和块级元素不是一个概念，块级元素的概念更广
+                    <br> 我个人认为，如同鸭式辩形一般，一个元素，放进文档里，默认的表现就如同水流一般自动铺满，独自成行，后面的换行
+                    <br> 能达到这样的表现就可以说是块级元素了，例如display:list-item || table都可以这样，不仅仅block哟！
+                    <br>
+                </p>
+                <p>
+                    利用块级换行可以轻易的用来清除浮动的效果
+                </p>
+                <div class="ff">
+                    <img src="../../images/autofix.png" style="float:left">
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h4>IE浏览器不支持伪元素display:list-item,IE11支持普通元素如此display</h4>
+                <h4>display:list-item为何会出现项目符号的问题</h4>
+                <p>
+                    整个CSS世界的元素派系分为两类: 块级元素和内联元素
+                    <br> 块级元素负责结构，内联元素负责内容，男女搭配干活不累
+                    <br> 但即使这样看似美好的愿景也并不满足日益增长的现实需求，块级元素仅仅只有一个块级盒子满足不了项目符号的需求
+                    <br> 于是乎块级盒子前面就增加了一个附加盒子(标记盒子)，当作放符号的就行了
+                    <br> 过一段时间，需求又来了，又要表现成内联元素又可以满足块级元素
+                    <br> 于是乎又开辟了新的盒子：内在盒子(也可以说是容器盒子，毕竟是拿来装东西展示内容的)，原先块级元素和内联元素的块级盒子和内联盒子则自动成为了外在盒子
+                    <br> 外在盒子就是控制块级元素和内联元素默认表现，独自成行内还是大家排队一起呢？
+                    <br> 内在盒子负责宽高和内容展现。
+                    <br> 所以，所有元素均具有两个或以上(附加盒子)的盒子，则也解释了display:inline-block外在表现内联元素图文一行显示，内在又可以设置高宽
+                    <br>
+                </p>
+            </div>
+            <div class="zlf-margin height-text">
+                <h4>width</h4>
+                <p>
+                    理解了上面的盒子原则，那么我们平常设置高宽的对象就是负责展示内容的容器盒子，也就是说容器盒子为block设置高宽是OK的
+                    <br> 如果是inline的则爱莫能助
+                    <br> 再来重复一遍好了，整个CSS世界的元素派系分为两类: 块级元素和内联元素
+                    <br> width默认值为auto,无论哪两种元素的width表现无出以下四种情况
+                    <br> 1：无论父级容器大小，自动铺满，独自成行
+                    <br> 2：橡皮泥包裹，被包裹的东西有多大，橡皮泥表现多大
+                    <br> 3：收缩到最小
+                    <br> 4：超出父级容器宽度　
+                </p>
+            </div>
+            <div class="zlf-margin height-text">
+                <p>
+                    CSS世界分为内在盒子，外在盒子<br>
+                    显示也分为内在显示，和外在显示<br>
+                    尺寸也分为内在尺寸，和外在尺寸(宽度由外部元素决定)<br>
+                </p>
+                <p>
+                    上面所说的width四种表现只有第一种表现属于外在尺寸，其余属于内部尺寸<br>
+                    外在尺寸之所以外在因为满足流体特性,流体特性不仅仅看上去宽度100%，而是整个盒子的边距，边框，内间距，内容的展现100%<br>
+                    <span class="redword">这个尺寸有两种形式:1:默认流体元素:div 2:格式化宽度(绝对定位下的元素，使用相反定位属性)</span><br>
+                    格式化宽度的宽度大小取决于最近的position不为static的父级<br>
+                    那如果对默认内联元素使用格式化宽度也是没问题的，因为即使是内联元素，一旦设置了absolute，将自动display:block<br>
+                    和块级元素无异
+                </p>
+                <p>
+                    内部尺寸就稍微复杂许多，橡皮泥包裹，内部元素多长包裹长度也就是表现长度就多长，不过即使再长也不超过父级容器长度<br>
+                </p>
+                <div class="nnb">
+                    <div class="nnbb">
+                            橡皮泥包裹
+                    </div>
+                   
+                </div>
+                <div class="zlf-margin">
+                        <button id="addWord">增加文字</button>
+                </div>
+                <p>
+                    以上这个增加文字的例子就很好的说明了内部尺寸，外部元素text-align:center,所以内部元素为inline-block居中展示<br>
+                    文字少的时候，又因为呈现包裹性，内部尺寸小，但文字多起来的时候，内部尺寸变大，但即使再大不会超过父级宽度<br>
+                    最后换行展示,当然能达到智能包裹性的手段还有浮动，绝对定位
+                </p>
+                <div class="zlf-margin">
+                        <button id="minWidth">最小宽度</button>
+                </div>
+                <p>
+                        收缩到最小,即元素最适合的最小宽度，在点击之后最小宽度之后，元素的宽度虽然为0，但是文字还是显现出来<br>
+                        此时表现出来的文字所占宽度就是最适合的最小宽度，也就是单个文字的宽度<br>
+                        但是对于英文则不是，可能会更长，因为英文的换行规则是不同的，根据的是空格，短横线，问号以及其他非英文字符来换行<br>
+                        对于替换元素的最小宽度即该元素内容本身的宽度
+                </p>
+                <p>
+                    最大宽度，如果内部没有块级元素或者块级元素没有设定宽度值，则最大宽度实际上是最大的连续内联盒子的宽度<br>
+                    也可以说是所有不换行的连续的内联元素的宽度的总和的意思，大部分需要使用最大宽度的场景都可以通过设置一个“很多宽度”<br>
+                    来使得即使最大宽度也不会因为宽度不足而换行，也就是尽可能是想要的元素尽量在一行显示<br>    
+                </p>
+                <p class="zlf-margin ">
+                    好了，现在4种所有元素宽度表现的方式也已经叙述完毕，但这仅仅是在外在显示的层面上，对于width的内在作用还不知道<br>
+                    前面说过,width作用在内在盒子中,内在盒子从外往内又分为:margin, border, padding, content<br>
+                    而我们的width自然是作用在content层,margin的背景永远是透明的，因此不可能作为background-clip或者background-origin属性值出现<br>
+                    元素一旦设置了宽高，本身尺寸就不会随着margin值变化而变化了,因此作为box-sizing属性值就没有意义<br>
+                    width作用在content层带来的困扰会有两处：1.块级元素设置定宽则流动性丢失。2:与现实世界的不一致，设定的宽度可能并不如我们所想象的那样
+                </p>
+            </div>
+            <div class="zlf-margin height-text">
+                对于第2种困扰，采取的宽度分离的方法可以说是最佳实践，父级元素定宽，在内部来定间距，把影响宽度的因素降到最低<br>
+                <div class="wbox">
+                    <div class="son"> 宽度分离原则</div>
+                </div>
+                <div class="zlf-margin">
+                    这样的实现宽度仅由父元素决定，结构很稳固
+                </div>
+                <div class="zlf-margin">
+                    还可以采用box-sizing改变width作用的地方，当我们把作用的地方从content改成border，这样是不是就可以无忧无虑了<br>
+                    设定的宽度不受border,padding影响，现实也确实如此<br>
+                    但是因为边框的间距仅仅只有margin存在了，要实现更复杂的布局就显得捉襟见肘了<br>所以说，宽度分离是最佳实践
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#addWord').click(function() {
+            $('.nnbb').text($('.nnbb').text() + '增加');
+        });
+        $('#minWidth').click(function() {
+            $('.nnbb').css({
+                width: 0
+            })
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-2-13 10:18');
+        /*日志结束*/
+    </script>
+</body>
+
+</html>

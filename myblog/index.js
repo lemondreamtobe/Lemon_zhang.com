@@ -581,6 +581,14 @@ articleInfo.addArticle('baoguo', '包裹', '包裹存在于浮动的领域', 'cs
 //2018-2-7 14:41幽灵空白节点
 articleInfo.addArticle('strut', '幽灵空白节点', '犹如幽灵一般存在', 'css');
 
+//2018-2-12 11:40品读CSS WORLD第一章
+articleInfo.addArticle('csw1', '浅析CSS世界第一章节', 'CSS world first chapter', 'css');
+
+//2018-2-12 11:40品读CSS WORLD第二章
+articleInfo.addArticle('csw2', '浅析CSS世界第二章节', 'CSS world second chapter', 'css');
+
+
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
