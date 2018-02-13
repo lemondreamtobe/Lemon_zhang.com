@@ -143,14 +143,14 @@
             content: counter(wangxiaosan);
         }
 
-        .reset1 {
+        .reset {
             padding-left: 20px;
-            counter-reset: wangxiaoera;
+            counter-reset: wangxiaoer;
         }
 
-        .countera:before {
-            content: counters(wangxiaoera, '-') '. ';
-            counter-increment: wangxiaoera;
+        .counter:before {
+            content: counters(wangxiaoer, '-') '. ';
+            counter-increment: wangxiaoer;
         }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
@@ -196,33 +196,20 @@
                 </div>
             </div>
             <div class="zlf-margin">
-                <div class="height-text" style="text-align:left">
+                <div class="height-text">
                     <h4>Part 5</h4>
-                    <div class="reset1">
-                        <div class="countera">我是王小二
-                            <div class="reset1">
-                                <div class="countera">我是王小二的大儿子</div>
-                                <div class="countera">我是王小二的二儿子
-                                    <div class="reset1">
-                                        <div class="countera">我是王小二的二儿子的大孙子</div>
-                                        <div class="countera">我是王小二的二儿子的二孙子</div>
-                                        <div class="countera">我是王小二的二儿子的小孙子</div>
-                                    </div>
-                                </div>
-                                <div class="countera">我是王小二的三儿子</div>
-                            </div>
-                        </div>
-                        <div class="countera">我是王小三</div>
-                        <div class="countera">我是王小四
-                            <div class="reset1">
-                                <div class="countera">我是王小四的大儿子</div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="reset">
+                        <p class="counter">a
+                            <p class="reset">
+                                <p class="counter">e</p>
+                                <p class="counter">f</p>
+                                <p class="counter">g</p>
+                            </p>
+                        </p>
+                        <p class="counter">b</p>
+                        <p class="counter">c</p>
+                    </p>
                 </div>
-            </div>
-            <div>
-                <a>lsaldl</a>
             </div>
         </div>
         <div class="height-text">
