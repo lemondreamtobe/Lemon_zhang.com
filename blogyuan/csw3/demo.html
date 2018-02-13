@@ -32,6 +32,15 @@
             display: inline-block;
             text-align: left;
         }
+        .wbox{
+            width: 250px;
+            margin: 0 auto;
+        }
+        .son{
+            border: 1px solid red;
+            padding: 5px;
+            background: gray;
+        }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
     <script src="../../js/jquery-3.2.1.js"></script>
@@ -146,9 +155,22 @@
                     也可以说是所有不换行的连续的内联元素的宽度的总和的意思，大部分需要使用最大宽度的场景都可以通过设置一个“很多宽度”<br>
                     来使得即使最大宽度也不会因为宽度不足而换行，也就是尽可能是想要的元素尽量在一行显示<br>    
                 </p>
-                <p class="zlf-margin">
-                    好了，现在4种所有元素宽度表现的方式也已经叙述完毕，但这仅仅是在外在显示的层面上，对于width的内在作用还不知道
+                <p class="zlf-margin ">
+                    好了，现在4种所有元素宽度表现的方式也已经叙述完毕，但这仅仅是在外在显示的层面上，对于width的内在作用还不知道<br>
+                    前面说过,width作用在内在盒子中,内在盒子从外往内又分为:margin, border, padding, content<br>
+                    而我们的width自然是作用在content层,margin的背景永远是透明的，因此不可能作为background-clip或者background-origin属性值出现<br>
+                    元素一旦设置了宽高，本身尺寸就不会随着margin值变化而变化了,因此作为box-sizing属性值就没有意义<br>
+                    width作用在content层带来的困扰会有两处：1.块级元素设置定宽则流动性丢失。2:与现实世界的不一致，设定的宽度可能并不如我们所想象的那样
                 </p>
+            </div>
+            <div class="zlf-margin height-text">
+                对于第2种困扰，采取的宽度分离的方法可以说是最佳实践，父级元素定宽，在内部来定间距，把影响宽度的因素降到最低<br>
+                <div class="wbox">
+                    <div class="son"> 宽度分离原则</div>
+                </div>
+                <div class="zlf-margin">
+                    这样的实现宽度仅由父元素决定，结构很稳固
+                </div>
             </div>
         </div>
         <div class="demo-bottom">
