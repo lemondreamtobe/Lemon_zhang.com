@@ -171,6 +171,11 @@
                 <div class="zlf-margin">
                     这样的实现宽度仅由父元素决定，结构很稳固
                 </div>
+                <div class="zlf-margin">
+                    还可以采用box-sizing改变width作用的地方，当我们把作用的地方从content改成border，这样是不是就可以无忧无虑了<br>
+                    设定的宽度不受border,padding影响，现实也确实如此<br>
+                    但是因为边框的间距仅仅只有margin存在了，要实现更复杂的布局就显得捉襟见肘了<br>所以说，宽度分离是最佳实践
+                </div>
             </div>
         </div>
         <div class="demo-bottom">
