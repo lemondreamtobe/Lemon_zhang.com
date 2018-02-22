@@ -590,6 +590,8 @@ articleInfo.addArticle('csw2', '浅析CSS世界第二章节', 'CSS world second 
 //2018-2-22 8:37品读CSS WORLD第三章
 articleInfo.addArticle('csw3', '浅析CSS世界第三章节', 'CSS world third chapter', 'css');
 
+//2018-2-22 16:13品读CSS WORLD第四章
+articleInfo.addArticle('csw4', '浅析CSS世界第四章节', 'CSS world fourth chapter', 'css');
 
 
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));

@@ -26,8 +26,41 @@
             <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
         </div>
         <div class="demo-content">
-            <h3 id="blogTitle"></h3>
+            <h3 id="blogTitle">浅析CSS世界第四章节</h3>
+            <div class="zlf-margin height-text">
+                    <h4>替换元素</h4>
+                    定义：通过修改某个属性值呈现内容就可以被替换的元素称为替换元素，有着以下三种特性：<br>
+                    1.样式表现在CSS作用域之外，需要类似appearance,或者浏览器自身暴露的一些样式接口<br>
+                    2.有自己的尺寸<br>
+                    3.很多CSS属性有自己的表现规则，例如vertical-align，高宽尺寸计算规则不受display值影响
+                </div>
+                <div class="zlf-margin height-text">
+                        高宽尺寸计算规则：固有尺寸，HTML尺寸，CSS尺寸<br>
+                        固有尺寸:替换内容原本的尺寸，我们是无法改变这个替换元素内容的固有尺寸的<br>
+                        HTML尺寸:设置在HTML标签上的width height size cols rows属性<br>
+                        CSS尺寸:通过CSS的width height min/max width/height设置的尺寸，对应盒尺寸的content box<br>
+                        优先级顺序递增，具有覆盖性<br>
+                        如果固有尺寸含有固有的宽高比例，同时仅仅设置宽度和高度，则尺寸按原比例显示
+                </div>
+                <div class="zlf-margin height-text">
+                    替换元素和非替换元素的区别：拿IMG做例子，点击右边链接看第二个例子<a href="../imgasync/demo.html">区别在于src属性</a>
+        
+                </div>
+                <div class="zlf-margin height-text">
+                        <h4>content内容生成技术</h4>
+                        1.辅助元素生成。<a href="../csw3/...html">清除浮动</a><br>
+                        2.content字符内容生成，直接写入字符内容哦，常见于配合@font-face规则实现图标字体效果,也可以插入unicode字符实现换行效果
+                        <a href="../imgasync/demo.html">加载中</a>点击加载中查看与此对应的例子
+                        <br>
+                        3.content图片生成，适用于不需要控制尺寸的图片，例如base64格式的小图片 <br>
+                        4.开启闭合符合用于添加前缀后缀 <br>
+                        5.attr属性内容生成， <a href="../imgasync/demo.html">例子</a> <br>
+                        6.content计数器，用CSS代码实现元素数目增多数值跟着变大的效果，<a href="../imgasync/demo.html">纯计数的例子</a><a href="http://demo.cssworld.cn/4/1-18.php">嵌套计数例子</a><br>
+                        7.内容生成的混合特性
+                </div>
+                
         </div>
+        
         <div class="demo-bottom">
             <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
         </div>
@@ -36,7 +69,7 @@
 
         /*文章信息操作日志*/
         var blogTool = new Tools();
-        blogTool.updateTime('');
+        blogTool.updateTime('2018-2-22 16:12');
         /*日志结束*/
     </script>
 </body>
