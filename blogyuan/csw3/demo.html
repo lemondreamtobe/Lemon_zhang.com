@@ -41,6 +41,16 @@
             padding: 5px;
             background: gray;
         }
+        .zd{
+            /* height: 200px; */
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height .25s;
+            background: red;
+        }
+        .active{
+            max-height: 220px;
+        }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
     <script src="../../js/jquery-3.2.1.js"></script>
@@ -177,12 +187,69 @@
                     但是因为边框的间距仅仅只有margin存在了，要实现更复杂的布局就显得捉襟见肘了<br>所以说，宽度分离是最佳实践
                 </div>
             </div>
+            <div class="zlf-margin height-text">
+                <h4>height</h4>
+                <div>
+                    这里是块级元素
+                </div>
+                <span>这里是内联元素</span>
+                <div class="zlf-margin">
+                    <span class="redword">块级元素height的初始化height值都是0px，内联元素height值默认值auto；</span><br>
+                    百分比高度值想要起作用的前提是父级元素有一个可以生效的高度值<br>
+                    而如果父级元素的高度没有显示指定，并且该元素不是绝对定位，则计算值为auto;<br>
+                    所以百分比值与auto乘积不可计算，所以不起作用<br>
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                height:100%起效果的解决方案在上面的定义也说了，即1.指定高度 2.绝对定位<br>
+                第二种方法中，即使祖先元素为auto，也是起作用的，相对于非绝对定位元素的百分比计算值有所区别<br>
+                <span class="redword">绝对定位的宽高百分比相对于padding box，也就是说会把padding大小值计算在内<br>
+                    非绝对定位元素则相对于content box计算
+                </span>
+            </div>
+            <div class="zlf-margin height-text">
+                <h4>min/max - width/height</h4>
+                max系列的初始值为none，min系列为auto<br>
+                <div>
+                    <span class="redword">这四种属性值存在相互覆盖的规则即"超越!important 超越最大"</span>
+                    <br>
+                    第一个超越指max-width会覆盖width，即使width设置!important<br>
+                    第二个超越指min-width会覆盖max-width<br>
+                    高度同理
+                </div>
+                <button id="pzd">折叠</button>
+                <div class="zd">
+                    利用max-height也可以实现折叠效果，需要注意的是折叠后的max-height需要设定一个安全的值
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h4>内联元素</h4>
+                <div>
+                    <span class="redword">块级负责结构，内联负责内容，CSS世界是为图文展示服务的</span><br>
+                    <div>
+                        内联盒模型
+                        <p>这是一行普通文字，这里有一个<span>标签</span></p>
+                        内容区域：围绕文字看不见的盒子，大小由文字本身特性控制，对于替换元素则为替换元素自身<br>
+                        方便理解可以理解为文本选中的背景区域作为内容区域<br>
+                        内联盒子：纯文字为匿名内联盒子，内联标签属于内联盒子
+                        行框盒子：每一单独成行的就是行框盒子，由许多的内联盒子组成
+                        包含盒子：整个P标签就是包含盒子，由一行行的行框盒子组成
+                    </div>
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h4>幽灵空白节点</h4>
+                请点击右侧文章进行参考<a href="../strut/demo.html">文章</a>
+            </div>
         </div>
         <div class="demo-bottom">
             <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
         </div>
     </div>
     <script type="text/javascript">
+        $('#pzd').click(function() {
+            $('.zd').toggleClass('active');
+        });
         $('#addWord').click(function() {
             $('.nnbb').text($('.nnbb').text() + '增加');
         });
