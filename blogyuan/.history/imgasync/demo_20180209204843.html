@@ -143,15 +143,14 @@
             content: counter(wangxiaosan);
         }
 
-        #btn {
-            position: absolute;
-            clip: rect(0 0 0 0);
+        .reset1 {
+            padding-left: 20px;
+            counter-reset: wangxiaoera;
         }
 
-        label {
-            display: inline-block;
-            line-height: 20px;
-            padding: 10px;
+        .countera:before {
+            content: counters(wangxiaoera, '-') '. ';
+            counter-increment: wangxiaoera;
         }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
@@ -198,16 +197,18 @@
             </div>
             <div class="zlf-margin">
                 <div class="height-text">
-                    <h4>Part 6</h4>
-                    <button id="btn"></button>
-                    <label for="btn">按钮</label>
-                </div>
-            </div>
-            <div class="zlf-margin">
-                <div class="height-text">
-                    <div class="father">
-                        <span class="son">float</span>
-                    </div>
+                    <h4>Part 5</h4>
+                    <p class="reset1">
+                        <p class="countera">a
+                            <p class="reset1">
+                                <p class="countera">e</p>
+                                <p class="countera">f</p>
+                                <p class="countera">g</p>
+                            </p>
+                        </p>
+                        <p class="countera">b</p>
+                        <p class="countera">c</p>
+                    </p>
                 </div>
             </div>
         </div>
@@ -219,9 +220,6 @@
         </div>
     </div>
     <script type="text/javascript">
-        $('#btn').click(function () {
-            alert('1');
-        });
         $('#seeImg').click(function () {
             $('#demo').prop('src', '../../images/autofix.png');
         });

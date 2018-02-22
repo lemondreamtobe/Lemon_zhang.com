@@ -1,0 +1,190 @@
+<!doctype>
+<html>
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+    img{
+        visibility: hidden;
+    }
+    img[src] {
+        visibility: visible;
+    }
+    .tc-15-btn{
+    display: block;
+    line-height: 45px;
+    margin: 0 auto;
+    width: 218px;
+    height: 47px;
+    border: 1px solid #2277da;
+    color: #2277da;
+    padding: 0;
+    font-size: 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    min-width: 24px;
+    text-align: center;
+    transition: .2s ease background;
+    background-color: rgba(237,113,31,0);
+    /* background: #0071ce; */
+}
+.tc-15-btn:hover{
+    background: #0071ce;
+    color: white;
+    text-decoration: none;
+}
+.tc-15-btn{
+    -webkit-tap-highlight-color: transparent;
+}
+.tc-15-btn{
+    text-decoration: none;
+}
+.demo1 {
+    display: inline-block;
+    width: 256px; height: 192px;
+    /* 隐藏Firefox alt文字 */
+    color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+.demo1:not([src]) {
+    /* 隐藏Chrome alt文字以及银色边框 */
+    visibility: hidden;
+}
+.demo1::before {
+    /* 淡蓝色占位背景 */
+    content: "";
+    position: absolute; left: 0;
+    width: 100%; height: 100%;
+    background-color: #f0f3f9;
+    visibility: visible;
+}
+.demo1::after {
+    /* 黑色alt信息条 */
+    content: attr(alt);
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* line-height: 30px; */
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    line-height: 192px;
+    font-size: 14px;
+    /* transform: translateY(100%); */
+    /* 来点过渡动画效果 */
+    transition: transform .2s;
+    visibility: visible;
+}
+.demo1:hover::after {
+    /* transform: translateY(0); */
+}
+dot {
+    display: inline-block; 
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -.25em;
+    overflow: hidden;
+}
+dot::before {
+    display: block;
+    content: '...\A..\A.';
+    white-space: pre-wrap;
+    animation: dot 3s infinite step-start both;
+}
+@keyframes dot {
+    33% { transform: translateY(-2em); }
+    66% { transform: translateY(-1em); }
+}
+.counter {
+  counter-reset: wangxiaoer 2 wangxiaosan 3; 
+  counter-increment: wangxiaoer;
+  font-size: 32px; 
+  font-family: Arial Black; 
+  color: #cd0000; 
+}
+.counter:before { 
+    counter-increment: wangxiaoer;
+  content: counter(wangxiaoer); 
+}
+.counter:after { 
+  content: counter(wangxiaosan); 
+}
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="/" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle"></h3>
+            <div class="height-text">
+                <h4>Part 1</h4>
+                <img id="demo">
+                <div class="zlf-margin">
+                        <button class="tc-15-btn" id="seeImg">看图</button>
+                </div>
+            </div>
+            <div class="zlf-margin">
+                <div class="height-text">
+                        <h4>Part 2</h4>
+                    <img id="demo2" class="demo1" alt="这是一个demo">
+                </div>
+            </div>
+            <div class="zlf-margin">
+                <div class="height-text">
+                        <h4>Part 3</h4>
+                        正在加载中<dot>...</dot>
+                </div>
+            </div>
+            <div class="zlf-margin">
+                    <div class="height-text">
+                            <h4>Part 4</h4>
+                            <p class="counter"></p>
+                    </div>
+                </div>
+        </div>
+        <div class="height-text">
+            
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#seeImg').click(function() {
+            $('#demo').prop('src', '../../images/autofix.png');
+        });
+        setTimeout(function() {
+            $('#demo2').attr('src', '../../images/autofix.png');
+        }, 2000);
+        $('#demo2').click(function(e) {
+
+            if (!$(this).attr('src')) {
+                $(this).attr('src', '../../images/autofix.png');
+            } else {
+                $(this).removeAttr('src');
+            }
+        }); 
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-2-8 16:23');
+        /*日志结束*/
+    </script>
+</body>
+</html>
