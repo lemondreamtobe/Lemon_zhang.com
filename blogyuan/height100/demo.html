@@ -1,0 +1,80 @@
+<!doctype>
+<html>
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+.box {
+  display: inline-block;
+  position: relative;
+}
+.box > img {
+  display: block;
+}
+.prev, 
+.next {
+  width: 50%; height: 100%;
+  position: absolute;
+  font-size: 0px;
+  top: 0;
+  opacity: .5;
+  filter: alpha(opacity=30);
+}
+.prev:active,
+.next:active {
+  opacity: .6;
+}
+.prev {
+  left: 0;
+  color: #cd0000;
+  background-color: #cd0000;
+}
+
+.next {
+  right: 0;
+  color: #34538b;
+  background-color: #34538b;
+}
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">绝对定位下高度100%</h3>
+            <div class="zlf-margin height-text">
+                <div class="box">
+                    <a href="javascript:" class="prev" title="上一张">上一张</a>
+                    <a href="javascript:" class="next" title="下一张">下一张</a>
+                    <img src="../../images/autofix.png">
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-2-26 11:21');
+        /*日志结束*/
+    </script>
+</body>
+</html>

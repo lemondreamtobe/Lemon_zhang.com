@@ -593,6 +593,11 @@ articleInfo.addArticle('csw3', '浅析CSS世界第三章节', 'CSS world third c
 //2018-2-22 16:13品读CSS WORLD第四章
 articleInfo.addArticle('csw4', '浅析CSS世界第四章节', 'CSS world fourth chapter', 'css');
 
+//2018-2-26 10:59add a demo from css world
+articleInfo.addArticle('wordmid', '包裹性的尺寸用例', '文字少居中，文字多居左', 'css');
+
+//2018-2-26 11:20add a demo from css world
+articleInfo.addArticle('height100', 'height100%生效之绝对定位', '绝对定位下高度自适应外部尺寸', 'css');
 
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();

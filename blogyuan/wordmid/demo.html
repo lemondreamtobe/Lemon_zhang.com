@@ -1,0 +1,60 @@
+<!doctype>
+<html>
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+    .box{
+        text-align: center;
+    }
+    .content{
+        display: inline-block;
+        text-align: left;
+    }
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">文字少时居中显示，超过一行居左显示</h3>
+            <div class="zlf-margin height-text">
+                <div class="box">
+                    <div class="content">
+                        这里增加文字
+                    </div>
+                </div>
+            </div>
+            <button id="addWord" class="zlf-margin">增加文字</button>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $('#addWord').click(function() {
+            $('.content').text($('.content').text() + '增加文字')
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-2-26 10:59');
+        /*日志结束*/
+    </script>
+</body>
+</html>
