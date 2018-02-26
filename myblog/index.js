@@ -599,6 +599,9 @@ articleInfo.addArticle('wordmid', '包裹性的尺寸用例', '文字少居中�
 //2018-2-26 11:20add a demo from css world
 articleInfo.addArticle('height100', 'height100%生效之绝对定位', '绝对定位下高度自适应外部尺寸', 'css');
 
+//2018-2-26 11:40add a demo from css world
+articleInfo.addArticle('toggleheight', 'max-height实现过渡的折叠效果', 'max-height的应用', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
