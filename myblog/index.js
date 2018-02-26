@@ -604,6 +604,10 @@ articleInfo.addArticle('toggleheight', 'max-height实现过渡的折叠效果', 
 
 //2018-2-26 14:40add a demo from css world
 articleInfo.addArticle('imginfo', '利用替换元素向非替换元素转换的特性', '利用特性做的天然的图片信息提示', 'css');
+
+//2018-2-26 14:40基于content的内容生成技术
+articleInfo.addArticle('loading', '基于content的内容生成技术', '也叫做::before, ::after伪元素技术', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
