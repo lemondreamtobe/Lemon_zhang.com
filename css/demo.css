@@ -5,6 +5,9 @@ input,textarea,img,video,object{
     box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
+img{
+    display: inline-block;
+}
 body{
     margin: 0px;
     padding: 0px;

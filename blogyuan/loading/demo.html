@@ -1,0 +1,123 @@
+<!doctype>
+<html>
+<head>
+<title>柠檬树下的过客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="../../images/webhead.jpg" />
+<link href="../../css/demo.css" rel="styleSheet">
+<link href="./demo.css" rel="styleSheet" rel="styleSheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+<style type="text/css">
+dot {
+    display: inline-block; 
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -.25em;
+    overflow: hidden;
+}
+dot::before {
+    display: block;
+    content: '...\A..\A.';
+    white-space: pre-wrap;
+    animation: dot 3s infinite step-start both;
+}
+@keyframes dot {
+    33% { transform: translateY(-2em); }
+    66% { transform: translateY(-1em); }
+}
+#num{
+    counter-reset: wangxiaoer 0;
+    /* counter-increment: wangxiaoer; */
+}
+#num li{
+    counter-increment: wangxiaoer;
+}
+#num::after{
+    content: counter(wangxiaoer);
+}
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+<script src="../../js/notice.js"></script>
+<script src="../../js/demo.js"></script>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">基于content内容生成技术</h3>
+            <div class="zlf-margin height-text">
+                <h3>content辅助元素生成</h3>
+                <div>
+                    1.清除浮动：content:'';display: block;clear:both<br>
+                    2.利用伪元素来生成空白内容，在利用其它CSS代码来辅助元素完成布局
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>content字符内容生成</h3>
+                <div>
+                    1.直接写入字符内容，中英文都可以，常用于配合@font-face完成字体图标效果
+                    2.还可插入unicode字符，例如插入换行符'\A'来实现某些布局，例如下面的加载中
+                </div>
+                正在加载中<dot>...</dot>
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>content图片生成</h3>
+                <div>
+                    存在两点缺点，实用性不高不加赘述
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>content开启闭合符号生成</h3>
+                类似于content辅助元素生成不加赘述
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>content计数器</h3>
+                <ul id="num">
+                    <li>水果</li>
+                </ul>
+                <button id="addF">增加水果</button>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#addF').click(function() {
+            $('#num').append('<li>水果</li>');
+        });
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-2-26 15:21');
+        function add() {
+            var storage;
+            if (arguments.length !== 1) {
+                return Array.prototype.reduce.call(arguments, function(prev, cur, index, array){
+                    return prev + cur;
+                })
+            } else {
+                return curry(arguments.callee, arguments[0])
+            }
+        }
+        function curry(fn) {
+            var argus = Array.prototype.slice.call(arguments, 1);
+            return function() {
+                var inargus = Array.prototype.slice.call(arguments);
+                var finalin = argus.concat(inargus);
+                return fn.apply(null, finalin);
+            };
+        };
+        add(2)(5);
+        /*日志结束*/
+    </script>
+</body>
+</html>

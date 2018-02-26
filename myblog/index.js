@@ -602,6 +602,8 @@ articleInfo.addArticle('height100', 'height100%生效之绝对定位', '绝对�
 //2018-2-26 11:40add a demo from css world
 articleInfo.addArticle('toggleheight', 'max-height实现过渡的折叠效果', 'max-height的应用', 'css');
 
+//2018-2-26 14:40add a demo from css world
+articleInfo.addArticle('imginfo', '利用替换元素向非替换元素转换的特性', '利用特性做的天然的图片信息提示', 'css');
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
