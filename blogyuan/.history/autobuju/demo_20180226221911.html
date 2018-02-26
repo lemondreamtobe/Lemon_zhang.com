@@ -1,0 +1,108 @@
+<!doctype>
+<html>
+
+<head>
+    <title>柠檬树下的过客</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet" rel="styleSheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+    <style type="text/css">
+        .box {
+            width: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .box>img {
+            float: left;
+        }
+
+        .box>p {
+            margin-left: 240px;
+        }
+
+        .column-left {
+            background-color: #34538b;
+        }
+
+        .column-right {
+            background-color: #cd0000;
+        }
+
+        .column-left,
+        .column-right {
+            width: 50%;
+            float: left;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+    <script src="../../js/notice.js"></script>
+    <script src="../../js/demo.js"></script>
+</head>
+
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">利用margin特性实现的自适应布局</h3>
+            <div class="zlf-margin height-text">
+                <div class="box">
+                    <img src="../../images/autofix.png">
+                    <p>
+                        利用margin特性实现一侧定宽的自适应布局,利用margin特性实现一侧定宽的自适应布局,利用margin特性实现一侧定宽的自适应布局,利用margin特性实现一侧定宽的自适应布局
+                    </p>
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <div class="box">
+                    <div id="colLeft" class="column-left">
+                        <h4>正方观点</h4>
+                        <p>观点1</p>
+                    </div>
+                    <div id="colRight" class="column-right">
+                        <h4>反方观点</h4>
+                        <p>观点1</p>
+                    </div>
+                </div>
+                <div class="zlf-margin">
+                    <input type="button" id="leftMore" value="更多正方观点">
+                    <input type="button" id="rightMore" value="更多反方观点">
+                </div>
+            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /*文章信息操作日志*/
+        $('#btn').click(function () {
+            alert('hi');
+        });
+        $('#leftMore').click(function () {
+            $('.column-left').append('<p>观点1</p>');
+        });
+        $('#rightMore').click(function () {
+            $('.column-right').append('<p>观点1</p>');
+        });
+        var blogTool = new Tools();
+        blogTool.updateTime('2018-2-26 21:21');
+        /*日志结束*/
+    </script>
+</body>
+
+</html>
