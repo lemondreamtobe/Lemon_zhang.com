@@ -608,6 +608,15 @@ articleInfo.addArticle('imginfo', '利用替换元素向非替换元素转换的
 //2018-2-26 14:40基于content的内容生成技术
 articleInfo.addArticle('loading', '基于content的内容生成技术', '也叫做::before, ::after伪元素技术', 'css');
 
+//2018-2-26 21:21自适应的大图展示
+articleInfo.addArticle('autobg', '自适应横屏展示大图', '常用于大张的宣传图片', 'css');
+
+//2018-2-26 21:21
+articleInfo.addArticle('autobuju', '利用margin特性实现的自适应布局', '常用于布局', 'css');
+
+////2018-2-26 21:21
+articleInfo.addArticle('labelforbtn', '用label标签模拟原生button', '用以解决button跨浏览兼容性不良', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
