@@ -5,51 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+       .sdg {
+            display: inline-block;
+            width: 120px;
+            height: 20px;
+            border-top: 60px double;
+            border-bottom: 20px solid;
+            margin-right: 15px;
+            position: absolute;
+        }
+        .sdg1 {
+            display: inline-block;
+            width: 24px;
+            height: 100px;
+            border-left: 72px double;
+            border-right: 24px solid;
+        }
+        .zjsjx, .zjsjx1, .zjsjx2, .zjsjx3{
+            display: inline-block;
+            width: 0;
+            border-width: 10px 20px;
+            border-style: solid;
+            border-color: transparent #000000 #000000 transparent;
+            margin-right: 10px;
+            transform: skewY(-25deg)
+        }
+    </style>
 </head>
 <body>
-        <div>
-                这里是文本<input type="text" value="这里是文本输入框">
-            </div>
-            <script>
-                window.onload = function(e) {
-                    
-                    if(typeof jQuery == 'undefined'){
-                        var script = document.createElement('script');
-                        script.type = 'text/javascript';
-                        script.src = 'http://www.lemon-zhang.cn/js/jquery-3.2.1.js';
-                        document.body.appendChild(script);
-
-                        document.write('<div class="demo"></div>');
-                        script.addEventListener('load', function() {
-                            var fire = document.createElement('script');
-                            fire.type = 'text/javascript';
-                            fire.src = 'http://www.lemon-zhang.cn/js/jquery.fireworks.js';
-                            document.body.appendChild(fire);
-                            fire.addEventListener('load', function() {
-                                $('.demo').fireworks({ 
-                                    sound: true, // 声音效果
-                                    opacity: 0.9, 
-                                    width: '100%', 
-                                    height: '100%'
-                                });
-                            });
-                        });
-                    } else {
-                        document.write('<div class="demo"></div>');
-                        var fire = document.createElement('script');
-                        fire.type = 'text/javascript';
-                        fire.src = 'http://www.lemon-zhang.cn/js/jquery.fireworks.js';
-                        document.body.appendChild(fire);
-                        fire.addEventListener('load', function() {
-                            $('.demo').fireworks({ 
-                                sound: true, // 声音效果
-                                opacity: 0.9, 
-                                width: '100%', 
-                                height: '100%'
-                            });
-                        });
-                    }
-                }
-            </script>
+    <div>
+        <div class="sdg"></div>
+        <div class="sdg1"></div>
+    </div>
+    <div class="zjsjx"></div>
 </body>
 </html>

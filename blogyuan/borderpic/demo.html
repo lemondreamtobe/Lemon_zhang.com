@@ -1,0 +1,174 @@
+<!doctype>
+<html>
+
+<head>
+    <title>柠檬树下的过客</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../images/webhead.jpg" />
+    <link href="../../css/demo.css" rel="styleSheet">
+    <link href="./demo.css" rel="styleSheet" rel="styleSheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
+    <style type="text/css">
+        .sdg {
+            display: inline-block;
+            width: 120px;
+            height: 100px;
+            border-top: 60px double;
+            border-bottom: 20px solid;
+            margin-right: 15px;
+            position: absolute;
+        }
+        .sdg1 {
+            display: inline-block;
+            width: 120px;
+            height: 100px;
+            border-left: 72px double;
+            border-right: 24px solid;
+        }
+        .sjx, .sjx1, .sjx2, .sjx3{
+            display: inline-block;
+            border: 10px solid;
+            border-color: #000000 transparent transparent;
+            margin-right: 10px;
+        }
+        
+        .jx, .jx1,.jx2,.jx3{
+            display: inline-block;
+            width: 30px;
+            height: 25px;
+            border: 10px solid;
+            border-color: #000000 transparent transparent;
+            margin-right: 10px;
+        }
+        .sjx1,.jx1{
+            border-color: transparent #000000 transparent transparent;
+        }
+        .sjx2, .jx2{
+            border-color: transparent transparent #000000 transparent;
+        }
+        .sjx3, .jx3{
+            border-color: transparent transparent transparent #000000;
+        }
+        .zjsjx, .zjsjx1, .zjsjx2, .zjsjx3{
+            display: inline-block;
+            width: 0;
+            border-width: 10px 20px;
+            border-style: solid;
+            border-color: #000000 #000000 transparent transparent;
+            margin-right: 10px;
+        }
+        .zjsjx1{
+            border-color: transparent #000000 #000000 transparent;
+        }
+        .zjsjx2{
+            border-color: transparent transparent #000000 #000000;
+        }
+        .zjsjx3{
+            border-color: #000000 transparent transparent #000000;
+        }
+        .content{
+            width: 250px;
+            height: 150px;
+            padding: 10px;
+            border: 10px solid #ccc;
+            margin: 0 auto;
+        }
+        .hzj{
+            border-width: 15px 7px;
+            border-color: #ccc #ccc transparent transparent;
+        }
+        .father{
+            position: relative;
+            width: 50%;
+            height: 120px;
+            background: red;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        .father:before,
+        .father:after{
+            content: "";
+            position: absolute;
+            left: 0; right: 0;
+            border: 7px solid;
+        }
+        .father:before{
+            /* border-width: 0px 0px 2px 0px; */
+            border-color: transparent transparent red transparent;
+            top: -13px;
+        }
+        .father:after{
+            /* border-width: 2px 0px 0px 0px; */
+            border-color: red transparent transparent  transparent;
+            bottom: -14px;
+        }
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+    <script src="../../bootstrap-3.3.5/js/bootstrap.js"></script>
+    <script src="../../js/notice.js"></script>
+    <script src="../../js/demo.js"></script>
+</head>
+
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html" class="head-img"></a>
+            <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
+        </div>
+        <div class="demo-content">
+            <h3 id="blogTitle">利用border绘制几何图形</h3>
+            <div class="zlf-margin height-text">
+                <h3>绘制三道杠</h3>
+                <div class="sdg"></div>
+                <div class="sdg1"></div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>绘制三角形</h3>
+                <div class="sjx"></div>
+                <div class="sjx1"></div>
+                <div class="sjx2"></div>
+                <div class="sjx3"></div>
+            </div>
+            <div class="zlf-margin height-text">
+                    <h3>绘制矩形</h3>
+                    <div class="jx"></div>
+                    <div class="jx1"></div>
+                    <div class="jx2"></div>
+                    <div class="jx3"></div>
+                </div>
+                <div class="zlf-margin height-text">
+                        <h3>绘制直角三角形</h3>
+                        <div class="zjsjx"></div>
+                        <div class="zjsjx1"></div>
+                        <div class="zjsjx2"></div>
+                        <div class="zjsjx3"></div>
+                    </div>
+                    <div class="zlf-margin height-text">
+                            <h3>综合应用：提示框</h3>
+                            <div class="content">利用border绘制几何图形利用border绘制几何图形利用border绘制几何图形</div>
+                            <div class="zjsjx hzj"></div>
+                        </div>
+                        <div class="zlf-margin height-text">
+                                <h3>综合应用：模拟近似圆角</h3>
+                                <div class="father">
+                                    <!-- <div class="son"></div> -->
+                                </div>
+                            </div>
+        </div>
+        <div class="demo-bottom">
+            <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /*文章信息操作日志*/
+        var blogTool = new Tools();
+        blogTool.updateTime('');
+        /*日志结束*/
+    </script>
+</body>
+
+</html>
