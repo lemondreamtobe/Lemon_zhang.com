@@ -43,6 +43,44 @@
             color: #fff;
             /* display: table-cell; */
         }
+
+        .ma,
+        .ma1,
+        .ma2 {
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+
+        .ma {
+            margin-left: auto;
+        }
+
+        .ma1 {
+            margin: 0 auto;
+        }
+
+        .ma2 {
+            margin-right: auto;
+        }
+        .father{
+            height: 200px;
+            width: 200px;
+            background: red;
+            margin: 0 auto;
+            position: relative;
+        }
+        .son{
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: green;
+            top:0;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+        }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
     <script src="../../js/jquery-3.2.1.js"></script>
@@ -61,6 +99,7 @@
         <div class="demo-content">
             <h3 id="blogTitle">利用margin特性实现的自适应布局</h3>
             <div class="zlf-margin height-text">
+                <h3>利用margin特性可以改变尺寸实现一侧定宽的两栏自适应布局</h3>
                 <div class="box">
                     <img src="../../images/autofix.png">
                     <p>
@@ -69,6 +108,7 @@
                 </div>
             </div>
             <div class="zlf-margin height-text">
+                <h3>利用margin特性可以改变外部尺寸实现多栏等高布局</h3>
                 <div class="box">
                     <div id="colLeft" class="column-left">
                         <h4>正方观点</h4>
@@ -82,6 +122,24 @@
                 <div class="zlf-margin">
                     <input type="button" id="leftMore" value="更多正方观点">
                     <input type="button" id="rightMore" value="更多反方观点">
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>利用margin特性auto值平分剩余空间实现块级元素居左中右对齐</h3>
+                <div class="ma">
+
+                </div>
+                <div class="ma1">
+
+                </div>
+                <div class="ma2">
+
+                </div>
+            </div>
+            <div class="zlf-margin height-text">
+                <h3>利用margin特性auto值平分剩余空间实现块级元素垂直水平居中</h3>
+                <div class="father">
+                    <div class="son"></div>
                 </div>
             </div>
         </div>
