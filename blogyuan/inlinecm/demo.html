@@ -10,7 +10,13 @@
 <link href="./demo.css" rel="styleSheet" rel="styleSheet">
 <link href="../../font-awesome/css/font-awesome.css" rel="styleSheet">
 <style type="text/css">
-
+    .ic{
+        display: inline-block;
+        width: 20px;
+        height: 1ex;
+        background: url('../../images/wzk.png') no-repeat center;
+        
+    }
 </style>
 <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">  
 <script src="../../js/jquery-3.2.1.js"></script>
@@ -26,9 +32,15 @@
             <div class="zlf-head-description" id="updateTime">最后更新时间: </div>
         </div>
         <div class="demo-content">
-            <h3 id="blogTitle"></h3>
+            <h3 id="blogTitle">内联元素垂直居中对齐</h3>
             <div class="zlf-margin height-text">
-                
+                    <div class="b1">
+                            内联元素垂直居中对齐<i class="ic"></i>
+                    </div>
+                    <div class="zlf-margin">
+                        <button id="bgW">文字增大</button>
+                        <button id="bgM">文字减小</button>
+                    </div>
             </div>
         </div>
         <div class="demo-bottom">
@@ -36,7 +48,16 @@
         </div>
     </div>
     <script type="text/javascript">
-
+        $('#bgW').click(function() {
+            $('.b1').css({
+                'font-size': (Number($('.b1').css('font-size').split('px')[0]) + 10) +　'px'
+            })
+        });
+        $('#bgM').click(function() {
+            $('.b1').css({
+                'font-size': (Number($('.b1').css('font-size').split('px')[0]) - 10) +　'px'
+            })
+        });
         /*文章信息操作日志*/
         var blogTool = new Tools();
         blogTool.updateTime('');
