@@ -7,42 +7,25 @@
     <title>Document</title>
     <script src="../jquery/jquery-1.12.1.min.js"></script>
     <style>
-       .box{
-           /* overflow: hidden; */
-           border-left: 150px solid #ccc;
-           background-color: #f0f3f9;
-       }
-       
-       .box::after{
-           content:'';
-           display: block;
-           clear: both;
-       }
-       .box>nav{
-           float: left;
-           color: #0078db;
-           margin-left: -150px;
-       }
-       .box > module h3,
-       .box >nav h3{
-           margin: 0px;
-       }
+      .box {
+        width: 280px;
+        line-height: 120px;
+        background-color: #f0f3f9;
+        margin: auto;
+    }
+    .content {
+        display: inline-block;
+        line-height: 20px;
+        margin: 0 20px;
+        text-align: left;
+        vertical-align: middle;
+    }
     </style>
 </head>
 <body>
-    <div class="box">
-        <nav>
-            <h3>导航1</h3>
-        </nav>
-        <module>
-            <h3>模块</h3>
-        </module>
-    </div>
-    <div>
-        <button id="addN">增加导航栏</button>
-        <button id="addM">增加模块</button>
-    </div>
-    <div></div>
+        <div class="box">
+                <div class="content">多行文本垂直居中对齐多行文本垂直居中对齐多行文本垂直居中对齐...</div>
+            </div>
     <script>
         $('#addN').click(function() {
             $('nav').append(' <h3>导航1</h3>')

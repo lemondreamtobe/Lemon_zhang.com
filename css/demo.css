@@ -1,3 +1,4 @@
+/*css reset*/
 *{
     font-size: 16px;
 }
@@ -5,9 +6,16 @@ input,textarea,img,video,object{
     box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
+input,button{
+    line-height: inherit;
+}
 img{
     display: inline-block;
 }
+body{
+    line-height: 1.5;
+}
+
 body{
     margin: 0px;
     padding: 0px;
