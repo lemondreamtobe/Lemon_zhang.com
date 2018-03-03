@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>柠檬树下的过客</title>
     <meta charset="UTF-8">
@@ -25,7 +26,8 @@
             background: url('../../images/wzk.png') no-repeat center;
             font-size: inherit;
         }
-        .id{
+
+        .id {
             display: inline-block;
             width: 20px;
             height: 20px;
@@ -33,6 +35,7 @@
             background: url('../../images/wzk.png') no-repeat center;
             font-size: inherit;
         }
+
         .b2 {
             width: 280px;
             line-height: 120px;
@@ -47,10 +50,12 @@
             text-align: left;
             vertical-align: middle;
         }
-        button+button{
+
+        button+button {
             margin-left: 25px;
         }
-        .im1{
+
+        .im1 {
             width: 50%;
             background-color: #f0f3f9;
             /* height: 200px; */
@@ -58,8 +63,39 @@
             text-align: center;
             margin: 0 auto;
         }
-        .img>img{
+
+        .img>img {
             vertical-align: middle;
+        }
+
+        .ie {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            white-space: nowrap;
+            letter-spacing: -1em;
+            text-indent: -999em;
+        }
+
+        .b5 {
+            line-height: 20px;
+        }
+
+        .b5>span,
+        .b5>i {
+            font-size: inherit;
+        }
+
+        .ie:before {
+            content: '\3000';
+        }
+
+        .ie {
+            background: url('../../images/wzk.png') no-repeat center;
+        }
+
+        .large {
+            font-size: 20px;
         }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
@@ -85,8 +121,13 @@
                     <i class="ic"></i>
                 </div>
                 <div class="zlf-margin b1">
-                    <span>内联元素垂直居中对齐(方法2,)</span>
+                    <span>内联元素垂直居中对齐(方法2)</span>
                     <i class="id"></i>
+                </div>
+                <div class="zlf-margin b5">
+                    <span>内联元素垂直居中对齐(方法3)</span>
+                    <i class="ie"></i>
+                    <i class="ie">里面有字</i>
                 </div>
                 <div class="zlf-margin">
                     <button id="bgW">文字增大</button>
@@ -96,13 +137,13 @@
             <div class="zlf-margin height-text">
                 <h3>多行文本垂直居中对齐</h3>
                 <div class="b2">
-                        <div class="c1">多行文本垂直居中对齐多行文本垂直居中对齐多行文本垂直居中对齐...</div>
-                    </div>
+                    <div class="c1">多行文本垂直居中对齐多行文本垂直居中对齐多行文本垂直居中对齐...</div>
+                </div>
             </div>
             <div class="zlf-margin height-text">
                 <h3>图片垂直居中</h3>
                 <div class="im1">
-                       <img src="../../images/autofix.png">
+                    <img src="../../images/autofix.png">
                 </div>
             </div>
         </div>
@@ -114,11 +155,17 @@
         $('#bgW').click(function () {
             $('.b1').css({
                 'font-size': (Number($('.b1').css('font-size').split('px')[0]) + 10) + 　'px'
-            })
+            });
+            $('.b5').css({
+                'font-size': (Number($('.b5').css('font-size').split('px')[0]) + 10) + 　'px'
+            });
         });
         $('#bgM').click(function () {
             $('.b1').css({
                 'font-size': (Number($('.b1').css('font-size').split('px')[0]) - 10) + 　'px'
+            });
+            $('.b5').css({
+                'font-size': (Number($('.b5').css('font-size').split('px')[0]) - 10) + 　'px'
             })
         });
         /*文章信息操作日志*/
