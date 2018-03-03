@@ -63,23 +63,61 @@
         .ma2 {
             margin-right: auto;
         }
-        .father{
+
+        .father {
             height: 200px;
             width: 200px;
             background: red;
             margin: 0 auto;
             position: relative;
         }
-        .son{
+
+        .son {
             position: absolute;
             left: 0;
             right: 0;
             background: green;
-            top:0;
+            top: 0;
             bottom: 0;
             width: 100px;
             height: 100px;
             margin: auto;
+        }
+
+        .br {
+            border-left: 150px solid #333;
+            background-color: #f0f3f9;
+        }
+
+        /* 清除浮动影响，不能使用overflow:hidden */
+
+        .br:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 布局主结构 */
+
+        .br>nav {
+            width: 150px;
+            margin-left: -150px;
+            float: left;
+        }
+
+        .br>section {
+            overflow: hidden;
+        }
+
+        /* 导航列表和模块列表 */
+
+        .nav {
+            line-height: 40px;
+            color: #fff;
+        }
+
+        .module {
+            line-height: 40px;
         }
     </style>
     <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css">
@@ -142,6 +180,21 @@
                     <div class="son"></div>
                 </div>
             </div>
+            <div class="zlf-margin height-text">
+                <h3>利用border属性同样实现的两栏等高布局</h3>
+                <div class="br">
+                    <nav>
+                        <h3 class="nav">导航1</h3>
+                    </nav>
+                    <section>
+                        <div class="module">模块1</div>
+                    </section>
+                </div>
+                <div class="zlf-margin">
+                    <button id="addNav">增加导航</button>
+                    <button id="addMod">增加模块</button>
+                </div>
+            </div>
         </div>
         <div class="demo-bottom">
             <a href="http://www.lemon-zhang.cn/myblog/index.html">返回首页</a>
@@ -157,6 +210,12 @@
         });
         $('#rightMore').click(function () {
             $('.column-right').append('<p>观点1</p>');
+        });
+        $('#addNav').click(function () {
+            $('.br>nav').append('<h3 class="nav">导航1</h3>');
+        });
+        $('#addMod').click(function () {
+            $('.br>section').append('<div class="module">模块1</div>');
         });
         var blogTool = new Tools();
         blogTool.updateTime('2018-2-26 21:21');
