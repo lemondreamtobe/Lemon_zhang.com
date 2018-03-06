@@ -614,8 +614,17 @@ articleInfo.addArticle('autobg', '自适应横屏展示大图', '常用于大张
 //2018-2-26 21:21
 articleInfo.addArticle('autobuju', '利用margin特性实现的自适应布局', '常用于布局', 'css');
 
-////2018-2-26 21:21
+//2018-2-26 21:21
 articleInfo.addArticle('labelforbtn', '用label标签模拟原生button', '用以解决button跨浏览兼容性不良', 'css');
+
+//2018-3-2 17:20
+articleInfo.addArticle('borderpic', '基于border的图形绘制', 'border的另类用法', 'css');
+
+//2018-3-4 21:15 
+articleInfo.addArticle('inlinecm', '再见垂直居中对齐', '常见的垂直对齐方法', 'css');
+
+//2018-3-5 22:10
+articleInfo.addArticle('focushref', '基于focus来滚动实现的tab', '一种便利的选项卡', 'css');
 
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
