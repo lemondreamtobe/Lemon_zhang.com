@@ -1,0 +1,88 @@
+.dialog-container {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    /* for IE8 */
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
+    /* for IE9+ */
+    background: rgba(0,0,0,.5), none;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 99;
+}
+.dialog-container:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.dialog {
+    display: inline-block;
+    vertical-align: middle;
+    /* border-radius: 6px; */
+    background-color: #fff;
+    text-align: left;
+    white-space: normal;
+    position: relative;
+}
+.dialog-bottom {
+    text-align: center;
+    padding: 5px;
+}
+.dialog-bottom label{
+    border: none;
+    text-align: center;
+    width: 120px;
+    line-height: 30px;
+    display: inline-block;
+    background: #0078d7;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    /* padding: 6px 12px; */
+}
+.dialog-bottom label+label{
+    margin-left: 20px;
+}
+.dialog-content {
+    /* width: 240px;
+    height: 120px; */
+    padding: 10px;
+}
+.dialog-head{
+    line-height: 46px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    color: white;
+    background: #0078d7;
+}
+.dialog-close{
+    font-size: 12px;
+    margin-right: 4px;
+    float: right;
+    cursor: pointer;
+}
+.dialog-close:hover{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.dialog:before,
+.dialog:after{
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    border: 5px solid;
+}
+.dialog:before{
+    /* border-width: 0px 0px 2px 0px; */
+    border-color: transparent transparent #0078d7 transparent;
+    top: -10px;
+}
+.dialog:after{
+    /* border-width: 2px 0px 0px 0px; */
+    border-color: white transparent transparent  transparent;
+    bottom: -10px;
+}

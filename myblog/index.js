@@ -629,6 +629,12 @@ articleInfo.addArticle('focushref', '基于focus来滚动实现的tab', '一种�
 //2018-3-7 10:58
 articleInfo.addArticle('flyword', '文字飞入效果', 'letter-spcing', 'css');
 
+//2018-3-12 11:01
+articleInfo.addArticle('bgsize', '背景图片定位', 'background-position', 'css');
+
+//2018-3-12 14:28
+articleInfo.addArticle('dialogmodal', '永恒居中的模态对话框', '弹窗插件', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 

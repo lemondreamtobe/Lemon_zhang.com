@@ -5,33 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="../css/dialog.css" rel="styleSheet">
+    <link rel="stylesheet" href="../../bootstrap-3.3.5/css/bootstrap.css"> 
     <script src="../jquery/jquery-1.12.1.min.js"></script>
+    <script src="../js/drag.js"></script>
+    <script src="../js/dialog.js"></script>
     <style>
-      .box {
-        width: 280px;
-        line-height: 120px;
-        background-color: #f0f3f9;
-        margin: auto;
-    }
-    .content {
-        display: inline-block;
-        line-height: 20px;
-        margin: 0 20px;
-        text-align: left;
-        vertical-align: middle;
-    }
+  
     </style>
 </head>
 <body>
-        <div class="box">
-                <div class="content">多行文本垂直居中对齐多行文本垂直居中对齐多行文本垂直居中对齐...</div>
-            </div>
+        <button id="sd">弹窗</button>
     <script>
-        $('#addN').click(function() {
-            $('nav').append(' <h3>导航1</h3>')
-        });
-        $('#addM').click(function() {
-            $('module').append(' <h3>模块</h3>')
+        $('#sd').click(function() {
+            $.openDialog({
+                // title: '12343',
+                dragEnabled: true,
+                iframeUrl: "./firame.html",
+                width: 460,
+                height: 225,
+            });
         });
     </script>
 </body>
