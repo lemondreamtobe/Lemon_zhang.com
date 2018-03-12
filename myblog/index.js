@@ -626,6 +626,9 @@ articleInfo.addArticle('inlinecm', '再见垂直居中对齐', '常见的垂直�
 //2018-3-5 22:10
 articleInfo.addArticle('focushref', '基于focus来滚动实现的tab', '一种便利的选项卡', 'css');
 
+//2018-3-7 10:58
+articleInfo.addArticle('flyword', '文字飞入效果', 'letter-spcing', 'css');
+
 console.log('新增时间: '  + (Number(new Date()) - Number(start)));
 body_pagination.init();
 
