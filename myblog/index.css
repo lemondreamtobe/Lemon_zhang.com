@@ -2,11 +2,17 @@
     margin: 0;
     padding: 0;
 }
+body,html{
+    height: 100%;
+}
 body{
-    background: url(../images/bg.jpg);
+    background: url('../html/images/serve.jpg');
 }
 .zlf{
     min-width: 1376px;
+    /* height: 100%;
+     */
+     overflow: hidden;
 }
 .zlf-container{
     /* width: 80%;
@@ -19,6 +25,9 @@ body{
     overflow: hidden;
     background: #ffffff;
     zoom: 1;
+    border: 15px solid orange;
+    -webkit-border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27;
+    border-image:  url("https://mdn.mozillademos.org/files/4127/border.png") 27;
 }
 .zlf-body{
     margin-top: 10px;
@@ -321,6 +330,7 @@ ul, menu, dir {
     margin-left: 10px;
     display: inline-block;
     margin-top: 10px;
+    color: #d25;
 }
 .pagCount{
     width: 144px;
@@ -345,7 +355,7 @@ ul, menu, dir {
     vertical-align: top;
 }
 .btnGroup input{
-    height: 53px;
+    height: 51px;
     background-color: #999999;
     color: white;
     font-size: 15px;
