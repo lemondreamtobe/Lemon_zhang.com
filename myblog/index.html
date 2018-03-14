@@ -57,24 +57,25 @@
                     <br style="clear: both">
                 </div>
                 <br style="clear: both">
-            </div>
-            <div class="zlf-pagination" :controller="zlf_pagination">
-                <ul class="zlf-pagination-nav">   
-                    <li class="pagCount" :click="@first">首页</li>       	
-                    <li class="previous"><a :click="@previous" class="previous">←</a></li>
-                    <li class="pagCount">{{@pagination.current + 1}}/{{@pageTotal}}</li>
-                    <li class="next"><a :click="@next" class="next">←</a></li>
-                    <li class="pagCount" :click="@last">末页</li>
-                </ul>
-                <div class="btnGroup">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="count">
-                        <span class="input-group-btn">
-                            <label class="btn" type="button" :click="@go">跳转</label>
-                        </span>
+                <div class="zlf-pagination" :controller="zlf_pagination">
+                    <ul class="zlf-pagination-nav">   
+                        <li class="pagCount" :click="@first">首页</li>       	
+                        <li class="previous"><a :click="@previous" class="previous">←</a></li>
+                        <li class="pagCount">{{@pagination.current + 1}}/{{@pageTotal}}</li>
+                        <li class="next"><a :click="@next" class="next">←</a></li>
+                        <li class="pagCount" :click="@last">末页</li>
+                    </ul>
+                    <div class="btnGroup">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="count">
+                            <span class="input-group-btn">
+                                <label class="btn" type="button" :click="@go">跳转</label>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
+            
             <div class="zlf-bottom">
 
             </div>
