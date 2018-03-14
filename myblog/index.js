@@ -378,9 +378,6 @@ let body_pagination = avalon.define({
     clearGo: function(){
         $('#count').val('');
     },
-    deleteborder: function(){
-       
-    },
     fetch: function(pagi) {
         body_content.article = articleInfo.get('article').slice(pagi.current * pagi.pageSize, pagi.current * pagi.pageSize + pagi.pageSize);
     },
