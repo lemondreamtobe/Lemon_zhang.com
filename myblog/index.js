@@ -379,28 +379,7 @@ let body_pagination = avalon.define({
         $('#count').val('');
     },
     deleteborder: function(){
-        var count_border =  $('#count').css('border');
-        var input_border =  $('.input-group-btn').css('border');
-        $('#count').css({
-            'border': '1px solid yellow'
-        });
-        $('.input-group-btn').css({
-            'border': '1px solid yellow',
-            'border-left': '0px'
-        });
-
-        if (this.resetborder) {
-
-        } else {
-            this.resetborder = function(b1, b2) {
-                $('#count').css({
-                    'border': count_border
-                });
-                $('.input-group-btn').css({
-                    'border': input_border
-                });
-            }
-        }
+       
     },
     fetch: function(pagi) {
         body_content.article = articleInfo.get('article').slice(pagi.current * pagi.pageSize, pagi.current * pagi.pageSize + pagi.pageSize);
