@@ -66,9 +66,9 @@ img:hover::after {
         <div class="demo-content">
             <h3 id="blogTitle">利用替换元素向非替换元素转换做的图片信息提示</h3>
             <div class="zlf-margin height-text">
-                <img alt="美女沉思图">
+                <img alt="加载中...">
                 <div class="zlf-margin">
-                    <button id="adUrl">添加图片</button>
+                    <button id="adUrl">添加路径</button>
                 </div>
             </div>
         </div>
@@ -78,7 +78,14 @@ img:hover::after {
     </div>
     <script type="text/javascript">
         $('#adUrl').click(function() {
-            $('[alt="美女沉思图"]').attr('src', '../../images/autofix.png');
+            
+            if ($('[alt="加载中..."]').attr('src')) {
+                $('[alt="加载中..."]').removeAttr('src');
+                $('#adUrl').html('添加路径');
+            } else {
+                $('[alt="加载中..."]').attr('src', '../../images/autofix.png');
+                $('#adUrl').html('移除路径');
+            }
         });
         /*文章信息操作日志*/
         var blogTool = new Tools();

@@ -15,17 +15,14 @@
     </style>
 </head>
 <body>
-        <button id="sd">弹窗</button>
+        
     <script>
-        $('#sd').click(function() {
-            $.openDialog({
-                // title: '12343',
-                dragEnabled: true,
-                iframeUrl: "./firame.html",
-                width: 460,
-                height: 225,
-            });
-        });
+        
+        
+
+window.onbeforeunload = function(){
+    return '确定要刷新页面吗？';
+}
     </script>
 </body>
 </html>
