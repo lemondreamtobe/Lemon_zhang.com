@@ -272,6 +272,7 @@ body{
 			display: inline-block;
 			float: left;
 			width: 45%;
+			text-align: center;
 		}
 		.ib-right{
 			display: inline-block;
