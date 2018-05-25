@@ -210,7 +210,7 @@ body{
 		}
 		.skill-info .xixi h4{
 			text-align: center;
-			color: springgreen;
+			color: #0078d7;
 		}
 		.skill-info .xixi p{
 			text-align: center;
@@ -237,7 +237,7 @@ body{
 			height: 526px;
 		}
 		.skill{
-			background: url(../html/images/6.jpg);
+			/* background: url(../html/images/6.jpg); */
 			background-size: 100%;
 			min-width: 1182px;
 		}
